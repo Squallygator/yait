@@ -1,0 +1,22 @@
+# Normalise line endings: the repo stores LF, working copies get the native form.
+# CI runs on both Ubuntu and Windows; without this, every diff carries EOL noise.
+* text=auto eol=lf
+
+# Windows-only launchers must keep CRLF to stay runnable from Explorer.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binary: never touched, never diffed as text.
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.thm   binary
+*.avi   binary
+*.mp4   binary
+*.zip   binary
+*.bak   binary
+
+# Generated sample corpus: keep it out of review diffs, it is rebuilt from
+# samples.yaml by tools/build_samples.py and verified by manifest, not by bytes.
+specs/**/files/** linguist-generated=true
