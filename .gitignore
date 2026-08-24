@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.eggs/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local runtime state (never committed)
+.yait/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups produced by the tool itself
+*.bak
+*.tmp
+
+# The real photo archive is NEVER committed: it contains personal data.
+# It is referenced at runtime through the YAIT_PRIVATE_ARCHIVE env var.
+private-archive/
