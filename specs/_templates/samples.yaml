@@ -1,0 +1,45 @@
+# Technical recipe for this rule's example files. Nothing else belongs here:
+# what the files should PRODUCE is asserted in rule.feature.
+#
+# Build with:  python tools/build_samples.py
+# Never place a file into files/ by hand.
+
+version: 1
+
+files:
+  # --- images derived from the seed photograph -----------------------------
+  - path: "<folder>/<name>.jpg"   # directories allowed; they are often the point
+    source: seed
+    width: 480                    # optional, default: small standard size
+    quality: 70                   # optional
+    exif: {}                      # {} or omitted = no metadata at all
+    #   exif:
+    #     DateTimeOriginal: "2006-08-29 09:43:38"
+    #     DateTimeDigitized: "2006-08-29 09:43:38"
+    #     Orientation: 1
+
+  # --- forged artefacts ----------------------------------------------------
+  # Built byte by byte: no encoder, no external tool, no third-party content.
+  #
+  #   kind: riff-idit       AVI carrying a RIFF IDIT chunk
+  #     params: {idit: "Tue Aug 29 09:43:38 2006"}
+  #
+  #   kind: mp4-mvhd        MP4/MOV carrying a moov/mvhd atom
+  #     params: {created: "2011-06-04 18:22:00"}
+  #
+  #   kind: zip             archive containing seed-derived images
+  #     params: {entries: [{name: "a.jpg", exif: {DateTimeOriginal: "..."}}]}
+  #
+  #   kind: truncated-jpeg  header intact, scan cut short (damaged CD sector)
+  #     params: {keep_bytes: 4096}
+  #
+  #   kind: empty           zero-byte file
+  #
+  #   kind: bytes           literal content, for junk files
+  #     params: {content: "[Picasa]\nname=whatever\n"}
+  #
+  # - path: "holidays/MVI_0027.AVI"
+  #   source: forge
+  #   kind: riff-idit
+  #   params:
+  #     idit: "Tue Aug 29 09:43:38 2006"
