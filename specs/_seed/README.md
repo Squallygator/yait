@@ -15,7 +15,7 @@ APP0/JFIF marker remains.
 This is not tidiness. The corpus works by re-injecting, for each rule, exactly
 the fields that rule is about. A leftover `DateTimeOriginal` on the seed would
 propagate into every derived sample and make tests depend on data that appears
-nowhere in `samples.yaml` — invisible input, unexplainable failures.
+nowhere in `samples.toml` — invisible input, unexplainable failures.
 
 What was removed when the seed was integrated:
 

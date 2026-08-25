@@ -5,10 +5,10 @@
 # one is EARLIER than the outer one, so an implementation that picks the maximum,
 # the minimum, or the first match while walking down cannot pass by accident.
 
-version: 1
+version = 1
 
-files:
-  - path: "2002-07-20 Wedding at Arras/18-07-2002/026-the-couple-and-the-mother.jpg"
-    source: seed
-    width: 320
-    exif: {}
+[[files]]
+path = "2002-07-20 Wedding at Arras/18-07-2002/026-the-couple-and-the-mother.jpg"
+source = "seed"
+width = 320
+exif = {}

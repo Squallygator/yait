@@ -67,7 +67,7 @@ This tool rewrites irreplaceable family photos. These are not suggestions.
 ## Non-negotiable — specification by example
 
 Every behaviour is a rule under `specs/`, with four artefacts:
-`rule.md`, `rule.feature`, `samples.yaml`, `files/`.
+`rule.md`, `rule.feature`, `samples.toml`, `files/`.
 Target shape: **1 rule -> 1 example -> 1 acceptance test.**
 
 - Each rule carries a polarity in its `## Decision` block:
@@ -77,7 +77,7 @@ Target shape: **1 rule -> 1 example -> 1 acceptance test.**
 - To reverse a decision: the exclusion's test goes **red** -> **delete** the rule
   folder -> add the enforced rule with its own example and test. Never silently
   amend an exclusion. The git diff is the trace of the doctrine change.
-- **Never hand-write files into `files/`.** Edit `samples.yaml`, then run
+- **Never hand-write files into `files/`.** Edit `samples.toml`, then run
   `python tools/build_samples.py`.
 - New behaviour without a rule is out of scope. Ask; do not improvise.
 

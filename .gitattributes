@@ -18,5 +18,5 @@
 *.bak   binary
 
 # Generated sample corpus: keep it out of review diffs, it is rebuilt from
-# samples.yaml by tools/build_samples.py and verified by manifest, not by bytes.
+# samples.toml by tools/build_samples.py and verified by manifest, not by bytes.
 specs/**/files/** linguist-generated=true
