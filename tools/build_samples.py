@@ -516,11 +516,80 @@ def _build_mvhd(timestamp: int) -> bytes:
     return _mp4_box(b"mvhd", payload)
 
 
+def _build_tkhd(timestamp: int) -> bytes:
+    payload = (7).to_bytes(4, "big")  # version 0, flags: enabled | in movie | in preview
+    payload += timestamp.to_bytes(4, "big")  # creation_time
+    payload += timestamp.to_bytes(4, "big")  # modification_time
+    payload += (1).to_bytes(4, "big")  # track_ID
+    payload += b"\x00" * 4  # reserved
+    payload += (0).to_bytes(4, "big")  # duration
+    payload += b"\x00" * 8  # reserved
+    payload += b"\x00" * 2  # layer
+    payload += b"\x00" * 2  # alternate_group
+    payload += b"\x00" * 2  # volume (0 for a video track)
+    payload += b"\x00" * 2  # reserved
+    for value in (0x00010000, 0, 0, 0, 0x00010000, 0, 0, 0, 0x40000000):  # identity matrix
+        payload += value.to_bytes(4, "big")
+    payload += (320 << 16).to_bytes(4, "big")  # width, fixed-point 16.16
+    payload += (240 << 16).to_bytes(4, "big")  # height, fixed-point 16.16
+    return _mp4_box(b"tkhd", payload)
+
+
+def _build_mdhd(timestamp: int) -> bytes:
+    payload = b"\x00\x00\x00\x00"  # version 0, flags 0
+    payload += timestamp.to_bytes(4, "big")  # creation_time
+    payload += timestamp.to_bytes(4, "big")  # modification_time
+    payload += (1000).to_bytes(4, "big")  # timescale
+    payload += (0).to_bytes(4, "big")  # duration
+    payload += (0x55C4).to_bytes(2, "big")  # language, packed ISO-639-2/T "und"
+    payload += b"\x00" * 2  # pre_defined
+    return _mp4_box(b"mdhd", payload)
+
+
+def _build_hdlr() -> bytes:
+    payload = b"\x00\x00\x00\x00"  # version 0, flags 0
+    payload += b"\x00\x00\x00\x00"  # pre_defined
+    payload += b"vide"  # handler_type: video
+    payload += b"\x00" * 12  # reserved
+    payload += b"\x00"  # name, empty C string
+    return _mp4_box(b"hdlr", payload)
+
+
+def _build_stbl() -> bytes:
+    # An empty sample table: no codec entry, no samples. This is what makes the
+    # file undecodable by construction — a real player has nothing to decode.
+    stsd = _mp4_box(b"stsd", b"\x00\x00\x00\x00" + (0).to_bytes(4, "big"))
+    stts = _mp4_box(b"stts", b"\x00\x00\x00\x00" + (0).to_bytes(4, "big"))
+    stsc = _mp4_box(b"stsc", b"\x00\x00\x00\x00" + (0).to_bytes(4, "big"))
+    stsz = _mp4_box(b"stsz", b"\x00\x00\x00\x00" + (0).to_bytes(4, "big") + (0).to_bytes(4, "big"))
+    stco = _mp4_box(b"stco", b"\x00\x00\x00\x00" + (0).to_bytes(4, "big"))
+    return _mp4_box(b"stbl", stsd + stts + stsc + stsz + stco)
+
+
+def _build_minf() -> bytes:
+    vmhd = _mp4_box(b"vmhd", (1).to_bytes(4, "big") + b"\x00" * 8)  # flags must be 1
+    url_box = _mp4_box(b"url ", (1).to_bytes(4, "big"))  # self-contained, no location needed
+    dref = _mp4_box(b"dref", b"\x00\x00\x00\x00" + (1).to_bytes(4, "big") + url_box)
+    dinf = _mp4_box(b"dinf", dref)
+    return _mp4_box(b"minf", vmhd + dinf + _build_stbl())
+
+
+def _build_trak(timestamp: int) -> bytes:
+    mdia = _mp4_box(b"mdia", _build_mdhd(timestamp) + _build_hdlr() + _build_minf())
+    return _mp4_box(b"trak", _build_tkhd(timestamp) + mdia)
+
+
 def build_mp4_mvhd(created: datetime) -> bytes:
-    """A minimal MP4/MOV: ``ftyp`` plus a ``moov`` box carrying ``mvhd`` v0."""
+    """A minimal MP4/MOV: ``ftyp``, ``moov/mvhd``, and one empty video ``trak``.
+
+    The date lives in ``mvhd`` alone. The track carries no sample table entry
+    at all, so nothing about it is decodable — it exists only because Windows'
+    shell property handler reports no properties at all for a trackless
+    MPEG-4 container, unlike its lenient RIFF/AVI chunk scanner.
+    """
     timestamp = int(created.replace(tzinfo=timezone.utc).timestamp()) + QT_EPOCH_OFFSET_SECONDS
     ftyp = _mp4_box(b"ftyp", b"isom" + (0).to_bytes(4, "big") + b"isom" + b"mp42")
-    moov = _mp4_box(b"moov", _build_mvhd(timestamp))
+    moov = _mp4_box(b"moov", _build_mvhd(timestamp) + _build_trak(timestamp))
     return ftyp + moov
 
 
