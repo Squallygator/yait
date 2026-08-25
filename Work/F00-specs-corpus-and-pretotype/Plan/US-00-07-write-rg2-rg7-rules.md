@@ -18,6 +18,13 @@ dans n'importe quel ordre, ou en parallèle sur des branches distinctes.
 - Les six `group.md` de `RG-2` à `RG-7`, **avec leurs tables de règles** qui listent nommément les
   31 UC attendus et ce que chacun décide
 - `tools/build_samples.py` — images dérivées et artefacts forgés
+- `specs/RG-2-file-classification/UC-24-unreadable-is-detected/samples.toml` **existe déjà**,
+  posé par `US-00-05` comme recette de mise au point : elle exerce les six `kind` forgés d'un
+  coup (AVI, MP4, zip, JPEG tronqué, fichier vide, fichier parasite), pas seulement le JPEG
+  tronqué que la règle `UC-24` décide réellement. Ne pas la régénérer à l'aveugle : la relire et
+  la réduire à l'unique exemple dont `UC-24` a besoin (forme cible : une règle, un exemple), puis
+  déplacer les entrées qui appartiennent à d'autres règles (`UC-20`, `UC-21`, `UC-23`, `UC-25`,
+  `UC-26`) vers leurs propres `samples.toml`.
 
 ## Règles applicables
 
