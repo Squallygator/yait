@@ -1,0 +1,3 @@
+# Provisional: US-01-01 replaces this with pyproject.toml.
+# Needed only to run tools/build_samples.py.
+Pillow
