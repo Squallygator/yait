@@ -1,7 +1,7 @@
 # US-00-04 — Sample generator, image derivatives
 
 > **Feature** F00 — Specs corpus & pretotype · **Lot 4/22** · Statut : ✅ **(25/08/2026)**
-> Branche `feat/US-00-04-sample-generator-images`, tag `US-00-04` à la fusion sur `main`.
+> Le lot est livré, tag `US-00-04`.
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
