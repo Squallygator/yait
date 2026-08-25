@@ -23,7 +23,7 @@ Code is never the source of truth for behaviour. To change what the tool does:
 
 1. Edit or add the rule in `specs/RG-*/UC-*/rule.md`, including its `## Decision` block.
 2. Write the Gherkin scenario in `rule.feature` — by hand, in business language.
-3. Describe the sample files in `samples.yaml`, then run `python tools/build_samples.py`.
+3. Describe the sample files in `samples.toml`, then run `python tools/build_samples.py`.
    Never hand-place files into `files/`.
 4. Implement, and make the acceptance test pass.
 

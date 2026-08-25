@@ -8,7 +8,7 @@ writes metadata (rule ``UC-44``), applied here to the seed photograph.
 Why the seed must carry no metadata at all: the sample corpus is built by
 re-injecting, for each rule, exactly the fields that rule needs. A leftover
 ``DateTimeOriginal`` on the seed would silently leak into every derived sample
-and make the tests depend on data nobody can see in ``samples.yaml``.
+and make the tests depend on data nobody can see in ``samples.toml``.
 
 Usage::
 

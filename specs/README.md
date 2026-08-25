@@ -10,7 +10,7 @@ exist — and if it is written here, a test proves it.
 specs/RG-1-date-resolution/RG-1.2-folder-dates/UC-14-deepest-folder-wins/
 ├── rule.md         the rule, why it exists, and the decision behind it
 ├── rule.feature    one Gherkin scenario, written by hand in business language
-├── samples.yaml    how to build this rule's example files — technical only
+├── samples.toml    how to build this rule's example files — technical only
 └── files/          the generated examples, committed
 ```
 
@@ -25,10 +25,10 @@ several, it usually hides two rules. `rule.md` must then say why it does not.
 |---|---|---|
 | `rule.md` | a human | *What* the rule is and *why*. **The source of truth.** |
 | `rule.feature` | a human | *How* it is proven, in business language |
-| `samples.yaml` | a human | *How* the example files are built. Nothing else. |
+| `samples.toml` | a human | *How* the example files are built. Nothing else. |
 | `files/` | `tools/build_samples.py` | The example files themselves |
 
-Nothing is generated from anything else. `rule.feature` and `samples.yaml` meet
+Nothing is generated from anything else. `rule.feature` and `samples.toml` meet
 through **file names**: the scenario names a file, the recipe builds that file.
 
 This separation is deliberate. An earlier design had one big manifest generating
@@ -86,7 +86,7 @@ Never edit an exclusion into an enforcement in place. The deletion is the record
 4. Write `rule.feature`. Business language: no file formats, no function names,
    no "the parser". Someone who has never opened the code must be able to judge
    whether the scenario is right.
-5. Describe the example files in `samples.yaml`, then run
+5. Describe the example files in `samples.toml`, then run
    `python tools/build_samples.py`. **Never place a file into `files/` by hand.**
 6. Reference the rule from at least one User Story.
 
@@ -118,34 +118,34 @@ bug waiting for the next batch of DVDs.
 
 ## Sample recipes
 
-`samples.yaml` is purely technical. It says how to make bytes, never what they
+`samples.toml` is purely technical. It says how to make bytes, never what they
 should produce.
 
-```yaml
-version: 1
+```toml
+version = 1
 
-files:
-  # An image derived from the seed photograph.
-  - path: "2002-07-20 Wedding at Arras/18-07-2002/026-the-couple.jpg"
-    source: seed
-    width: 480          # optional, defaults to the small standard size
-    exif: {}            # no metadata at all — forces resolution by path
+# An image derived from the seed photograph.
+[[files]]
+path = "2002-07-20 Wedding at Arras/18-07-2002/026-the-couple.jpg"
+source = "seed"
+width = 480          # optional, defaults to the small standard size
+exif = {}            # no metadata at all — forces resolution by path
 
-  # An image carrying a capture date.
-  - path: "holidays/IMG_0042.JPG"
-    source: seed
-    exif:
-      DateTimeOriginal: "2006-08-29 09:43:38"
+# An image carrying a capture date.
+[[files]]
+path = "holidays/IMG_0042.JPG"
+source = "seed"
+exif = { DateTimeOriginal = "2006-08-29 09:43:38" }
 
-  # An artefact forged byte by byte — no encoder, no third-party content.
-  - path: "holidays/MVI_0027.AVI"
-    source: forge
-    kind: riff-idit
-    params:
-      idit: "Tue Aug 29 09:43:38 2006"
+# An artefact forged byte by byte — no encoder, no third-party content.
+[[files]]
+path = "holidays/MVI_0027.AVI"
+source = "forge"
+kind = "riff-idit"
+params = { idit = "Tue Aug 29 09:43:38 2006" }
 ```
 
-Available `kind` values are documented in `_templates/samples.yaml`.
+Available `kind` values are documented in `_templates/samples.toml`.
 
 Paths may contain directories: the folder names are usually the point of the
 rule. Accents, spaces and ampersands are welcome — the real archive is full of

@@ -37,7 +37,7 @@ Every behaviour lives in `specs/` as a self-contained rule:
 specs/RG-1-date-resolution/RG-1.2-folder-dates/UC-14-deepest-folder-wins/
 ├── rule.md         the business rule and why it exists
 ├── rule.feature    one Gherkin scenario, written by hand
-├── samples.yaml    how to build this rule's sample files
+├── samples.toml    how to build this rule's sample files
 └── files/          the generated samples, committed
 ```
 
