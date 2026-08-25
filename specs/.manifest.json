@@ -8,6 +8,65 @@
       "quality": 70,
       "exif": {},
       "size": 8964
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/backups/holiday-photos.zip",
+      "kind": "zip",
+      "params": {
+        "entries": [
+          {
+            "name": "001.jpg",
+            "exif": {
+              "DateTimeOriginal": "2010-05-01 10:00:00"
+            }
+          },
+          {
+            "name": "002.jpg",
+            "exif": {
+              "DateTimeOriginal": "2009-12-24 08:30:00"
+            }
+          }
+        ]
+      },
+      "size": 18278
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/corrupt-scan.jpg",
+      "kind": "truncated-jpeg",
+      "params": {
+        "keep_bytes": 4096
+      },
+      "size": 4096
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/empty-file.jpg",
+      "kind": "empty",
+      "params": {},
+      "size": 0
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0027.AVI",
+      "kind": "riff-idit",
+      "params": {
+        "idit": "Tue Aug 29 09:43:38 2006"
+      },
+      "size": 122
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0028.MOV",
+      "kind": "mp4-mvhd",
+      "params": {
+        "created": "2011-06-04 18:22:00"
+      },
+      "size": 140
+    },
+    {
+      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/junk/Picasa.ini",
+      "kind": "bytes",
+      "params": {
+        "content": "[Picasa]\nname=whatever\n"
+      },
+      "size": 23
     }
   ]
 }

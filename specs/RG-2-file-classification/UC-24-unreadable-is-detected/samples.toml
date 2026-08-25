@@ -1,0 +1,46 @@
+# US-00-05 warm-up recipe: exercises the six forged `kind` values together, so
+# the generator itself is proven correct before any rule needs them one at a
+# time. UC-24's own rule.md and rule.feature are not written yet (US-00-07):
+# when they are, trim this recipe down to the single example that rule needs
+# (target shape: one rule, one example) and move the other entries to
+# whichever UC actually specifies that behaviour.
+
+version = 1
+
+[[files]]
+path = "holidays/MVI_0027.AVI"
+source = "forge"
+kind = "riff-idit"
+params = { idit = "Tue Aug 29 09:43:38 2006" }
+
+[[files]]
+path = "holidays/MVI_0028.MOV"
+source = "forge"
+kind = "mp4-mvhd"
+params = { created = "2011-06-04 18:22:00" }
+
+[[files]]
+path = "backups/holiday-photos.zip"
+source = "forge"
+kind = "zip"
+params = { entries = [
+  { name = "001.jpg", exif = { DateTimeOriginal = "2010-05-01 10:00:00" } },
+  { name = "002.jpg", exif = { DateTimeOriginal = "2009-12-24 08:30:00" } },
+] }
+
+[[files]]
+path = "damaged/corrupt-scan.jpg"
+source = "forge"
+kind = "truncated-jpeg"
+params = { keep_bytes = 4096 }
+
+[[files]]
+path = "damaged/empty-file.jpg"
+source = "forge"
+kind = "empty"
+
+[[files]]
+path = "junk/Picasa.ini"
+source = "forge"
+kind = "bytes"
+params = { content = "[Picasa]\nname=whatever\n" }
