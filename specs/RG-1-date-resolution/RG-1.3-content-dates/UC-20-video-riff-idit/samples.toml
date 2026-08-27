@@ -1,0 +1,13 @@
+# UC-20 — an AVI dated by its RIFF IDIT chunk.
+#
+# Forged byte for byte: a minimal RIFF/AVI header and an IDIT chunk holding the
+# camcorder asctime string. The folder names no date, so the chunk is the only
+# source.
+
+version = 1
+
+[[files]]
+path = "holidays/MVI_0031.AVI"
+source = "forge"
+kind = "riff-idit"
+params = { idit = "Tue Aug 29 09:43:38 2006" }

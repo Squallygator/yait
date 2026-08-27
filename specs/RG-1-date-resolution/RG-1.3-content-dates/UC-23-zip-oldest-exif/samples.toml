@@ -1,0 +1,17 @@
+# UC-23 — an archive takes the oldest date it contains.
+#
+# Three entries, out of order: the oldest (2009-12-24) is the MIDDLE one, so an
+# implementation that takes the first, the last, or the maximum fails. The
+# archive name and folder carry no date.
+
+version = 1
+
+[[files]]
+path = "backups/holiday-photos.zip"
+source = "forge"
+kind = "zip"
+params = { entries = [
+  { name = "0001.jpg", exif = { DateTimeOriginal = "2010-05-01 10:00:00" } },
+  { name = "0002.jpg", exif = { DateTimeOriginal = "2009-12-24 08:30:00" } },
+  { name = "0003.jpg", exif = { DateTimeOriginal = "2011-02-02 12:15:00" } },
+] }

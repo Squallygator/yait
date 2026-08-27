@@ -1,0 +1,21 @@
+# UC-22 — a .THM thumbnail dates its video (twin of UC-38 in RG-2).
+#
+# The AVI is a real RIFF/AVI whose IDIT chunk holds the non-date string
+# "unknown", so its container yields no date. The .THM beside it is a seed-
+# derived JPEG carrying DateTimeOriginal. Inspecting the video must fall to the
+# sidecar; the folder names no date, so an implementation that ignores the
+# sidecar gets nothing.
+
+version = 1
+
+[[files]]
+path = "CANON/MVI_2468.AVI"
+source = "forge"
+kind = "riff-idit"
+params = { idit = "unknown" }
+
+[[files]]
+path = "CANON/MVI_2468.THM"
+source = "seed"
+width = 160
+exif = { DateTimeOriginal = "2005-12-25 16:30:00" }

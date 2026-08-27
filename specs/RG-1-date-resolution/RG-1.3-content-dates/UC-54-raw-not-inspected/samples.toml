@@ -1,0 +1,14 @@
+# UC-54 — a RAW file is not inspected for its embedded date.
+#
+# The sample is seed-derived JPEG bytes written to a .CR2 path, carrying a real
+# day-precision DateTimeOriginal, inside a month-dated folder. rule.feature
+# asserts the fallback (folder, month precision), so an implementation that just
+# opens the readable bytes and reads Exif gives a different answer and fails.
+
+version = 1
+
+[[files]]
+path = "2016-05 Iceland/IMG_8801.CR2"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2016-05-14 07:12:00" }

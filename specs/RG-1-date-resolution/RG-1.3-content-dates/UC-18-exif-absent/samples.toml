@@ -1,0 +1,13 @@
+# UC-18 — absent Exif is not a dead end.
+#
+# No metadata, no date in the filename, a folder that names only the year.
+# rule.feature asserts a date is still resolved (from the folder) and that it
+# does not come from embedded-metadata.
+
+version = 1
+
+[[files]]
+path = "vacances corse 2004/DSC_0009.JPG"
+source = "seed"
+width = 320
+exif = {}

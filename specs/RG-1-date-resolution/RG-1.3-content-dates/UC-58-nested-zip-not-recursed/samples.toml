@@ -1,0 +1,21 @@
+# UC-58 — archives are read one level deep.
+#
+# Two datable images and a third entry named "old-stuff.zip" that stands in for
+# a nested archive, with the oldest stored date (2001-01-01). rule.feature
+# asserts the outer archive resolves to 2012-07-10, the oldest READABLE image,
+# so a wrongly-counted 2001 entry fails the test.
+#
+# The generator builds one archive level, so "old-stuff.zip" is a seed-derived
+# entry with that name, not a real inner ZIP. See rule.md's sample-fidelity note.
+
+version = 1
+
+[[files]]
+path = "backups/2012-full-backup.zip"
+source = "forge"
+kind = "zip"
+params = { entries = [
+  { name = "photos/IMG_001.jpg", exif = { DateTimeOriginal = "2012-07-10 09:00:00" } },
+  { name = "photos/IMG_002.jpg", exif = { DateTimeOriginal = "2012-07-11 09:00:00" } },
+  { name = "old-stuff.zip", exif = { DateTimeOriginal = "2001-01-01 00:00:00" } },
+] }
