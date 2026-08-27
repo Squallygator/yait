@@ -1,0 +1,17 @@
+# UC-36 — the full priority ladder, exercised by a three-way conflict.
+#
+# Deliberately rigged so all three sources disagree and the correct answer is
+# the MIDDLE candidate:
+#   - filename bare YYYYMMDD "20070815"      -> 2007-08-15  (rank 4)
+#   - Exif DateTimeOriginal                  -> 2007-08-20  (rank 2, wins)
+#   - folder "2007-08-25 retour"             -> 2007-08-25  (rank 5)
+# The Exif date is 5 days from the folder date, so the clock-drift guard (UC-19)
+# does not fire. Earliest / latest / first-source pickers all fail.
+
+version = 1
+
+[[files]]
+path = "2007-08-25 retour/20070815 arrivee ferry.JPG"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2007-08-20 14:03:22" }

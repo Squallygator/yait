@@ -1,0 +1,14 @@
+# UC-37 — mtime is never a capture date.
+#
+# No name date, no Exif, a parent folder ("Copie de Photos") with no date. The
+# generator writes the file fresh, so its mtime is "now" — decades from any
+# plausible capture. rule.feature asserts no resolved date: an mtime fallback
+# would surface a current-year date and fail.
+
+version = 1
+
+[[files]]
+path = "Copie de Photos/IMG_1234.JPG"
+source = "seed"
+width = 320
+exif = {}

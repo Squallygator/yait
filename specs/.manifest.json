@@ -251,6 +251,100 @@
       "size": 27462
     },
     {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-08-long-digit-run-is-not-a-date/files/2015-07 Barcelona/received_862666160799536.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-09-epoch-timestamp-ignored/files/2003 vacances/FB_IMG_1288000000.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-19-clock-drift-guard/files/2009-06 Corsica/IMG_0007.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2000-01-01 00:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-29-no-date-at-all/files/Originals/scan.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-30-year-bounds/files/2015-08 wedding/note-20991231.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-36-source-priority-order/files/2007-08-25 retour/20070815 arrivee ferry.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2007-08-20 14:03:22"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-37-mtime-is-never-a-date-source/files/Copie de Photos/IMG_1234.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-56-companion-json-ignored/files/2018-09 Rome/IMG_1234.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-56-companion-json-ignored/files/2018-09 Rome/IMG_1234.JPG.json",
+      "kind": "bytes",
+      "params": {
+        "content": "{\"title\": \"IMG_1234.JPG\", \"photoTakenTime\": {\"timestamp\": \"1041379200\", \"formatted\": \"Jan 1, 2003, 12:00:00 AM UTC\"}}\n"
+      },
+      "size": 118
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-57-gps-not-used-for-dating/files/2013-07 Sicily/DSCN2043.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-60-timezone-not-inferred-from-gps/files/2006-08 birthday/IMG_0512.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-08-29 23:30:00"
+      },
+      "size": 9038
+    },
+    {
       "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/backups/holiday-photos.zip",
       "kind": "zip",
       "params": {
