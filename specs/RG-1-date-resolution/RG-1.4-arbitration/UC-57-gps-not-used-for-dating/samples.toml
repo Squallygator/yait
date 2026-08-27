@@ -1,0 +1,14 @@
+# UC-57 — GPS metadata is not a date source.
+#
+# Degenerate example: the generator cannot yet write a GPS IFD, so this is a
+# still with no metadata at all, in a month-dated folder. See rule.md's
+# sample-fidelity note — the distinct case (a present GPSDateStamp, ignored) is
+# a tracked follow-up once the generator can forge a GPS block.
+
+version = 1
+
+[[files]]
+path = "2013-07 Sicily/DSCN2043.JPG"
+source = "seed"
+width = 320
+exif = {}

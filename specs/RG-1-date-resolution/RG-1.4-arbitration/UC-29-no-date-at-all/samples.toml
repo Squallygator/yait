@@ -1,0 +1,12 @@
+# UC-29 — nothing answers: the file is undated.
+#
+# No date in the name, no Exif, a parent folder ("Originals") with no date.
+# rule.feature asserts no resolved date and precision "none".
+
+version = 1
+
+[[files]]
+path = "Originals/scan.jpg"
+source = "seed"
+width = 320
+exif = {}

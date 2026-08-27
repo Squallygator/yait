@@ -103,6 +103,8 @@ When the media "<relative/path.jpg>" is inspected
 When the collection is inventoried
 
 Then its resolved date is "YYYY-MM-DD"
+Then its resolved date is "YYYY-MM"
+Then its resolved date is "YYYY"
 Then it has no resolved date
 And the date comes from "<source>"
 And the date does not come from "<source>"
@@ -115,6 +117,12 @@ And its target name is "<name.ext>"
 `sidecar`, `none`. It is the answer to *"why this date?"* and every scenario that
 resolves a date must assert it — a right date obtained for the wrong reason is a
 bug waiting for the next batch of DVDs.
+
+The **resolved date is written to its precision**: `2004-06-14` at day precision,
+`2004-06` at month precision, `2004` at year precision. The value and the
+`date precision` step always agree; a scenario that resolves a date asserts both.
+A partial value never means "the rest is 01" — it means the rest is unknown, and
+downstream naming (`RG-3`) must not fill it in.
 
 ## Sample recipes
 

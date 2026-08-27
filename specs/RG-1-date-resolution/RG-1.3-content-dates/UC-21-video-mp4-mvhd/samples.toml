@@ -1,0 +1,13 @@
+# UC-21 — an MP4/MOV dated by moov/mvhd creation_time.
+#
+# Forged byte for byte: ftyp + moov/mvhd + one empty video track. The generator
+# applies the 1904 QuickTime epoch offset. The folder names no date, so mvhd is
+# the only source.
+
+version = 1
+
+[[files]]
+path = "holidays/MVI_0032.MOV"
+source = "forge"
+kind = "mp4-mvhd"
+params = { created = "2011-06-04 18:22:00" }

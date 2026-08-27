@@ -1,0 +1,13 @@
+# UC-60 — a timestamp is kept as written, no timezone shift.
+#
+# DateTimeOriginal is 23:30, thirty minutes before midnight. rule.feature
+# asserts the resolved date is 2006-08-29: any positive UTC offset would roll it
+# to 2006-08-30 and fail.
+
+version = 1
+
+[[files]]
+path = "2006-08 birthday/IMG_0512.JPG"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2006-08-29 23:30:00" }

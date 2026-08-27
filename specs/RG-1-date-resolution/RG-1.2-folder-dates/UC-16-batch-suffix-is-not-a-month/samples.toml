@@ -1,0 +1,20 @@
+# UC-16 — "2006-2" is disc two of 2006, not February.
+#
+# Two sibling folders, 2006-1 and 2006-2, so the hand-numbered disc set is
+# visible in the corpus. The inspected file (in 2006-2) has no metadata and no
+# date in its name, so the folder is the only candidate. rule.feature asserts
+# the fallback: year 2006, year precision.
+
+version = 1
+
+[[files]]
+path = "2006-1/scan 001.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2006-2/family new year 025.jpg"
+source = "seed"
+width = 320
+exif = {}

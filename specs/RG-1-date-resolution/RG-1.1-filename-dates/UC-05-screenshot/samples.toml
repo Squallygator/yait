@@ -1,0 +1,13 @@
+# UC-05 — the Android screenshot name: Screenshot_YYYY-MM-DD-HH-MM-SS-mmm_package.
+#
+# No metadata. A dashed time follows the date directly and a dotted package name
+# follows that, so a pattern that keeps consuming digit groups produces a wrong
+# result.
+
+version = 1
+
+[[files]]
+path = "Pictures/Screenshots/Screenshot_2024-02-15-08-13-22-123_com.example.app.png"
+source = "seed"
+width = 320
+exif = {}

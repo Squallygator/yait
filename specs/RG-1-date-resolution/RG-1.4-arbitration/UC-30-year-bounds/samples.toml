@@ -1,0 +1,12 @@
+# UC-30 — an out-of-range candidate is rejected.
+#
+# The filename holds the valid calendar date 2099-12-31; year 2099 is far in the
+# future, so it is discarded and the month-dated folder answers instead.
+
+version = 1
+
+[[files]]
+path = "2015-08 wedding/note-20991231.jpg"
+source = "seed"
+width = 320
+exif = {}
