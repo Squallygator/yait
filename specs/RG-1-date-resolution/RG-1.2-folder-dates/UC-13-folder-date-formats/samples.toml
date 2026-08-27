@@ -1,0 +1,13 @@
+# UC-13 — the registry of accepted folder-date forms.
+#
+# One folder, one file. The folder uses the underscore separator (2002_07_20),
+# the least obvious accepted form, with a description after it. No metadata: the
+# folder is the only source.
+
+version = 1
+
+[[files]]
+path = "2002_07_20 Wedding at Arras/img_0042.jpg"
+source = "seed"
+width = 320
+exif = {}

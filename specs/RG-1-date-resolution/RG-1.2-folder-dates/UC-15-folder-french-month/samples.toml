@@ -1,0 +1,12 @@
+# UC-15 — a French month name in a folder, month precision.
+#
+# All-caps "JUILLET" with a leading "22" that must not become the day. No
+# metadata: the folder is the only source. rule.feature asserts month precision.
+
+version = 1
+
+[[files]]
+path = "22 JUILLET 2002/numérisation 08.jpg"
+source = "seed"
+width = 320
+exif = {}
