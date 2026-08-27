@@ -1,0 +1,13 @@
+# UC-03 — the WhatsApp media name: IMG-YYYYMMDD-WAnnnn.
+#
+# No metadata, because WhatsApp strips it. The WA0001 counter follows the date
+# with no separator, so a greedy digit match that swallows it produces a wrong
+# day and fails.
+
+version = 1
+
+[[files]]
+path = "WhatsApp/IMG-20161013-WA0001.jpg"
+source = "seed"
+width = 320
+exif = {}

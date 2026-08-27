@@ -1,0 +1,12 @@
+# UC-04 — the Android camera name: IMG_/VID_/PANO_/BURST_ + YYYYMMDD + _HHMMSS.
+#
+# No metadata. The _193000 capture time follows the date directly, so an
+# implementation that keeps consuming digits past the date fails.
+
+version = 1
+
+[[files]]
+path = "DCIM/Camera/IMG_20150704_193000.jpg"
+source = "seed"
+width = 320
+exif = {}

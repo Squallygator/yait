@@ -1,0 +1,13 @@
+# UC-12 — a lone in-range year in the filename, year precision.
+#
+# One year, no other digits, no metadata. The rule.feature asserts year
+# precision, so an implementation that pads to "2011-01-01" at day precision
+# fails.
+
+version = 1
+
+[[files]]
+path = "albums/2011 - family reunion.jpg"
+source = "seed"
+width = 320
+exif = {}
