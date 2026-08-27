@@ -1,0 +1,13 @@
+# UC-17 — the Exif date tag preference order.
+#
+# DateTimeOriginal and DateTimeDigitized are set four years apart, so an
+# implementation that reads Digitized first, or reads whichever tag it finds
+# first, cannot pass. The filename carries no date.
+
+version = 1
+
+[[files]]
+path = "holidays/IMG_0042.JPG"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2006-08-29 09:43:38", DateTimeDigitized = "2010-01-02 14:00:00" }

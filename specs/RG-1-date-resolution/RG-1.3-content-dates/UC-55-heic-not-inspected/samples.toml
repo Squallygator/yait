@@ -1,0 +1,13 @@
+# UC-55 — a HEIC file is not inspected for its embedded date.
+#
+# Seed-derived JPEG bytes on a .HEIC path, carrying a real day-precision
+# DateTimeOriginal, inside a month-dated folder. rule.feature asserts the
+# fallback (folder, month precision).
+
+version = 1
+
+[[files]]
+path = "2019-08 Algarve/IMG_2233.HEIC"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2019-08-03 19:44:00" }

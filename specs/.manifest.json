@@ -124,6 +124,133 @@
       "size": 8964
     },
     {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-17-exif-capture-date/files/holidays/IMG_0042.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeDigitized": "2010-01-02 14:00:00",
+        "DateTimeOriginal": "2006-08-29 09:43:38"
+      },
+      "size": 9070
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-18-exif-absent/files/vacances corse 2004/DSC_0009.JPG",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-20-video-riff-idit/files/holidays/MVI_0031.AVI",
+      "kind": "riff-idit",
+      "params": {
+        "idit": "Tue Aug 29 09:43:38 2006"
+      },
+      "size": 122
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-21-video-mp4-mvhd/files/holidays/MVI_0032.MOV",
+      "kind": "mp4-mvhd",
+      "params": {
+        "created": "2011-06-04 18:22:00"
+      },
+      "size": 469
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-22-video-dated-by-thm-sidecar/files/CANON/MVI_2468.AVI",
+      "kind": "riff-idit",
+      "params": {
+        "idit": "unknown"
+      },
+      "size": 104
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-22-video-dated-by-thm-sidecar/files/CANON/MVI_2468.THM",
+      "width": 160,
+      "height": 72,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2005-12-25 16:30:00"
+      },
+      "size": 3062
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-23-zip-oldest-exif/files/backups/holiday-photos.zip",
+      "kind": "zip",
+      "params": {
+        "entries": [
+          {
+            "name": "0001.jpg",
+            "exif": {
+              "DateTimeOriginal": "2010-05-01 10:00:00"
+            }
+          },
+          {
+            "name": "0002.jpg",
+            "exif": {
+              "DateTimeOriginal": "2009-12-24 08:30:00"
+            }
+          },
+          {
+            "name": "0003.jpg",
+            "exif": {
+              "DateTimeOriginal": "2011-02-02 12:15:00"
+            }
+          }
+        ]
+      },
+      "size": 27412
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-54-raw-not-inspected/files/2016-05 Iceland/IMG_8801.CR2",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2016-05-14 07:12:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-55-heic-not-inspected/files/2019-08 Algarve/IMG_2233.HEIC",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2019-08-03 19:44:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.3-content-dates/UC-58-nested-zip-not-recursed/files/backups/2012-full-backup.zip",
+      "kind": "zip",
+      "params": {
+        "entries": [
+          {
+            "name": "photos/IMG_001.jpg",
+            "exif": {
+              "DateTimeOriginal": "2012-07-10 09:00:00"
+            }
+          },
+          {
+            "name": "photos/IMG_002.jpg",
+            "exif": {
+              "DateTimeOriginal": "2012-07-11 09:00:00"
+            }
+          },
+          {
+            "name": "old-stuff.zip",
+            "exif": {
+              "DateTimeOriginal": "2001-01-01 00:00:00"
+            }
+          }
+        ]
+      },
+      "size": 27462
+    },
+    {
       "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/backups/holiday-photos.zip",
       "kind": "zip",
       "params": {
