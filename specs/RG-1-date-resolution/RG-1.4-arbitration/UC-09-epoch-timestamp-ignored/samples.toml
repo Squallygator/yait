@@ -1,0 +1,13 @@
+# UC-09 — an epoch stamp in the name is the transfer time, not the capture.
+#
+# FB_IMG_1288000000 decodes to October 2010; the photo is filed under 2003. No
+# Exif. rule.feature asserts the date comes from folder-name (year 2003), not
+# from file-name.
+
+version = 1
+
+[[files]]
+path = "2003 vacances/FB_IMG_1288000000.jpg"
+source = "seed"
+width = 320
+exif = {}

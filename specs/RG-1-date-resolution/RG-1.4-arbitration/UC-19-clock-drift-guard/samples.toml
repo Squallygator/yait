@@ -1,0 +1,13 @@
+# UC-19 — a camera clock stuck at 2000-01-01, contradicted by the folder.
+#
+# The embedded date is more than nine years off the folder date, so the guard
+# fires and the folder wins. rule.feature asserts folder-name / month precision,
+# not embedded-metadata.
+
+version = 1
+
+[[files]]
+path = "2009-06 Corsica/IMG_0007.JPG"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2000-01-01 00:00:00" }

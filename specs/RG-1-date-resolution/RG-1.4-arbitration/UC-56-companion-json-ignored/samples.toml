@@ -1,0 +1,19 @@
+# UC-56 — a Google Takeout companion JSON is not read for a date.
+#
+# The media has no Exif and sits in a month-dated folder. The .json sidecar
+# beside it carries a photoTakenTime fifteen years off. rule.feature asserts the
+# folder answers and the date does not come from the sidecar.
+
+version = 1
+
+[[files]]
+path = "2018-09 Rome/IMG_1234.JPG"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2018-09 Rome/IMG_1234.JPG.json"
+source = "forge"
+kind = "bytes"
+params = { content = "{\"title\": \"IMG_1234.JPG\", \"photoTakenTime\": {\"timestamp\": \"1041379200\", \"formatted\": \"Jan 1, 2003, 12:00:00 AM UTC\"}}\n" }

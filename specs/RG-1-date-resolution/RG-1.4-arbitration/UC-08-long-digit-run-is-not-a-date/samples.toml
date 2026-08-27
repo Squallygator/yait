@@ -1,0 +1,13 @@
+# UC-08 — a long digit id is not mined for a date.
+#
+# Fifteen-digit Messenger id, no Exif, inside a month-dated folder. rule.feature
+# asserts the date comes from folder-name and not file-name, so an implementation
+# that slices an eight-digit window out of the id fails.
+
+version = 1
+
+[[files]]
+path = "2015-07 Barcelona/received_862666160799536.jpg"
+source = "seed"
+width = 320
+exif = {}
