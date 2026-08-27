@@ -14,7 +14,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ✅ `US-00-03` Specs structure [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-03-specs-structure.md) **(25/08/2026)**
   - ✅ `US-00-04` Sample generator — images [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-04-sample-generator-images.md) **(25/08/2026)**
   - ✅ `US-00-05` Sample generator — forged artefacts [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-05-sample-generator-forged.md) **(27/08/2026)**
-  - ⬜ `US-00-06` Write RG-1 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md)
+  - ⌛ `US-00-06` Write RG-1 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md)
   - ⬜ `US-00-07` Write RG-2 to RG-7 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-07-write-rg2-rg7-rules.md)
   - ⬜ `US-00-08` Spec guards in CI [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-08-spec-guards.md)
   - ⬜ `US-00-09` Design system [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-09-design-system.md)
