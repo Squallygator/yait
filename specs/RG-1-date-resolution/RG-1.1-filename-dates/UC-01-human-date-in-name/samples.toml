@@ -1,0 +1,13 @@
+# UC-01 — a leading human-typed YYYY-MM-DD outranks embedded metadata.
+#
+# One image whose filename starts with 1974-08-11 while DateTimeOriginal says
+# 2009-03-20 (the scan date). The two are decades apart, so an implementation
+# that reads metadata first cannot pass by accident.
+
+version = 1
+
+[[files]]
+path = "Scans/1974-08-11 grandparents house 03.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2009-03-20 14:05:11" }

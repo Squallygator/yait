@@ -1,0 +1,12 @@
+# UC-10 — a French month name beside a year in the filename, month precision.
+#
+# Accented path, French month "juin", trailing "045" that must read as a batch
+# counter and not a day. No metadata: the name is the only source.
+
+version = 1
+
+[[files]]
+path = "numérisations/suède juin 2004 045.jpg"
+source = "seed"
+width = 320
+exif = {}

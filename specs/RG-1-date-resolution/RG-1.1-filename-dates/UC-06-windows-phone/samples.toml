@@ -1,0 +1,12 @@
+# UC-06 — the Windows Phone camera name: WP_YYYYMMDD_HH_MM_SS_Pro.
+#
+# No metadata. Three underscore-separated numbers and a _Pro marker follow the
+# date, so a pattern that does not anchor on the WP_YYYYMMDD head can drift.
+
+version = 1
+
+[[files]]
+path = "Camera Roll/WP_20140713_15_22_30_Pro.jpg"
+source = "seed"
+width = 320
+exif = {}

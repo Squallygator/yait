@@ -2,6 +2,88 @@
   "version": 1,
   "files": [
     {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-01-human-date-in-name/files/Scans/1974-08-11 grandparents house 03.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2009-03-20 14:05:11"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-02-dropbox-camera-uploads/files/Camera Uploads/2013-08-15 12.34.56-2.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-03-whatsapp/files/WhatsApp/IMG-20161013-WA0001.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-04-android-generated/files/DCIM/Camera/IMG_20150704_193000.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-05-screenshot/files/Pictures/Screenshots/Screenshot_2024-02-15-08-13-22-123_com.example.app.png",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-06-windows-phone/files/Camera Roll/WP_20140713_15_22_30_Pro.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-07-yyyymmdd-embedded/files/scans/20080614_sunset_over_the_bay.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-10-french-month-in-filename/files/numérisations/suède juin 2004 045.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-11-numeric-month-in-name/files/divers/2011-12 christmas market 08.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-1-date-resolution/RG-1.1-filename-dates/UC-12-year-only-in-name/files/albums/2011 - family reunion.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
       "path": "RG-1-date-resolution/RG-1.2-folder-dates/UC-14-deepest-folder-wins/files/2002-07-20 Wedding at Arras/18-07-2002/026-the-couple-and-the-mother.jpg",
       "width": 320,
       "height": 143,

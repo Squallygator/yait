@@ -1,0 +1,13 @@
+# UC-02 — the Dropbox "Camera Uploads" filename shape: YYYY-MM-DD HH.MM.SS.
+#
+# The example keeps the dotted time and Dropbox's "-2" collision suffix, so a
+# pattern that stops at the first dot, or trips on the suffix, cannot pass. No
+# metadata: the name is the only source.
+
+version = 1
+
+[[files]]
+path = "Camera Uploads/2013-08-15 12.34.56-2.jpg"
+source = "seed"
+width = 320
+exif = {}

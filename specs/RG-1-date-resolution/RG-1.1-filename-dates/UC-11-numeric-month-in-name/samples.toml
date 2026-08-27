@@ -1,0 +1,13 @@
+# UC-11 — a numeric YYYY-MM token in the filename, month precision.
+#
+# The trailing "08" is a decoy day sitting a few words after "2011-12". No
+# metadata. The rule.feature asserts month precision, so an implementation that
+# stitches "2011-12-08" fails.
+
+version = 1
+
+[[files]]
+path = "divers/2011-12 christmas market 08.jpg"
+source = "seed"
+width = 320
+exif = {}

@@ -1,0 +1,12 @@
+# UC-07 — a bare, unprefixed, isolated YYYYMMDD run in the name.
+#
+# The positive twin of the UC-08 refusal: the run here is isolated (separator
+# after it) and a valid calendar date, so it is read. No metadata.
+
+version = 1
+
+[[files]]
+path = "scans/20080614_sunset_over_the_bay.jpg"
+source = "seed"
+width = 320
+exif = {}
