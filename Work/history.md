@@ -6,6 +6,18 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-05` — Forged artefact samples **(27/08/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-05-sample-generator-forged.md)
+  Six `kind` forgés octet par octet dans `tools/build_samples.py` : `riff-idit` (AVI), `mp4-mvhd`
+  (MP4/MOV), `zip`, `truncated-jpeg`, `empty`, `bytes` — stdlib seule, aucun encodeur. Époque
+  QuickTime (1904, pas 1970) calculée depuis deux `datetime` plutôt qu'une constante à la main.
+  Le JPEG tronqué coupe une image réellement dérivée (SOI intact, pas d'EOI) au lieu de mentir sur
+  ses dimensions, pour ne pas saper `UC-24`. Découverte en vérification manuelle : le lecteur de
+  propriétés MP4 de l'Explorateur Windows n'affiche rien du tout sur un `moov` sans piste, contrairement
+  au lecteur RIFF/AVI qui scanne les chunks sans exiger un flux valide — corrigé en ajoutant une piste
+  vidéo minimale à zéro échantillon, toujours indécodable, confirmé via le magasin de propriétés du
+  shell puis dans l'Explorateur. Recette de mise au point posée sous `UC-24-unreadable-is-detected`
+  pour `US-00-07`. Tag `US-00-05`.
+
 - ✅ `US-00-04` — Image sample generator **(25/08/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-04-sample-generator-images.md)
   `tools/build_samples.py` (Pillow) dérive chaque image depuis `specs/_seed/river.jpg` : redimensionnement, qualité
   JPEG, injection EXIF sur liste fermée (`Orientation`, `DateTimeOriginal`, `DateTimeDigitized`) — un nom de champ ou

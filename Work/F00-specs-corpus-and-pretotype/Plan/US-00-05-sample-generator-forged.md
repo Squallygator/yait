@@ -1,6 +1,7 @@
 # US-00-05 — Sample generator, forged artefacts
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 5/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 5/22** · Statut : ✅ **(27/08/2026)**
+> Le lot est livré, tag `US-00-05`.
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
