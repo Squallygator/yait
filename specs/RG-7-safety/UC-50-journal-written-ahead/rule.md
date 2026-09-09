@@ -4,8 +4,8 @@
 |---|---|
 | Group | `RG-7 Safety and reversibility` |
 | Status | `Enforced` ▶ |
-| Legacy findings | — |
 | Stories | `US-07-01` |
+| Legacy findings | — |
 
 ## Rule
 

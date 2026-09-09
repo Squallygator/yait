@@ -4,8 +4,8 @@
 |---|---|
 | Group | `RG-5 Metadata deduction and writing` |
 | Status | `Enforced` ▶ |
-| Legacy findings | — |
 | Stories | `US-06-04` |
+| Legacy findings | — |
 
 ## Rule
 

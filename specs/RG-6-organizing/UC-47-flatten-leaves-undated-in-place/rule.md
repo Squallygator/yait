@@ -4,8 +4,8 @@
 |---|---|
 | Group | `RG-6 Organizing` |
 | Status | `Assumed exclusion` ⊘ |
-| Legacy findings | — |
 | Stories | `US-05-02` |
+| Legacy findings | — |
 
 ## Rule
 

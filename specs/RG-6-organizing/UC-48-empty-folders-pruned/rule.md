@@ -4,8 +4,8 @@
 |---|---|
 | Group | `RG-6 Organizing` |
 | Status | `Enforced` ▶ |
-| Legacy findings | — |
 | Stories | `US-05-04` |
+| Legacy findings | — |
 
 ## Rule
 
