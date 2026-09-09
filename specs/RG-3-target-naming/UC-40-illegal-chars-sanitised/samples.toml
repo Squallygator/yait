@@ -1,0 +1,14 @@
+# UC-40 — the target name carries no character Windows refuses.
+#
+# One image whose description ends in a dot then a space, both of which Windows
+# strips on write. See the Sample-fidelity note in rule.md: the outright-
+# forbidden set (< > : " | ? *) cannot be a committed corpus path. The date
+# comes from Exif; the folder carries none.
+
+version = 1
+
+[[files]]
+path = "scans/holiday day 1. .jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2005-08-01 10:00:00" }

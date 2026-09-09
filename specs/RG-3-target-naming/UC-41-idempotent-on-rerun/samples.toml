@@ -1,0 +1,13 @@
+# UC-41 — the namer is a fixed point: a file already in target form is untouched.
+#
+# One image, no metadata, whose name is already "YYYY-MM-DD-description.jpg".
+# The filename token is the date source; a correct namer removes it and rebuilds
+# the same name, a wrong one stacks a second date prefix.
+
+version = 1
+
+[[files]]
+path = "2007-08-25 retour/2007-08-25-arrivee ferry.jpg"
+source = "seed"
+width = 320
+exif = {}

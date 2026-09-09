@@ -1,0 +1,12 @@
+# UC-51 — undo returns the file to its exact prior bytes.
+#
+# One image with an Exif date. The rename-then-undo round trip is driven by the
+# US-07-03 undo machinery; the corpus carries the starting state only.
+
+version = 1
+
+[[files]]
+path = "2007-08 corse/IMG_0042.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2007-08-19 10:30:00" }

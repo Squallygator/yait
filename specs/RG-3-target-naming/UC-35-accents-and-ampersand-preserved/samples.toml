@@ -1,0 +1,13 @@
+# UC-35 — keep accents, &, parentheses and spaces in the description.
+#
+# One image, no metadata: the date comes from the month-precision folder. The
+# filename stem carries an accented capital, an ampersand, parentheses and
+# spaces, all of which must reach the target name unchanged.
+
+version = 1
+
+[[files]]
+path = "2004-07 corse/Étretat & la plage (2).jpg"
+source = "seed"
+width = 320
+exif = {}

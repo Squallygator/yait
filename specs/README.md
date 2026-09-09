@@ -111,6 +111,41 @@ And the date does not come from "<source>"
 And the date precision is "<day|month|year|none>"
 And it is classified as "<image|video|archive|sidecar|junk|unreadable>"
 And its target name is "<name.ext>"
+
+# RG-5 — metadata deduction and writing
+And its deduced label is "<text>"
+When the media "<relative/path.jpg>" has its metadata written
+Then its title, subject and comment all read "<text>"
+And its title still reads "<text>"
+And the deduced label was not written to the title
+And the compressed image is byte-for-byte unchanged
+Given the metadata audit has recorded "<relative/path.jpg>"
+When the file's bytes change and the write is applied
+Then the write is refused because the file changed since it was audited
+And the file is left untouched
+
+# RG-6 — organizing
+When the collection is organized
+When the collection is flattened
+Then it is filed under "<YYYY/>" | "<YYYY/MM/>" | "_undated/"
+And the media "<relative/path.jpg>" stays at "<relative/path.jpg>"
+And the folder "<relative/path>" has been pruned
+And the folder "<relative/path>" is left in place
+
+# RG-7 — safety and reversibility
+# These scenarios describe an interruption or an escape attempt. How a cut is
+# actually simulated in a test is US-08-04's problem, stated in each rule.md.
+When the operation on "<relative/path.jpg>" is interrupted before it completes
+When the operation on "<relative/path.jpg>" is undone
+When an operation is handed the path "<escaping/or/absolute/path>"
+Then the original file is intact, byte for byte
+And no partial or temporary file is left beside it
+And the journal already records the operation, flushed, before the file changes
+And the file is back at "<relative/path.jpg>" with identical bytes
+And the path is rejected as outside the collection
+And nothing outside the collection root is read or written
+And the operation fails rather than overwrite the file that is already there
+And a file whose full path exceeds 260 characters is not skipped for its length
 ```
 
 `<source>` is one of: `file-name`, `folder-name`, `embedded-metadata`,

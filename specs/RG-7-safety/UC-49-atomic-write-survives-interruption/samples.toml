@@ -1,0 +1,13 @@
+# UC-49 — an interrupted write leaves the original intact.
+#
+# One image with an Exif date (so a metadata write has something to do). The
+# corpus holds it in its original state; the interruption is staged by the
+# US-08-04 harness.
+
+version = 1
+
+[[files]]
+path = "originals/portrait.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2008-04-12 17:00:00" }

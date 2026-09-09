@@ -1,0 +1,13 @@
+# UC-31 — an unknown camera prefix (SANY) is kept in the label context.
+#
+# One image, no metadata: the folder gives a month-precision date. "SANY" is
+# not on the known-prefix list, so "SANY0032" must survive into the label
+# rather than being stripped by a shape heuristic.
+
+version = 1
+
+[[files]]
+path = "2012-06 Ouessant/SANY0032.jpg"
+source = "seed"
+width = 320
+exif = {}

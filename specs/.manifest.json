@@ -345,27 +345,6 @@
       "size": 9038
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/backups/holiday-photos.zip",
-      "kind": "zip",
-      "params": {
-        "entries": [
-          {
-            "name": "001.jpg",
-            "exif": {
-              "DateTimeOriginal": "2010-05-01 10:00:00"
-            }
-          },
-          {
-            "name": "002.jpg",
-            "exif": {
-              "DateTimeOriginal": "2009-12-24 08:30:00"
-            }
-          }
-        ]
-      },
-      "size": 18278
-    },
-    {
       "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/corrupt-scan.jpg",
       "kind": "truncated-jpeg",
       "params": {
@@ -374,34 +353,340 @@
       "size": 4096
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/empty-file.jpg",
+      "path": "RG-2-file-classification/UC-25-zero-byte-file/files/damaged/empty-file.jpg",
       "kind": "empty",
       "params": {},
       "size": 0
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0027.AVI",
-      "kind": "riff-idit",
-      "params": {
-        "idit": "Tue Aug 29 09:43:38 2006"
-      },
-      "size": 122
-    },
-    {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0028.MOV",
-      "kind": "mp4-mvhd",
-      "params": {
-        "created": "2011-06-04 18:22:00"
-      },
-      "size": 469
-    },
-    {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/junk/Picasa.ini",
+      "path": "RG-2-file-classification/UC-26-junk-files/files/junk/Picasa.ini",
       "kind": "bytes",
       "params": {
-        "content": "[Picasa]\nname=whatever\n"
+        "content": "[Picasa]\nname=Album\nlocation=\n[.]\nstar=yes\n"
       },
-      "size": 23
+      "size": 43
+    },
+    {
+      "path": "RG-2-file-classification/UC-38-sidecar-is-not-junk/files/CANON/MVI_3312.AVI",
+      "kind": "riff-idit",
+      "params": {
+        "idit": "unknown"
+      },
+      "size": 104
+    },
+    {
+      "path": "RG-2-file-classification/UC-38-sidecar-is-not-junk/files/CANON/MVI_3312.THM",
+      "width": 160,
+      "height": 72,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-07-14 18:30:00"
+      },
+      "size": 3062
+    },
+    {
+      "path": "RG-2-file-classification/UC-59-duplicate-content-not-detected/files/2007-08 corse/sunset (copy).jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-2-file-classification/UC-59-duplicate-content-not-detected/files/2007-08 corse/sunset.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-28-originals-suffix/files/Bretagne 2011/Originals/coastal path.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-07-02 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-28-originals-suffix/files/Bretagne 2011/coastal path.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-07-02 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-35-accents-and-ampersand-preserved/files/2004-07 corse/Étretat & la plage (2).jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-39-date-token-removed-only-if-it-provided-the-date/files/Scans/2003-07-14 - 1998 reunion rescan.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-40-illegal-chars-sanitised/files/scans/holiday day 1. .jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2005-08-01 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-41-idempotent-on-rerun/files/2007-08-25 retour/2007-08-25-arrivee ferry.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-4-collisions/UC-27-quality-ordering/files/2010-08 fete/a/photo.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-08-15 14:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-4-collisions/UC-27-quality-ordering/files/2010-08 fete/b/photo.jpg",
+      "width": 640,
+      "height": 287,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-08-15 14:00:00"
+      },
+      "size": 33143
+    },
+    {
+      "path": "RG-4-collisions/UC-42-uniqueness-is-global/files/2006-05 disc 1/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-05-14 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-4-collisions/UC-42-uniqueness-is-global/files/2006-05 disc 2/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-05-14 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-31-unknown-camera-prefix/files/2012-06 Ouessant/SANY0032.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-32-label-from-folder-and-context/files/2004-09 Bretagne/menhir debout.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-33-existing-fields-never-overwritten/files/2004-09 Bretagne/vieux scan.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-43-one-label-for-title-subject-comment/files/2005-08 Rome/le Forum.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2005-08-19 11:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-44-write-never-reencodes/files/2003-07 corse/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2003-07-19 15:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-45-drift-detected/files/2010-05 corse/IMG_0042.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-05-08 16:20:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/2009 albums/b.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/2011-06-14 rando/a.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 08:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/sans date/c.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-47-flatten-leaves-undated-in-place/files/2011-06 corse/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 12:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-47-flatten-leaves-undated-in-place/files/divers/mystere.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/alpha/beta/two.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/alpha/one.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 08:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/gamma/keep.txt",
+      "kind": "bytes",
+      "params": {
+        "content": "just some notes the tool does not touch\n"
+      },
+      "size": 40
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/gamma/three.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-34-long-path-windows/files/deeply nested archive folder from an old backup disc/one more level down the tree/family gathered on the beach at sunset.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-07-30 19:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-49-atomic-write-survives-interruption/files/originals/portrait.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2008-04-12 17:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-50-journal-written-ahead/files/originals/portrait.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2008-04-12 17:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-51-undo-restores-bit-for-bit/files/2007-08 corse/IMG_0042.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2007-08-19 10:30:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-52-path-confinement/files/inside/kept.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-7-safety/UC-53-never-overwrite/files/src/photo.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2012-09-01 13:00:00"
+      },
+      "size": 9038
     }
   ]
 }
