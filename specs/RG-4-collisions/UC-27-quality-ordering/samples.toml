@@ -1,0 +1,20 @@
+# UC-27 — the higher-resolution colliding file keeps the clean name.
+#
+# Two images with the same Exif date and stem, so they collide on one target
+# name. They differ only in width (320 vs 640) — distinct dimensions are the
+# whole point of the rule. The 640 px file (path "b", which sorts *after* "a")
+# must win the clean name, proving resolution beats path order.
+
+version = 1
+
+[[files]]
+path = "2010-08 fete/a/photo.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2010-08-15 14:00:00" }
+
+[[files]]
+path = "2010-08 fete/b/photo.jpg"
+source = "seed"
+width = 640
+exif = { DateTimeOriginal = "2010-08-15 14:00:00" }
