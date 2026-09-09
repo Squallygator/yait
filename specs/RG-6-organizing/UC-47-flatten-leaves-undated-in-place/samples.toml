@@ -1,0 +1,19 @@
+# UC-47 — flatten leaves undated files in place (assumed exclusion).
+#
+# One dated image that flattens to the root, and one image with no date
+# anywhere that must stay at its original path. The scenario asserts the
+# fallback: the undated file is still where it started.
+
+version = 1
+
+[[files]]
+path = "2011-06 corse/plage.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2011-06-14 12:00:00" }
+
+[[files]]
+path = "divers/mystere.jpg"
+source = "seed"
+width = 320
+exif = {}

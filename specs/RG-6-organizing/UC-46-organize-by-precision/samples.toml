@@ -1,0 +1,25 @@
+# UC-46 — placement depth follows date precision.
+#
+# Three images: one dated to the day by Exif, one to the year by its folder,
+# one with no date anywhere. They must land in YYYY/MM/, YYYY/ and _undated/
+# respectively.
+
+version = 1
+
+[[files]]
+path = "2011-06-14 rando/a.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2011-06-14 08:00:00" }
+
+[[files]]
+path = "2009 albums/b.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "sans date/c.jpg"
+source = "seed"
+width = 320
+exif = {}

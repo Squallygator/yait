@@ -547,6 +547,88 @@
         "DateTimeOriginal": "2010-05-08 16:20:00"
       },
       "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/2009 albums/b.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/2011-06-14 rando/a.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 08:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-46-organize-by-precision/files/sans date/c.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-47-flatten-leaves-undated-in-place/files/2011-06 corse/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 12:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-47-flatten-leaves-undated-in-place/files/divers/mystere.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/alpha/beta/two.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/alpha/one.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 08:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/gamma/keep.txt",
+      "kind": "bytes",
+      "params": {
+        "content": "just some notes the tool does not touch\n"
+      },
+      "size": 40
+    },
+    {
+      "path": "RG-6-organizing/UC-48-empty-folders-pruned/files/gamma/three.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-06-14 10:00:00"
+      },
+      "size": 9038
     }
   ]
 }

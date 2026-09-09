@@ -123,6 +123,14 @@ Given the metadata audit has recorded "<relative/path.jpg>"
 When the file's bytes change and the write is applied
 Then the write is refused because the file changed since it was audited
 And the file is left untouched
+
+# RG-6 — organizing
+When the collection is organized
+When the collection is flattened
+Then it is filed under "<YYYY/>" | "<YYYY/MM/>" | "_undated/"
+And the media "<relative/path.jpg>" stays at "<relative/path.jpg>"
+And the folder "<relative/path>" has been pruned
+And the folder "<relative/path>" is left in place
 ```
 
 `<source>` is one of: `file-name`, `folder-name`, `embedded-metadata`,
