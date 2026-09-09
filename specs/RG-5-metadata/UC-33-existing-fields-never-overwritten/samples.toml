@@ -1,0 +1,14 @@
+# UC-33 — an existing human caption is not overwritten (assumed exclusion).
+#
+# One image with a capture date. The scenario needs it to already carry a
+# human-written title; see the Sample-fidelity note in rule.md — the generator
+# cannot seed a title field yet, so the acceptance harness sets it until
+# US-00-23 extends the generator.
+
+version = 1
+
+[[files]]
+path = "2004-09 Bretagne/vieux scan.jpg"
+source = "seed"
+width = 320
+exif = {}

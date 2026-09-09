@@ -493,6 +493,60 @@
         "DateTimeOriginal": "2006-05-14 10:00:00"
       },
       "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-31-unknown-camera-prefix/files/2012-06 Ouessant/SANY0032.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-32-label-from-folder-and-context/files/2004-09 Bretagne/menhir debout.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-33-existing-fields-never-overwritten/files/2004-09 Bretagne/vieux scan.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-5-metadata/UC-43-one-label-for-title-subject-comment/files/2005-08 Rome/le Forum.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2005-08-19 11:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-44-write-never-reencodes/files/2003-07 corse/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2003-07-19 15:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-5-metadata/UC-45-drift-detected/files/2010-05 corse/IMG_0042.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-05-08 16:20:00"
+      },
+      "size": 9038
     }
   ]
 }

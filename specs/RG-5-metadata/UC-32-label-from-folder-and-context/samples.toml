@@ -1,0 +1,13 @@
+# UC-32 — label = <folder label> - <filename context>.
+#
+# One image, no metadata: the date comes from the month-precision folder, and
+# the label must draw on both the folder name (minus its date token) and the
+# filename stem.
+
+version = 1
+
+[[files]]
+path = "2004-09 Bretagne/menhir debout.jpg"
+source = "seed"
+width = 320
+exif = {}

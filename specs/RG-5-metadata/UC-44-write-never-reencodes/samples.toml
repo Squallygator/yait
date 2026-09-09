@@ -1,0 +1,13 @@
+# UC-44 — a metadata write leaves the compressed scan byte-for-byte identical.
+#
+# One image carrying an Exif capture date, so there is a header segment for the
+# write to rebuild. The scenario compares the post-start-of-scan bytes before
+# and after writing the deduced label.
+
+version = 1
+
+[[files]]
+path = "2003-07 corse/plage.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2003-07-19 15:00:00" }

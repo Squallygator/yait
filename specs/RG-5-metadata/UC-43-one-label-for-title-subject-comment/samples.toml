@@ -1,0 +1,12 @@
+# UC-43 — the one deduced label is written to title, subject and comment.
+#
+# One image with a capture date and no caption fields. The scenario writes
+# metadata and checks all three fields read back the same deduced label.
+
+version = 1
+
+[[files]]
+path = "2005-08 Rome/le Forum.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2005-08-19 11:00:00" }
