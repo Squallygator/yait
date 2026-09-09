@@ -1,6 +1,6 @@
 # US-00-07 — Write the RG-2 to RG-7 rules
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 7/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 7/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md) puis [`specs/README.md`](../../../specs/README.md).
 
