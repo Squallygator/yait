@@ -399,6 +399,60 @@
       "quality": 70,
       "exif": {},
       "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-28-originals-suffix/files/Bretagne 2011/Originals/coastal path.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-07-02 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-28-originals-suffix/files/Bretagne 2011/coastal path.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2011-07-02 09:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-35-accents-and-ampersand-preserved/files/2004-07 corse/Étretat & la plage (2).jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-39-date-token-removed-only-if-it-provided-the-date/files/Scans/2003-07-14 - 1998 reunion rescan.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-3-target-naming/UC-40-illegal-chars-sanitised/files/scans/holiday day 1. .jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2005-08-01 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-3-target-naming/UC-41-idempotent-on-rerun/files/2007-08-25 retour/2007-08-25-arrivee ferry.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
     }
   ]
 }
