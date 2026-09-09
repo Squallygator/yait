@@ -104,9 +104,15 @@ jamais par un oubli.
 | `US-00-10` → `US-00-20` | Les 12 écrans | 09 |
 | `US-00-21` | Clickable prototype | 10→20 |
 | `US-00-22` | Pretotyping review — **point d'arrêt** | 21 |
+| `US-00-23` | Sample generator — GPS date field + nested archives | 06 |
 
 Deux chaînes parallèles : **corpus** (04→08) et **maquettes** (09→21). Elles ne se rejoignent
 qu'en `US-00-21`, où le prototype affiche les vrais noms du corpus.
+
+`US-00-23` est un ajout après coup : deux capacités du générateur qui manquaient en `US-00-06` et
+qui ont forcé `UC-57` et `UC-58` à un exemple dégénéré. Il appartient à la chaîne **corpus**, pas
+aux maquettes ; il est numéroté après `US-00-22` parce qu'ajouté ensuite, mais ne dépend pas du
+point d'arrêt et peut être fait à tout moment après `US-00-06`.
 
 ---
 

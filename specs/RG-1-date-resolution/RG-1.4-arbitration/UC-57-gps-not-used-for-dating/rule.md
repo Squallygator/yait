@@ -75,6 +75,6 @@ month precision, from `folder-name`, and **not** from `embedded-metadata`.
 > observationally the same as `UC-18`. What makes `UC-57` a distinct rule is the
 > `## Why`: a *present* `GPSDateStamp` must still be ignored. Tightening the
 > example (a real GPS block, `GPSDateStamp` a day off, asserting it is not read)
-> needs a small generator addition and is tracked as a follow-up.
+> needs a small generator addition, tracked as `US-00-23`.
 
 Proven by [`rule.feature`](rule.feature).

@@ -14,7 +14,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ✅ `US-00-03` Specs structure [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-03-specs-structure.md) **(25/08/2026)**
   - ✅ `US-00-04` Sample generator — images [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-04-sample-generator-images.md) **(25/08/2026)**
   - ✅ `US-00-05` Sample generator — forged artefacts [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-05-sample-generator-forged.md) **(27/08/2026)**
-  - ⌛ `US-00-06` Write RG-1 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md)
+  - ✅ `US-00-06` Write RG-1 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md) **(09/09/2026)**
   - ⬜ `US-00-07` Write RG-2 to RG-7 rules [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-07-write-rg2-rg7-rules.md)
   - ⬜ `US-00-08` Spec guards in CI [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-08-spec-guards.md)
   - ⬜ `US-00-09` Design system [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-09-design-system.md)
@@ -31,6 +31,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ⬜ `US-00-20` Screens — Empty and error states [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-20-screen-empty-and-error-states.md)
   - ⬜ `US-00-21` Clickable prototype [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md)
   - ⬜ `US-00-22` Pretotyping review **(point d'arrêt)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-22-pretotyping-review.md)
+  - ⬜ `US-00-23` Sample generator — GPS date field + nested archives *(chaîne corpus, hors point d'arrêt)* [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-23-sample-generator-gps-and-nesting.md)
 
 ---
 

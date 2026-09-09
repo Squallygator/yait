@@ -77,7 +77,7 @@ counted.
 > Sample-fidelity note: the generator builds one archive level, so
 > `old-stuff.zip` is a seed-derived entry with that name, not a real inner ZIP.
 > The rule's teeth are in the date arithmetic (a wrongly-counted `2001` entry
-> changes the answer). A follow-up can add true archive nesting to the sample
-> generator and tighten this example.
+> changes the answer). `US-00-23` adds true archive nesting to the sample
+> generator and tightens this example.
 
 Proven by [`rule.feature`](rule.feature).

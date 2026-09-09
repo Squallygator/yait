@@ -6,6 +6,18 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-06` — RG-1 date-resolution rules **(09/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md)
+  Les 32 règles neuves de RG-1 (UC-14 préexistait), quatre artefacts chacune, un commit par
+  sous-groupe. RG-1.1 lecture du nom (10), RG-1.2 répertoires (3), RG-1.3 contenu (9), RG-1.4
+  arbitrage (10 dont 6 exclusions). `UC-36` — l'échelle de priorité complète — rédigé en dernier ;
+  son exemple est un conflit à trois sources dont la bonne réponse est la valeur médiane, pour
+  qu'un `min`/`max`/premier-trouvé échoue. 42 échantillons au manifeste, `build_samples.py --check`
+  vert. `specs/README.md` : ajout des formes `YYYY-MM` / `YYYY` au vocabulaire de pas (résolution
+  à la précision, jamais complétée à `-01`). Deux écarts de fidélité d'échantillon assumés et
+  signalés en `rule.md` — `UC-57` (le générateur ne sait pas forger d'IFD GPS, exemple dégénéré)
+  et `UC-58` (archives non imbriquables) — reportés dans `US-00-23`. Comptage : la fiche disait
+  « 29 » mais les tables `group.md`, autoritaires, en listent 33. PR #3, tag `US-00-06`.
+
 - ✅ `US-00-05` — Forged artefact samples **(27/08/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-05-sample-generator-forged.md)
   Six `kind` forgés octet par octet dans `tools/build_samples.py` : `riff-idit` (AVI), `mp4-mvhd`
   (MP4/MOV), `zip`, `truncated-jpeg`, `empty`, `bytes` — stdlib seule, aucun encodeur. Époque
