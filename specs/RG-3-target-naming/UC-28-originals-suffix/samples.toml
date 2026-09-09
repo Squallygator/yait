@@ -1,0 +1,19 @@
+# UC-28 — a master in Originals/ takes -original, its edited twin keeps the name.
+#
+# Two images sharing a stem and the same Exif capture date: one in an
+# Originals/ sub-folder, one in the parent. Same date + same description means
+# they would collide on flatten; this rule disambiguates them by name.
+
+version = 1
+
+[[files]]
+path = "Bretagne 2011/Originals/coastal path.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2011-07-02 09:00:00" }
+
+[[files]]
+path = "Bretagne 2011/coastal path.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2011-07-02 09:00:00" }

@@ -1,0 +1,13 @@
+# UC-39 — remove the used date token from the description, keep other dates.
+#
+# One image, no metadata: the filename token "2003-07-14" is the only date
+# source. "1998" is a second, meaning-bearing year that must survive into the
+# target name. The folder carries no date.
+
+version = 1
+
+[[files]]
+path = "Scans/2003-07-14 - 1998 reunion rescan.jpg"
+source = "seed"
+width = 320
+exif = {}
