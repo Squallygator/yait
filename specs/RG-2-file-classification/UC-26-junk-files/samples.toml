@@ -1,0 +1,13 @@
+# UC-26 — a named leftover is junk, recognised without reading its content.
+#
+# One forged file: Picasa's per-folder settings file, with a plausible body so
+# the rule is shown deciding on the name, not the bytes. Moved here from the
+# US-00-05 warm-up recipe that used to live under UC-24.
+
+version = 1
+
+[[files]]
+path = "junk/Picasa.ini"
+source = "forge"
+kind = "bytes"
+params = { content = "[Picasa]\nname=Album\nlocation=\n[.]\nstar=yes\n" }

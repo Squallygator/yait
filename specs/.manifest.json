@@ -345,27 +345,6 @@
       "size": 9038
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/backups/holiday-photos.zip",
-      "kind": "zip",
-      "params": {
-        "entries": [
-          {
-            "name": "001.jpg",
-            "exif": {
-              "DateTimeOriginal": "2010-05-01 10:00:00"
-            }
-          },
-          {
-            "name": "002.jpg",
-            "exif": {
-              "DateTimeOriginal": "2009-12-24 08:30:00"
-            }
-          }
-        ]
-      },
-      "size": 18278
-    },
-    {
       "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/corrupt-scan.jpg",
       "kind": "truncated-jpeg",
       "params": {
@@ -374,34 +353,52 @@
       "size": 4096
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/damaged/empty-file.jpg",
+      "path": "RG-2-file-classification/UC-25-zero-byte-file/files/damaged/empty-file.jpg",
       "kind": "empty",
       "params": {},
       "size": 0
     },
     {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0027.AVI",
-      "kind": "riff-idit",
-      "params": {
-        "idit": "Tue Aug 29 09:43:38 2006"
-      },
-      "size": 122
-    },
-    {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/holidays/MVI_0028.MOV",
-      "kind": "mp4-mvhd",
-      "params": {
-        "created": "2011-06-04 18:22:00"
-      },
-      "size": 469
-    },
-    {
-      "path": "RG-2-file-classification/UC-24-unreadable-is-detected/files/junk/Picasa.ini",
+      "path": "RG-2-file-classification/UC-26-junk-files/files/junk/Picasa.ini",
       "kind": "bytes",
       "params": {
-        "content": "[Picasa]\nname=whatever\n"
+        "content": "[Picasa]\nname=Album\nlocation=\n[.]\nstar=yes\n"
       },
-      "size": 23
+      "size": 43
+    },
+    {
+      "path": "RG-2-file-classification/UC-38-sidecar-is-not-junk/files/CANON/MVI_3312.AVI",
+      "kind": "riff-idit",
+      "params": {
+        "idit": "unknown"
+      },
+      "size": 104
+    },
+    {
+      "path": "RG-2-file-classification/UC-38-sidecar-is-not-junk/files/CANON/MVI_3312.THM",
+      "width": 160,
+      "height": 72,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-07-14 18:30:00"
+      },
+      "size": 3062
+    },
+    {
+      "path": "RG-2-file-classification/UC-59-duplicate-content-not-detected/files/2007-08 corse/sunset (copy).jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-2-file-classification/UC-59-duplicate-content-not-detected/files/2007-08 corse/sunset.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
     }
   ]
 }
