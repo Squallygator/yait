@@ -1,0 +1,13 @@
+# UC-45 — a file that drifted since the audit is refused, not written blind.
+#
+# One image carrying a capture date. The corpus holds it in its audited state;
+# the acceptance harness (US-06-04) is what changes its bytes between audit and
+# apply.
+
+version = 1
+
+[[files]]
+path = "2010-05 corse/IMG_0042.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2010-05-08 16:20:00" }

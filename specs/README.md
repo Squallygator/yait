@@ -111,6 +111,18 @@ And the date does not come from "<source>"
 And the date precision is "<day|month|year|none>"
 And it is classified as "<image|video|archive|sidecar|junk|unreadable>"
 And its target name is "<name.ext>"
+
+# RG-5 — metadata deduction and writing
+And its deduced label is "<text>"
+When the media "<relative/path.jpg>" has its metadata written
+Then its title, subject and comment all read "<text>"
+And its title still reads "<text>"
+And the deduced label was not written to the title
+And the compressed image is byte-for-byte unchanged
+Given the metadata audit has recorded "<relative/path.jpg>"
+When the file's bytes change and the write is applied
+Then the write is refused because the file changed since it was audited
+And the file is left untouched
 ```
 
 `<source>` is one of: `file-name`, `folder-name`, `embedded-metadata`,
