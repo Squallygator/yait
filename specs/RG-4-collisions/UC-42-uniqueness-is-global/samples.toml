@@ -1,0 +1,19 @@
+# UC-42 — uniqueness is collection-wide, not per folder.
+#
+# Two identical images (same source, size, Exif date) each alone in its own
+# folder. A per-folder check sees no clash; the collection-wide check must.
+# UC-27's path tie-break gives "disc 1" the clean name.
+
+version = 1
+
+[[files]]
+path = "2006-05 disc 1/plage.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2006-05-14 10:00:00" }
+
+[[files]]
+path = "2006-05 disc 2/plage.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2006-05-14 10:00:00" }

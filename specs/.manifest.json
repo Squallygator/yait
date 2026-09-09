@@ -453,6 +453,46 @@
       "quality": 70,
       "exif": {},
       "size": 8964
+    },
+    {
+      "path": "RG-4-collisions/UC-27-quality-ordering/files/2010-08 fete/a/photo.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-08-15 14:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-4-collisions/UC-27-quality-ordering/files/2010-08 fete/b/photo.jpg",
+      "width": 640,
+      "height": 287,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2010-08-15 14:00:00"
+      },
+      "size": 33143
+    },
+    {
+      "path": "RG-4-collisions/UC-42-uniqueness-is-global/files/2006-05 disc 1/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-05-14 10:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-4-collisions/UC-42-uniqueness-is-global/files/2006-05 disc 2/plage.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-05-14 10:00:00"
+      },
+      "size": 9038
     }
   ]
 }
