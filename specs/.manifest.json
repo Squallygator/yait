@@ -629,6 +629,64 @@
         "DateTimeOriginal": "2011-06-14 10:00:00"
       },
       "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-34-long-path-windows/files/deeply nested archive folder from an old backup disc/one more level down the tree/family gathered on the beach at sunset.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2006-07-30 19:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-49-atomic-write-survives-interruption/files/originals/portrait.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2008-04-12 17:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-50-journal-written-ahead/files/originals/portrait.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2008-04-12 17:00:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-51-undo-restores-bit-for-bit/files/2007-08 corse/IMG_0042.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2007-08-19 10:30:00"
+      },
+      "size": 9038
+    },
+    {
+      "path": "RG-7-safety/UC-52-path-confinement/files/inside/kept.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {},
+      "size": 8964
+    },
+    {
+      "path": "RG-7-safety/UC-53-never-overwrite/files/src/photo.jpg",
+      "width": 320,
+      "height": 143,
+      "quality": 70,
+      "exif": {
+        "DateTimeOriginal": "2012-09-01 13:00:00"
+      },
+      "size": 9038
     }
   ]
 }

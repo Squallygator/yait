@@ -1,0 +1,15 @@
+# UC-34 — a long, deep path is handled like any other.
+#
+# See the Sample-fidelity note in rule.md: a path whose *full* length exceeds
+# 260 characters cannot be a committed corpus file, because the generator would
+# fail to write it on a Windows box without long-path support — the very
+# environment the rule is about. This sample is a deliberately long, deep path
+# kept under the limit, as a smoke test.
+
+version = 1
+
+[[files]]
+path = "deeply nested archive folder from an old backup disc/one more level down the tree/family gathered on the beach at sunset.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2006-07-30 19:00:00" }

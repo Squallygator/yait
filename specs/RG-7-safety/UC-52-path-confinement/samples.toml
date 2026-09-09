@@ -1,0 +1,13 @@
+# UC-52 — externally supplied paths are confined to the collection root.
+#
+# One ordinary in-root file. The escape strings and the PathGuard that rejects
+# them are built and attacked in US-04-01 / US-08-01; nothing malicious lives
+# in the corpus.
+
+version = 1
+
+[[files]]
+path = "inside/kept.jpg"
+source = "seed"
+width = 320
+exif = {}

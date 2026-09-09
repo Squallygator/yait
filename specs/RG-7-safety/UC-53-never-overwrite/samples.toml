@@ -1,0 +1,12 @@
+# UC-53 — an occupied destination is an error, not a ~2 fallback.
+#
+# One source file. The occupied destination is staged by the US-08-04 harness
+# after the plan is frozen, since a collision the plan can see is RG-4's job.
+
+version = 1
+
+[[files]]
+path = "src/photo.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2012-09-01 13:00:00" }

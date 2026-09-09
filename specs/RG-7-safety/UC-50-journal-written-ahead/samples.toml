@@ -1,0 +1,12 @@
+# UC-50 — the journal line is flushed before its operation runs.
+#
+# One image. The corpus only carries the file; stopping the process between the
+# journal write and the move is the US-08-04 harness's job.
+
+version = 1
+
+[[files]]
+path = "originals/portrait.jpg"
+source = "seed"
+width = 320
+exif = { DateTimeOriginal = "2008-04-12 17:00:00" }
