@@ -1,0 +1,20 @@
+# UC-59 — identical content is not deduplicated (assumed exclusion).
+#
+# Two entries with the same source, size and (absent) metadata produce
+# byte-for-byte identical files. Their names differ, so their target names
+# differ; the scenario asserts both survive. The folder supplies a month-
+# precision date.
+
+version = 1
+
+[[files]]
+path = "2007-08 corse/sunset.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2007-08 corse/sunset (copy).jpg"
+source = "seed"
+width = 320
+exif = {}

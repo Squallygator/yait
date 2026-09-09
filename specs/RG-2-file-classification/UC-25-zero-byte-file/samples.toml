@@ -1,0 +1,11 @@
+# UC-25 — a zero-byte file is unreadable, not a dateless photo.
+#
+# One forged file of exactly zero bytes. Moved here from the US-00-05 warm-up
+# recipe that used to live under UC-24.
+
+version = 1
+
+[[files]]
+path = "damaged/empty-file.jpg"
+source = "forge"
+kind = "empty"
