@@ -6,6 +6,23 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-07` — RG-2 to RG-7 rules **(21/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-07-write-rg2-rg7-rules.md)
+  Les 27 règles de RG-2 à RG-7, quatre artefacts chacune, un commit par groupe. RG-2 classification
+  (5 dont 1 exclusion), RG-3 nommage (5), RG-4 collisions (2), RG-5 métadonnées (6 dont 1
+  exclusion), RG-6 rangement (3 dont 1 exclusion), RG-7 sûreté (6). `UC-24` (posée en warm-up par
+  `US-00-05`) réduite à son unique exemple ; les entrées déplacées vers `UC-25`, `UC-26`, et celles
+  déjà couvertes par `UC-20`/`UC-21`/`UC-23` supprimées. `specs/README.md` : vocabulaire de pas
+  étendu par groupe (déduction de libellé, rangement, sûreté). Trois `> Sample-fidelity note` —
+  `UC-33` (le générateur ne sait pas semer un `XPTitle`, à plier dans `US-00-23`), `UC-40` (le jeu
+  de caractères que Windows refuse ne peut pas vivre dans un chemin de corpus committé), `UC-34`
+  (un chemin réellement > 260 caractères non plus). RG-7 relié aux findings `dvd-tools` via la
+  table de traçabilité de `plan-v3-approved.md`, jusque-là non exploitée pour ces règles : `#1`/`#4`
+  → `UC-49`, `#2`/`#3` → `UC-50`, `#9`-`#12` → `UC-52`, `#35` → `UC-34` (`#6` déjà posé sur
+  `UC-22`/`UC-38`). 74 échantillons au manifeste, `build_samples.py --check` vert. Comptage : la
+  fiche disait « 31 » restantes, la table `Livrables` et les six `group.md` en listent 27 — avec les
+  33 de RG-1, le corpus totalise 60 règles / 15 exclusions, conforme à ce qu'attend `US-00-08`.
+  L'écart « 31 » n'a pas été corrigé dans la fiche. PR #4, tag `US-00-07`.
+
 - ✅ `US-00-06` — RG-1 date-resolution rules **(09/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-06-write-rg1-rules.md)
   Les 32 règles neuves de RG-1 (UC-14 préexistait), quatre artefacts chacune, un commit par
   sous-groupe. RG-1.1 lecture du nom (10), RG-1.2 répertoires (3), RG-1.3 contenu (9), RG-1.4
