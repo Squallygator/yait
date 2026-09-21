@@ -1,6 +1,6 @@
 # US-00-08 — Spec guards in CI
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 8/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 8/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md) puis [`specs/README.md`](../../../specs/README.md).
 
