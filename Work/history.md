@@ -6,6 +6,26 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-08` — Spec guards in CI **(21/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-08-spec-guards.md)
+  `tools/check_specs.py`, stdlib seul, 9 invariants sur les 60 règles ; aucun en avertissement
+  (« un avertissement ne protège rien » est la propre règle de la fiche). Invariant 7 (référencé
+  par une fiche de lot ou un doc `docs/`) : liste d'exemptions décroissante tranchée en ouverture
+  de lot (33 UC non référencés aujourd'hui, F01-F09 sans fiches). Invariant 6 (pas d'échantillon
+  orphelin) : la lecture littérale de la fiche (« les chaînes entre guillemets des étapes `When …
+  is inspected` ») aurait signalé 19 faux positifs ; extraction élargie aux formes de step déjà
+  listées par `specs/README.md`, ramenant à 9 vrais orphelins (sidecars, JSON compagnon, leurres
+  d'un test de pruning) mis dans une exemption du même type — éditer leurs `rule.feature` est hors
+  périmètre (« Ne pas faire : pas de test d'acceptance »). `docs/00-project/10-decision-log.md`
+  généré (index dérivé, source de vérité inchangée dans chaque `rule.md`). Garde-fou vérifié en
+  échec réel, en local avant de pousser (`rule.feature` supprimé, polarité corrompue) — ce passage
+  a aussi attrapé un vrai bug : l'invariant 7 relisait son propre `10-decision-log.md` déjà généré
+  (qui cite les 60 UC), le rendant vert par construction dès le deuxième run ; corrigé en
+  l'excluant du balayage. `.github/workflows/ci.yml` : premier workflow, Ubuntu + Windows, vert dès
+  le premier run sur la PR. Comptage : la fiche attendait 15 exclusions ; le corpus en a 13
+  (RG-1 : 10 dont 6 en RG-1.4, cohérent avec l'entrée `US-00-06` ci-dessous ; RG-2 à RG-7 : 3,
+  cohérent avec l'entrée `US-00-07`). Le « 15 » vient d'une erreur d'addition dans l'entrée
+  `US-00-07`, pas d'un écart réel du corpus. PR #5, tag `US-00-08`.
+
 - ✅ `US-00-07` — RG-2 to RG-7 rules **(21/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-07-write-rg2-rg7-rules.md)
   Les 27 règles de RG-2 à RG-7, quatre artefacts chacune, un commit par groupe. RG-2 classification
   (5 dont 1 exclusion), RG-3 nommage (5), RG-4 collisions (2), RG-5 métadonnées (6 dont 1
