@@ -5,7 +5,7 @@
 | Group | `RG-7 Safety and reversibility` |
 | Status | `Enforced` ▶ |
 | Stories | `US-04-01` |
-| Legacy findings | — |
+| Legacy findings | `#1`, `#4` |
 
 ## Rule
 
@@ -18,11 +18,12 @@ real file is half-written.
 
 ## Why
 
-This is the first of the `dvd-tools` findings that could destroy originals. It
-wrote metadata in place — open the real file for writing, stream the new bytes
-over the old. A crash mid-stream left the only copy of a photograph truncated
-to whatever had been flushed. On a batch of tens of thousands of files, "a
-crash sometime during the run" is not a rare event, it is the expected case.
+This is findings `#1` and `#4` of the `dvd-tools` audit — non-atomic writes,
+two of the five that could destroy originals. It wrote metadata in place — open
+the real file for writing, stream the new bytes over the old. A crash
+mid-stream left the only copy of a photograph truncated to whatever had been
+flushed. On a batch of tens of thousands of files, "a crash sometime during the
+run" is not a rare event, it is the expected case.
 
 Temp-file-then-replace makes the write all-or-nothing. The temp file is in the
 same directory so the replace is a rename within one filesystem, which is

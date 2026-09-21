@@ -5,7 +5,7 @@
 | Group | `RG-7 Safety and reversibility` |
 | Status | `Enforced` ▶ |
 | Stories | `US-04-01` |
-| Legacy findings | — |
+| Legacy findings | `#9`, `#10`, `#11`, `#12` |
 
 ## Rule
 
@@ -18,13 +18,14 @@ input says.
 
 ## Why
 
-The tool takes instructions from files it did not write: a CSV the operator
-edited in a spreadsheet, a journal from a previous run or from `dvd-tools`. Any
-of those can carry `..\..\..\Windows\System32\...`, an absolute path, a
-drive-relative path (`C:foo`), or a symlink whose target climbs out of the
-tree. Acting on such a path means the tool can be steered into reading or
-clobbering files anywhere the process has rights — from a document the operator
-did not mean to touch to a system file.
+This is findings `#9` to `#12` of the `dvd-tools` audit — confinement and
+validation. The tool takes instructions from files it did not write: a CSV the
+operator edited in a spreadsheet, a journal from a previous run or from
+`dvd-tools`. Any of those can carry `..\..\..\Windows\System32\...`, an
+absolute path, a drive-relative path (`C:foo`), or a symlink whose target
+climbs out of the tree. Acting on such a path means the tool can be steered
+into reading or clobbering files anywhere the process has rights — from a
+document the operator did not mean to touch to a system file.
 
 Confinement is checked once, centrally (`PathGuard`), on the resolved real
 path, so a clever encoding cannot slip past a naive string check. `dvd-tools`
