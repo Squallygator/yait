@@ -5,7 +5,7 @@
 | Group | `RG-7 Safety and reversibility` |
 | Status | `Enforced` ▶ |
 | Stories | `US-04-01` |
-| Legacy findings | — |
+| Legacy findings | `#35` |
 
 ## Rule
 
@@ -17,12 +17,13 @@ aware APIs) throughout.
 
 ## Why
 
-Deeply nested archives — a backup of a backup of a Camera Uploads folder — hit
-260 characters easily, and the naive Win32 file APIs silently fail past it:
-`open` raises, `os.scandir` stops, a move reports success and does nothing.
-`dvd-tools` inherited that limit and just skipped the files it could not reach,
-so the deepest, most-buried photographs — often the ones most in need of
-rescue — were the ones it quietly left behind.
+This is finding `#35` of the `dvd-tools` audit — long paths. Deeply nested
+archives — a backup of a backup of a Camera Uploads folder — hit 260 characters
+easily, and the naive Win32 file APIs silently fail past it: `open` raises,
+`os.scandir` stops, a move reports success and does nothing. `dvd-tools`
+inherited that limit and just skipped the files it could not reach, so the
+deepest, most-buried photographs — often the ones most in need of rescue —
+were the ones it quietly left behind.
 
 The fix is not to shorten paths (that would rename folders the operator did not
 ask to rename); it is to open every path in the extended-length form so the

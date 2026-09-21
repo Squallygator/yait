@@ -5,7 +5,7 @@
 | Group | `RG-7 Safety and reversibility` |
 | Status | `Enforced` ▶ |
 | Stories | `US-07-01` |
-| Legacy findings | — |
+| Legacy findings | `#2`, `#3` |
 
 ## Rule
 
@@ -17,11 +17,11 @@ change it describes.
 
 ## Why
 
-This is the difference between a log and a recovery mechanism, and it is a
-`dvd-tools` finding. `dvd-tools` accumulated its journal in memory and wrote it
-once, after the whole batch. A crash at file 19 000 of 40 000 left 19 000 files
-moved and a journal file that was empty or stale — nothing to replay, nothing
-to reverse, no way to even know which 19 000.
+This is findings `#2` and `#3` of the `dvd-tools` audit — the journal written
+too late. `dvd-tools` accumulated its journal in memory and wrote it once,
+after the whole batch. A crash at file 19 000 of 40 000 left 19 000 files moved
+and a journal file that was empty or stale — nothing to replay, nothing to
+reverse, no way to even know which 19 000.
 
 Write-ahead flips that. After any crash, the journal is a precise record of
 every operation that had at least *started*. Recovery walks it: an entry with
