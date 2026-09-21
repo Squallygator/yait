@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  specs:
+    name: Specification corpus (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Sample corpus matches its recipes
+        run: python tools/build_samples.py --check
+
+      - name: Seed photograph carries no metadata
+        run: python tools/strip_exif.py --check specs/_seed/river.jpg
+
+      - name: Specification invariants
+        run: python tools/check_specs.py
