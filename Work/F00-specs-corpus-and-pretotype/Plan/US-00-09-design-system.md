@@ -1,6 +1,6 @@
 # US-00-09 — Design system for the mockups
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 9/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 9/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
