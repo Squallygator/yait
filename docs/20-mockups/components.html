@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Component gallery</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Component gallery — reference sheet, not an application screen</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Design system</h1>
+
+<h2>Tokens</h2>
+<div class="swatches">
+  <div class="swatch"><i style="background:var(--surface)"></i>surface</div>
+  <div class="swatch"><i style="background:var(--surface-raised)"></i>surface-raised</div>
+  <div class="swatch"><i style="background:var(--border)"></i>border</div>
+  <div class="swatch"><i style="background:var(--text)"></i>text</div>
+  <div class="swatch"><i style="background:var(--text-muted)"></i>text-muted</div>
+  <div class="swatch"><i style="background:var(--accent)"></i>accent</div>
+  <div class="swatch"><i style="background:var(--st-ok-bg)"></i>status ok</div>
+  <div class="swatch"><i style="background:var(--st-fill-bg)"></i>status fill</div>
+  <div class="swatch"><i style="background:var(--st-diff-bg)"></i>status diff</div>
+  <div class="swatch"><i style="background:var(--st-none-bg)"></i>status none</div>
+</div>
+
+<h2>Status badges</h2>
+<p class="muted">The four domain statuses. Each has a letter <em>and</em> a shape, so colour is never the only signal.</p>
+<div class="legend">
+  <span><span class="status status-ok" title="Compliant">C</span> Compliant</span>
+  <span><span class="status status-fill" title="To fill">F</span> To fill</span>
+  <span><span class="status status-diff" title="Divergent">D</span> Divergent</span>
+  <span><span class="status status-none" title="Nothing to propose">N</span> Nothing to propose</span>
+</div>
+
+<h2>Date source badges</h2>
+<div class="row">
+  <span class="source">file-name</span>
+  <span class="source">folder-name</span>
+  <span class="source">embedded-metadata</span>
+  <span class="source">sidecar</span>
+</div>
+
+<h2>Buttons</h2>
+<div class="row">
+  <button class="btn btn-primary" type="button">Apply changes</button>
+  <button class="btn" type="button">Cancel</button>
+  <button class="btn btn-danger" type="button">Undo operation</button>
+  <button class="btn" type="button" disabled>Disabled</button>
+</div>
+
+<h2>Banners</h2>
+<div class="banner banner-sim" style="position:static" data-mode="dry-run">
+  <span class="tag">Simulation</span><span>Dry run: nothing is written.</span>
+</div>
+<p></p>
+<div class="banner banner-sim" style="position:static" data-mode="write">
+  <span class="tag">Writing enabled</span><span>Changes will be applied to the collection. Every operation is journalled and can be undone.</span>
+</div>
+<p></p>
+<div class="banner banner-warn" role="alert">
+  <span class="tag">Warning</span><span>This operation cannot be reverted automatically once the journal is deleted.</span>
+</div>
+
+<h2>Filter bar, dense grid and side panel</h2>
+<div class="filters">
+  <label>Status
+    <select aria-label="Status">
+      <option>All</option><option>Compliant</option><option>To fill</option><option>Divergent</option><option>Nothing to propose</option>
+    </select>
+  </label>
+  <label>Folder
+    <select aria-label="Folder"><option>All folders</option><option>2019/Summer</option></select>
+  </label>
+  <input type="search" placeholder="Search file names…" aria-label="Search">
+  <span class="spacer muted">5 of 5 files</span>
+</div>
+<p></p>
+<div class="layout">
+  <div class="main grid-wrap">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:32px"><span class="visually-hidden">Status</span></th>
+          <th data-sort>File name</th>
+          <th data-sort>Folder</th>
+          <th data-sort>Resolved date</th>
+          <th>Source</th>
+          <th class="num" data-sort>Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr aria-selected="true">
+          <td><span class="status status-ok">C</span></td>
+          <td class="mono">2019-07-14_153012_IMG_0042.jpg</td>
+          <td>2019/Summer</td>
+          <td class="mono">2019-07-14 15:30:12</td>
+          <td><span class="source">file-name</span></td>
+          <td class="num" data-value="3482112">3.3 MB</td>
+        </tr>
+        <tr>
+          <td><span class="status status-fill">F</span></td>
+          <td class="mono">IMG_0043.jpg</td>
+          <td>2019/Summer</td>
+          <td class="mono">2019-07-14 00:00:00</td>
+          <td><span class="source">folder-name</span></td>
+          <td class="num" data-value="2901004">2.8 MB</td>
+        </tr>
+        <tr>
+          <td><span class="status status-diff">D</span></td>
+          <td class="mono">2018-12-25_holiday.jpg</td>
+          <td>2019/Summer</td>
+          <td class="mono">2018-12-25 12:00:00</td>
+          <td><span class="source">embedded-metadata</span></td>
+          <td class="num" data-value="4120330">3.9 MB</td>
+        </tr>
+        <tr>
+          <td><span class="status status-none">N</span></td>
+          <td class="mono">scan_0001.tif</td>
+          <td>2019/Summer</td>
+          <td class="muted">—</td>
+          <td class="muted">—</td>
+          <td class="num" data-value="18220341">17.4 MB</td>
+        </tr>
+        <tr>
+          <td><span class="status status-ok">C</span></td>
+          <td class="mono">2019-07-15_091500_VID_0007.mp4</td>
+          <td>2019/Summer</td>
+          <td class="mono">2019-07-15 09:15:00</td>
+          <td><span class="source">sidecar</span></td>
+          <td class="num" data-value="52428800">50.0 MB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="side-panel" aria-label="Media detail">
+    <div class="thumb">thumbnail</div>
+    <h3>2019-07-14_153012_IMG_0042.jpg</h3>
+    <dl>
+      <dt>Status</dt><dd><span class="status status-ok">C</span> Compliant</dd>
+      <dt>Date</dt><dd class="mono">2019-07-14 15:30:12</dd>
+      <dt>Source</dt><dd><span class="source">file-name</span></dd>
+      <dt>Folder</dt><dd>2019/Summer</dd>
+    </dl>
+  </aside>
+</div>
+
+<h2>Progress bar</h2>
+<div class="progress">
+  <progress max="100" value="42" aria-label="Scan progress">42%</progress>
+  <span class="label">1 260 / 3 000 files</span>
+</div>
+
+<h2>Empty states</h2>
+<div class="empty">
+  <strong>No collection selected</strong>
+  Choose a folder to start scanning.
+</div>
+<p></p>
+<div class="empty">
+  <strong>No result</strong>
+  No file matches the current filters.
+</div>
+
+</main>
+</body>
+</html>
