@@ -1,0 +1,358 @@
+/* YAIT mockup design system.
+   Vanilla CSS, no build step, no external request (ADR-004).
+   Tokens first, then base, then components. Reused as-is by US-01-06. */
+
+/* ---------- Tokens ---------- */
+
+:root {
+  color-scheme: light dark;
+
+  --surface: #f6f7f9;
+  --surface-raised: #ffffff;
+  --surface-sunken: #eceef2;
+  --border: #d3d7de;
+  --text: #1b1f27;
+  --text-muted: #5a6372;
+  --accent: #1f5fd1;
+  --accent-contrast: #ffffff;
+  --danger: #b3261e;
+  --danger-contrast: #ffffff;
+  --focus: #1f5fd1;
+
+  /* The four domain statuses. They carry business meaning:
+     compliant, to fill, divergent, nothing to propose.
+     Each one has a background, a foreground and a distinct shape (see .status),
+     so colour is never the only signal. */
+  --st-ok-bg: #d9f0df;
+  --st-ok-fg: #14532d;
+  --st-fill-bg: #dbe8ff;
+  --st-fill-fg: #1e3a8a;
+  --st-diff-bg: #ffe2c2;
+  --st-diff-fg: #7c2d12;
+  --st-none-bg: #e4e6eb;
+  --st-none-fg: #454d5b;
+
+  --warn-bg: #fff3c4;
+  --warn-fg: #5c4400;
+  --warn-border: #e0b800;
+  --sim-bg: #e3edff;
+  --sim-fg: #173a82;
+  --sim-border: #1f5fd1;
+
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fs-base: 13px;
+  --fs-small: 12px;
+  --fs-h1: 20px;
+  --fs-h2: 15px;
+  --row-h: 26px;
+  --gap: 8px;
+  --radius: 4px;
+}
+
+:root[data-theme="dark"] {
+  --surface: #14171c;
+  --surface-raised: #1c2027;
+  --surface-sunken: #0f1115;
+  --border: #343b47;
+  --text: #e6e9ef;
+  --text-muted: #9aa4b5;
+  --accent: #6ea0ff;
+  --accent-contrast: #0b1220;
+  --danger: #ff7b72;
+  --danger-contrast: #1b0907;
+  --focus: #8fb4ff;
+
+  --st-ok-bg: #173c26;
+  --st-ok-fg: #8fe0aa;
+  --st-fill-bg: #1c2f5c;
+  --st-fill-fg: #a9c5ff;
+  --st-diff-bg: #5a3112;
+  --st-diff-fg: #ffc48a;
+  --st-none-bg: #2a303a;
+  --st-none-fg: #b4bcca;
+
+  --warn-bg: #3d3208;
+  --warn-fg: #ffe083;
+  --warn-border: #a88a00;
+  --sim-bg: #172a52;
+  --sim-fg: #b7cdff;
+  --sim-border: #6ea0ff;
+}
+
+/* No explicit choice: follow the operating system. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #14171c;
+    --surface-raised: #1c2027;
+    --surface-sunken: #0f1115;
+    --border: #343b47;
+    --text: #e6e9ef;
+    --text-muted: #9aa4b5;
+    --accent: #6ea0ff;
+    --accent-contrast: #0b1220;
+    --danger: #ff7b72;
+    --danger-contrast: #1b0907;
+    --focus: #8fb4ff;
+
+    --st-ok-bg: #173c26;
+    --st-ok-fg: #8fe0aa;
+    --st-fill-bg: #1c2f5c;
+    --st-fill-fg: #a9c5ff;
+    --st-diff-bg: #5a3112;
+    --st-diff-fg: #ffc48a;
+    --st-none-bg: #2a303a;
+    --st-none-fg: #b4bcca;
+
+    --warn-bg: #3d3208;
+    --warn-fg: #ffe083;
+    --warn-border: #a88a00;
+    --sim-bg: #172a52;
+    --sim-fg: #b7cdff;
+    --sim-border: #6ea0ff;
+  }
+}
+
+/* ---------- Base ---------- */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font: var(--fs-base) / 1.4 var(--font-ui);
+}
+
+h1 { font-size: var(--fs-h1); margin: 0 0 var(--gap); }
+h2 { font-size: var(--fs-h2); margin: 24px 0 var(--gap); }
+h3 { font-size: var(--fs-base); margin: 16px 0 6px; color: var(--text-muted); }
+
+code, .mono { font-family: var(--font-mono); font-size: var(--fs-small); }
+.muted { color: var(--text-muted); }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.page { max-width: 1400px; margin: 0 auto; padding: 16px; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding: 6px 16px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand { font-weight: 700; margin-right: auto; }
+
+.swatches { display: flex; flex-wrap: wrap; gap: var(--gap); }
+.swatch {
+  width: 110px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  font-size: var(--fs-small);
+}
+.swatch i { display: block; height: 28px; margin-bottom: 4px; border: 1px solid var(--border); border-radius: 2px; }
+
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap); }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  font: inherit;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  color: var(--text);
+  cursor: pointer;
+}
+.btn:hover { background: var(--surface-sunken); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); font-weight: 600; }
+.btn-primary:hover { background: var(--accent); filter: brightness(1.1); }
+/* Destructive actions: outlined by default, filled only on hover, and always carry a label. */
+.btn-danger { border-color: var(--danger); color: var(--danger); font-weight: 600; }
+.btn-danger:hover { background: var(--danger); color: var(--danger-contrast); }
+
+/* ---------- Status badge: one letter, one shape per status ---------- */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  font: 700 var(--fs-small) / 1 var(--font-mono);
+  border: 1px solid currentColor;
+}
+.status-ok   { background: var(--st-ok-bg);   color: var(--st-ok-fg);   border-radius: 50%; }
+.status-fill { background: var(--st-fill-bg); color: var(--st-fill-fg); border-radius: 2px; }
+.status-diff { background: var(--st-diff-bg); color: var(--st-diff-fg); border-radius: 0; min-width: 26px; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); box-shadow: inset 0 0 0 2px currentColor; }
+.status-none { background: var(--st-none-bg); color: var(--st-none-fg); border-radius: 2px; border-style: dashed; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 16px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- Date source badge ---------- */
+
+.source {
+  display: inline-block;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-sunken);
+  color: var(--text-muted);
+  font: var(--fs-small) / 18px var(--font-mono);
+  white-space: nowrap;
+}
+
+/* ---------- Filter bar ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap);
+  padding: 6px 8px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.filters label { display: inline-flex; align-items: center; gap: 4px; color: var(--text-muted); }
+.filters select,
+.filters input[type="search"] {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2px 6px;
+  height: 24px;
+}
+.filters input[type="search"] { flex: 1 1 200px; min-width: 160px; }
+.filters .spacer { margin-left: auto; }
+
+/* ---------- Dense grid ---------- */
+
+.grid-wrap { overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-raised); }
+table.grid { width: 100%; border-collapse: collapse; }
+.grid th, .grid td {
+  height: var(--row-h);
+  padding: 0 8px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+  border-bottom: 1px solid var(--border);
+}
+.grid thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-sunken);
+  font-weight: 600;
+  color: var(--text-muted);
+  user-select: none;
+}
+.grid th[data-sort] { cursor: pointer; }
+.grid th[data-sort]::after { content: " \2195"; opacity: 0.4; }
+.grid th[aria-sort="ascending"]::after { content: " \2191"; opacity: 1; }
+.grid th[aria-sort="descending"]::after { content: " \2193"; opacity: 1; }
+.grid tbody tr:hover { background: var(--surface-sunken); }
+.grid tbody tr[aria-selected="true"] { outline: 2px solid var(--accent); outline-offset: -2px; }
+.grid td.num, .grid th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.grid td.mono { font-family: var(--font-mono); font-size: var(--fs-small); }
+
+/* ---------- Side panel ---------- */
+
+.layout { display: flex; gap: var(--gap); align-items: flex-start; }
+.layout > .main { flex: 1 1 auto; min-width: 0; }
+
+.side-panel {
+  flex: 0 0 320px;
+  padding: 12px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.side-panel h3 { margin-top: 0; }
+.side-panel dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; }
+.side-panel dt { color: var(--text-muted); }
+.side-panel dd { margin: 0; overflow-wrap: anywhere; }
+.side-panel .thumb {
+  height: 140px;
+  margin-bottom: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-sunken);
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+}
+
+/* ---------- Progress bar ---------- */
+
+.progress { display: flex; align-items: center; gap: var(--gap); }
+.progress progress {
+  flex: 1;
+  height: 14px;
+  accent-color: var(--accent);
+}
+.progress .label { min-width: 140px; text-align: right; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+
+/* ---------- Empty state ---------- */
+
+.empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--surface-raised);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+.empty strong { display: block; margin-bottom: 4px; color: var(--text); font-size: var(--fs-h2); }
+
+/* ---------- Banners ---------- */
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding: 6px 12px;
+  border: 1px solid;
+  border-radius: var(--radius);
+}
+.banner .tag { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.banner-warn { background: var(--warn-bg); color: var(--warn-fg); border-color: var(--warn-border); }
+
+/* Simulation banner: permanent, full width, pinned under the top bar.
+   Dry-run is the default and the user must always see which mode they are in. */
+.banner-sim {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  background: var(--sim-bg);
+  color: var(--sim-fg);
+  border-color: var(--sim-border);
+}
+.banner-sim .spacer { margin-left: auto; }
+/* Writing mode is the explicit opt-in, so it must look different and louder. */
+.banner-sim[data-mode="write"] {
+  background: var(--danger);
+  color: var(--danger-contrast);
+  border-color: var(--danger);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
