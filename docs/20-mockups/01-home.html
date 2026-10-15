@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Home</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 01 — Home</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Choose a collection</h1>
+<p>YAIT reads a folder of photos and videos, works out the capture date of every file, and
+proposes new names, a new folder layout and metadata fixes. You review a simulation first;
+nothing changes on disk until you explicitly enable writing.</p>
+
+<h2>Collection folder</h2>
+<form class="path-field" onsubmit="return false">
+  <input type="text" id="collection-path" name="path" autocomplete="off" spellcheck="false"
+         placeholder="D:\Photos\Family"
+         aria-label="Collection path" aria-describedby="path-hint">
+  <button class="btn btn-primary" type="submit">Open collection</button>
+</form>
+<p class="field-hint" id="path-hint">Paste the full path of the folder, for example
+  <span class="mono">D:\Photos\Family</span> or <span class="mono">/home/me/photos</span>.
+  The browser cannot browse your disk for us, so the path is typed or pasted once, then remembered below.</p>
+
+<!--
+  Error variants (T-00-10-03). Each replaces the hint paragraph above and sets
+  aria-invalid="true" on the input.
+
+  1. Path does not exist:
+     <input ... value="D:\Photos\Famly" aria-invalid="true">
+     <p class="field-error">This folder does not exist. Check the spelling of D:\Photos\Famly.</p>
+
+  2. Path cannot be read:
+     <input ... value="D:\Photos\Private" aria-invalid="true">
+     <p class="field-error">This folder exists but cannot be read. Check its permissions.</p>
+
+  3. Path outside the allowed roots:
+     <input ... value="C:\Windows" aria-invalid="true">
+     <p class="field-error">This folder is outside the allowed roots (D:\Photos, E:\Archive).</p>
+-->
+
+<h2>Recent collections</h2>
+<ul class="recent">
+  <li>
+    <span class="path">D:\Photos\Family\Scans</span>
+    <span class="meta">1 482 files</span>
+    <span class="meta">Opened 2026-10-02</span>
+    <button class="btn" type="button">Open</button>
+  </li>
+  <li>
+    <span class="path">E:\Archive\Imports\2019\Summer holidays in Brittany\Camera uploads and scans\Unsorted\To review later\Originals</span>
+    <span class="meta">12 860 files</span>
+    <span class="meta">Opened 2026-09-14</span>
+    <button class="btn" type="button">Open</button>
+  </li>
+  <li>
+    <span class="path">D:\Photos\Phone\WhatsApp</span>
+    <span class="meta">340 files</span>
+    <span class="meta">Opened 2026-08-27</span>
+    <button class="btn" type="button">Open</button>
+  </li>
+</ul>
+
+</main>
+</body>
+</html>
