@@ -6,6 +6,13 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-09` — Design system for the mockups **(15/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-09-design-system.md)
+  `docs/20-mockups/` : `mockup.css` (jetons, thème clair/sombre, grille dense, pastilles, bandeau
+  simulation), `mockup.js` (bascule de thème, tri de colonne), `components.html`. Les quatre statuts
+  portent une lettre C/F/D/N et une forme, pas la seule couleur. Vérification visuelle uniquement
+  (aucun test côté interface). Tag `US-00-09`.
+
+
 - ✅ `US-00-08` — Spec guards in CI **(21/09/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-08-spec-guards.md)
   `tools/check_specs.py`, stdlib seul, 9 invariants sur les 60 règles ; aucun en avertissement
   (« un avertissement ne protège rien » est la propre règle de la fiche). Invariant 7 (référencé
