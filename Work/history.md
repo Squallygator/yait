@@ -6,6 +6,27 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-21` — Clickable prototype **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md)
+  `docs/20-mockups/index.html` (douze pages, parcours principal, point à juger par page), barre de
+  mockup réduite au lien vers l'index, et navigation applicative : stepper à six étapes (Collection,
+  Scan, Inventory, Rename, Organize, Metadata facultative), fil d'ariane, barre Précédent / Suivant,
+  lien History permanent. Parcours Home → History parcouru par script, aucun lien cassé, aucune
+  ressource externe. Non vérifié à 1920 px. Tag `US-00-21`.
+
+- ✅ `US-00-20` — Mockup: Empty and error states **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-20-screen-empty-and-error-states.md)
+  `docs/20-mockups/11-states.html` : les neuf états, chacun avec ce qui s'est passé et l'action
+  suivante. L'état « chemin trop long » ne couvre que la limite de 32 000 caractères, `UC-34` imposant
+  de traiter les chemins de plus de 260 : point à trancher en revue. Tag `US-00-20`.
+
+- ✅ `US-00-19` — Mockup: History and undo **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-19-screen-history-undo.md)
+  `docs/20-mockups/10-history-undo.html` : liste des opérations, détail avec fichiers prêts ou non,
+  confirmation d'annulation, garde-fou d'ordre avec la sortie proposée, aucun bouton « forcer ».
+  Tag `US-00-19`.
+
+- ✅ `US-00-18` — Mockup: Job progress **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-18-screen-job-progress.md)
+  `docs/20-mockups/09-job-progress.html` : trois états (en cours, interrompu, terminé), compteur,
+  fichier en cours, journal des événements notables uniquement. Tag `US-00-18`.
+
 - ✅ `US-00-17` — Mockup: Metadata editor **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-17-screen-metadata-editor.md)
   `docs/20-mockups/08-metadata-editor.html` : valeur → proposition → statut par propriété, colonne
   groupée `T O C` avec vue détaillée, filtres, application en masse avec confirmation. Aucune option

@@ -1,6 +1,6 @@
 # US-00-21 — Clickable prototype
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 21/22** · Statut : ⌛
+> **Feature** F00 — Specs corpus & pretotype · **Lot 21/22** · Statut : ✅
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
