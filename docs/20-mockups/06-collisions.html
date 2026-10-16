@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Collisions</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 06 — Collisions</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection. These collisions are settled in the plan, before anything moves.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Name collisions</h1>
+<p>Two or more files would get the same name. Names are compared across the <strong>whole collection</strong>,
+not folder by folder, because the end result is often one flat folder. Every file is kept: the best copy
+keeps the clean name, the others get <span class="mono">_1</span>, <span class="mono">_2</span>…</p>
+<p class="muted">Order of the tie-break: <strong>1</strong> resolution (larger first), then <strong>2</strong> file size
+(larger first), then <strong>3</strong> time taken (earlier first), then <strong>4</strong> path (alphabetical, only so the
+result is the same on every run). The criterion that decided each case is marked ▶.</p>
+
+<div class="cards">
+  <div class="card"><div class="label">Collisions</div><div class="value">2</div></div>
+  <div class="card"><div class="label">Files renamed with a suffix</div><div class="value">2</div></div>
+  <div class="card"><div class="label">Settled by “-original”</div><div class="value">1</div></div>
+</div>
+
+<!-- ===== Group 1: resolution decides ===== -->
+<div class="group-title">
+  <h2>2010-08-15-photo.jpg</h2>
+  <span class="muted">2 files compete · decided by resolution</span>
+</div>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Rank</th><th>Path</th>
+        <th>1 Resolution</th><th class="num">2 Size</th><th>3 Taken at</th><th>4 Path</th>
+        <th>Gets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td class="mono">2010-08 fete/b/photo.jpg</td>
+        <td class="decisive">640 × 286</td><td class="num tied">41 KB</td><td class="tied mono">2010-08-15 14:00:00</td><td class="tied mono">2010-08 fete/b/</td>
+        <td class="mono after">2010-08-15-photo.jpg</td>
+      </tr>
+      <tr>
+        <td>2</td><td class="mono">2010-08 fete/a/photo.jpg</td>
+        <td>320 × 143</td><td class="num tied">14 KB</td><td class="tied mono">2010-08-15 14:00:00</td><td class="tied mono">2010-08 fete/a/</td>
+        <td class="mono after">2010-08-15-photo_1.jpg</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="why"><strong>Why <span class="mono">b/photo.jpg</span> keeps the clean name</strong>
+  It has more pixels (640 × 286 against 320 × 143). The smaller one is usually a reduced copy of the same
+  photo, so the clean name goes to the better copy. Size, time and path were not needed.</div>
+
+<!-- ===== Group 2: identical files, path decides ===== -->
+<div class="group-title">
+  <h2>2006-05-14-plage.jpg</h2>
+  <span class="muted">2 files compete · identical copies in two folders · decided by path</span>
+</div>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Rank</th><th>Path</th>
+        <th>1 Resolution</th><th class="num">2 Size</th><th>3 Taken at</th><th>4 Path</th>
+        <th>Gets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td class="mono">2006-05 disc 1/plage.jpg</td>
+        <td class="tied">320 × 143</td><td class="num tied">14 KB</td><td class="tied mono">2006-05-14 10:00:00</td><td class="decisive mono">2006-05 disc 1/</td>
+        <td class="mono after">2006-05-14-plage.jpg</td>
+      </tr>
+      <tr>
+        <td>2</td><td class="mono">2006-05 disc 2/plage.jpg</td>
+        <td class="tied">320 × 143</td><td class="num tied">14 KB</td><td class="tied mono">2006-05-14 10:00:00</td><td class="mono">2006-05 disc 2/</td>
+        <td class="mono after">2006-05-14-plage_1.jpg</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="why"><strong>Why <span class="mono">disc 1</span> keeps the clean name</strong>
+  The two files are indistinguishable: same resolution, same size, same time. Nothing says which is better,
+  so the alphabetical order of the paths decides, and it will decide the same way every time. The two sit in
+  different folders and would only have clashed once moved together, which is why names are compared collection-wide.</div>
+
+<!-- ===== Group 3: Originals ===== -->
+<div class="group-title">
+  <h2>2011-07-02-coastal path.jpg</h2>
+  <span class="muted">No collision left · settled by the <span class="mono">Originals</span> folder</span>
+</div>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Path</th><th>Folder role</th><th>Gets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">Bretagne 2011/coastal path.jpg</td><td>edited version, one level up</td>
+        <td class="mono after">2011-07-02-coastal path.jpg</td>
+      </tr>
+      <tr>
+        <td class="mono">Bretagne 2011/Originals/coastal path.jpg</td><td>raw master, in an <span class="mono">Originals</span> folder</td>
+        <td class="mono after">2011-07-02-coastal path-original.jpg</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="why"><strong>Why no <span class="mono">_1</span> here</strong>
+  Both files resolve to the same date and description, but one sits in an <span class="mono">Originals</span> folder.
+  That one is named <span class="mono">-original</span> before the tie-break is even looked at, so the two names
+  differ and neither is demoted. Both files are kept.</div>
+
+</main>
+</body>
+</html>
