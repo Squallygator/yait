@@ -251,6 +251,24 @@
 <div class="bulk"><label>Label <input type="text" value="Bretagne"></label><button class="btn" type="button">Apply to the rows shown…</button></div>
 <div class="dialog"><strong>Apply “Bretagne” to 14 rows?</strong><p>Existing values are never replaced.</p><button class="btn btn-primary" type="button">Apply</button> <button class="btn" type="button">Cancel</button></div>
 
+<h2>Event log and state card</h2>
+<ul class="log"><li><span class="time">0:41</span><span class="source">unreadable</span><span>damaged/corrupt-scan.jpg could not be read.</span></li></ul>
+<p></p>
+<div class="state state-error"><div class="kind">Problem</div><h3>This folder does not exist</h3><p>Nothing was found at D:\Photos\Famly.</p><p class="next">Check the spelling. <button class="btn" type="button">Back to the path</button></p></div>
+
+<h2>Editable proposal and unsaved edits</h2>
+<div class="row">
+  <input type="text" class="val changed" value="divers - mystère" style="padding:1px 6px;border:1px solid var(--accent);background:var(--surface-sunken)"> <span class="edited-mark">✎ edited</span>
+  <span class="dirty">✎ 2 unsaved edits</span>
+</div>
+
+<h2>Stepper, breadcrumb and step bar</h2>
+<p class="muted">Application navigation. Done steps are links; blocked steps say why; the optional step is marked.</p>
+<nav class="stepper" aria-label="Steps"><ol><li class="done"><a href="#"><span class="mark">✓</span> Collection</a></li><li class="done"><a href="#"><span class="mark">✓</span> Scan</a></li><li class="done"><a href="#"><span class="mark">✓</span> Inventory</a></li><li class="current" aria-current="step"><span class="mark">●</span> Rename</li><li class="blocked" title="Blocked until the rename plan is applied"><span class="mark">⊘</span> Organize</li><li class="todo"><span class="mark">○</span> Metadata <span class="opt">(optional)</span></li></ol><span class="aside"><span class="context"><span class="muted">Collection</span> <span class="mono">E:\Archive\Imports7-08 Corse été</span></span><a href="#">History</a></span></nav>
+<p></p>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="#">Rename plan</a> <span>›</span> <span aria-current="page">Collisions</span></nav>
+<div class="stepbar"><a class="btn" href="#">← Back to Rename plan</a><span class="spacer"></span><span class="reason">Blocked: apply the rename plan first</span><button class="btn btn-primary" type="button" disabled>Next: Organize →</button></div>
+
 <h2>Empty states</h2>
 <div class="empty">
   <strong>No collection selected</strong>

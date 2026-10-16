@@ -8,6 +8,7 @@
 <script type="module" src="assets/mockup.js"></script>
 </head>
 <body>
+<nav class="mocknav" aria-label="Mockup navigation"><span class="label">Mockup navigation, not part of the application</span><a href="index.html">Index</a></nav>
 
 <header class="topbar">
   <span class="brand">YAIT</span>
@@ -21,6 +22,7 @@
   <span class="spacer"></span>
   <span class="mono">mode: dry-run</span>
 </div>
+<nav class="stepper" aria-label="Steps"><ol><li class="current" aria-current="step"><span class="mark">●</span> Collection<span class="visually-hidden"> (current step)</span></li><li class="todo"><span class="mark">○</span> Scan<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Inventory<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Rename<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Organize<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Metadata <span class="opt">(optional)</span><span class="visually-hidden"> (not reached yet)</span></li></ol><span class="aside"><span class="context muted">No collection selected</span><a href="10-history-undo.html">History</a></span></nav>
 
 <main class="page">
 
@@ -34,7 +36,7 @@ nothing changes on disk until you explicitly enable writing.</p>
   <input type="text" id="collection-path" name="path" autocomplete="off" spellcheck="false"
          placeholder="D:\Photos\Family"
          aria-label="Collection path" aria-describedby="path-hint">
-  <button class="btn btn-primary" type="submit">Open collection</button>
+  <a class="btn btn-primary" href="02-collection-summary.html">Open collection</a>
 </form>
 <p class="field-hint" id="path-hint">Paste the full path of the folder, for example
   <span class="mono">D:\Photos\Family</span> or <span class="mono">/home/me/photos</span>.
@@ -63,22 +65,23 @@ nothing changes on disk until you explicitly enable writing.</p>
     <span class="path">D:\Photos\Family\Scans</span>
     <span class="meta">1 482 files</span>
     <span class="meta">Opened 2026-10-02</span>
-    <button class="btn" type="button">Open</button>
+    <a class="btn" href="02-collection-summary.html">Open</a>
   </li>
   <li>
     <span class="path">E:\Archive\Imports\2019\Summer holidays in Brittany\Camera uploads and scans\Unsorted\To review later\Originals</span>
     <span class="meta">12 860 files</span>
     <span class="meta">Opened 2026-09-14</span>
-    <button class="btn" type="button">Open</button>
+    <a class="btn" href="02-collection-summary.html">Open</a>
   </li>
   <li>
     <span class="path">D:\Photos\Phone\WhatsApp</span>
     <span class="meta">340 files</span>
     <span class="meta">Opened 2026-08-27</span>
-    <button class="btn" type="button">Open</button>
+    <a class="btn" href="02-collection-summary.html">Open</a>
   </li>
 </ul>
 
+<div class="stepbar"><span class="spacer"></span><a class="btn btn-primary" href="02-collection-summary.html">Next: Collection summary →</a></div>
 </main>
 </body>
 </html>

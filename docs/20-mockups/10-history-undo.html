@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — History and undo</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+<nav class="mocknav" aria-label="Mockup navigation"><span class="label">Mockup navigation, not part of the application</span><a href="index.html">Index</a></nav>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 10 — History and undo</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="write">
+  <span class="tag">Writing enabled</span>
+  <span>Undoing changes files in your collection. Every undo is journalled too.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: write</span>
+</div>
+<nav class="stepper" aria-label="Steps"><ol><li class="done"><a href="02-collection-summary.html"><span class="mark">✓</span> Collection</a><span class="visually-hidden"> (done)</span></li><li class="done"><a href="09-job-progress.html"><span class="mark">✓</span> Scan</a><span class="visually-hidden"> (done)</span></li><li class="done"><a href="03-inventory.html"><span class="mark">✓</span> Inventory</a><span class="visually-hidden"> (done)</span></li><li class="done"><a href="05-rename-plan.html"><span class="mark">✓</span> Rename</a><span class="visually-hidden"> (done)</span></li><li class="done"><a href="07-organize.html"><span class="mark">✓</span> Organize</a><span class="visually-hidden"> (done)</span></li><li class="done"><a href="08-metadata-editor.html"><span class="mark">✓</span> Metadata</a> <span class="opt">(optional)</span><span class="visually-hidden"> (done)</span></li></ol><span class="aside"><span class="context" title="E:\Archive\Imports\2007-08 Corse été"><span class="muted">Collection</span> <span class="mono">E:\Archive\Imports\2007-08 Corse été</span></span><a href="10-history-undo.html" aria-current="page">History</a></span></nav>
+
+<main class="page">
+
+<h1>History</h1>
+<p>Every change YAIT makes is recorded in a journal before it happens. Any operation can be undone, newest first,
+and each file comes back exactly as it was.</p>
+
+<h2>Operations</h2>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr><th>Date</th><th>Operation</th><th class="num">Files</th><th>State</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr aria-selected="true">
+        <td class="mono">2026-10-16 18:52</td><td>Organize, tree <span class="mono">YYYY/MM</span></td><td class="num">10 260</td>
+        <td><span class="cstate cstate-kept">Applied</span></td>
+        <td><button class="btn btn-danger" type="button">Undo…</button></td>
+      </tr>
+      <tr>
+        <td class="mono">2026-10-16 18:47</td><td>Metadata write</td><td class="num">2 418</td>
+        <td><span class="cstate cstate-kept">Applied</span></td>
+        <td><button class="btn btn-danger" type="button" disabled>Undo…</button> <span class="muted">after 18:52</span></td>
+      </tr>
+      <tr>
+        <td class="mono">2026-10-16 18:41</td><td>Rename</td><td class="num">7 962</td>
+        <td><span class="cstate cstate-kept">Applied</span></td>
+        <td><button class="btn btn-danger" type="button">Undo…</button> <span class="muted">blocked: see below</span></td>
+      </tr>
+      <tr>
+        <td class="mono">2026-10-02 21:10</td><td>Rename</td><td class="num">640</td>
+        <td><span class="cstate cstate-absent">Undone</span></td>
+        <td class="muted">—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="field-hint">Collection: <span class="mono">E:\Archive\Imports\2007-08 Corse été</span>.</p>
+
+<!-- ===== Detail of one operation ===== -->
+<h2>Detail — Organize, 2026-10-16 18:52</h2>
+<div class="cards">
+  <div class="card"><div class="label">Files moved</div><div class="value">10 260</div></div>
+  <div class="card"><div class="label">Ready to move back</div><div class="value">10 258</div></div>
+  <div class="card"><div class="label">Not where expected</div><div class="value">2</div></div>
+</div>
+<p></p>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr><th>Moved from</th><th></th><th>Moved to</th><th>Today</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono before">2007-08 corse/2007-08-14-IMG_0042.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2007/08/2007-08-14-IMG_0042.jpg</td><td><span class="cstate cstate-kept">Ready</span></td>
+      </tr>
+      <tr>
+        <td class="mono before">2004-09 Bretagne/2004-09-00-menhir debout.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2004/2004-09-00-menhir debout.jpg</td><td><span class="cstate cstate-kept">Ready</span></td>
+      </tr>
+      <tr>
+        <td class="mono before">2010-08 fete/b/2010-08-15-photo.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2010/08/2010-08-15-photo.jpg</td><td><span class="cstate cstate-dropped">Not found there</span></td>
+      </tr>
+      <tr>
+        <td class="mono before">Scans/1974-08-11-grandparents house 03.jpg</td><td class="arrow">→</td>
+        <td class="mono after">1974/08/1974-08-11-grandparents house 03.jpg</td><td><span class="cstate cstate-dropped">Changed since</span></td>
+      </tr>
+      <tr>
+        <td class="mono before">… 10 256 more</td><td class="arrow"></td><td class="muted">all ready</td><td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Some files are not where the journal expects</h3>
+<div class="state state-warn">
+  <div class="kind">Partly undoable</div>
+  <p><span class="mono">2010-08-15-photo.jpg</span> is no longer at <span class="mono">2010/08/</span>: it was moved or renamed since.
+    <span class="mono">1974-08-11-grandparents house 03.jpg</span> was edited since: its content no longer matches the journal.</p>
+  <p>Moving those two back could hide a change you made yourself, so YAIT leaves them exactly as they are.</p>
+  <p class="next">
+    <button class="btn btn-danger" type="button">Undo the 10 258 files that are ready…</button>
+    <a class="btn" href="#">Show the 2 files left alone</a>
+  </p>
+</div>
+
+<!-- ===== Confirmation ===== -->
+<h2>State — confirming an undo</h2>
+<div class="dialog" role="dialog" aria-label="Confirm undo">
+  <h3 style="margin-top:0;color:var(--text)">Undo “Organize, 2026-10-16 18:52”?</h3>
+  <p>10 258 files will be moved back to the folders they came from, with their names and content unchanged.</p>
+  <ul>
+    <li>Each file is checked before it moves: it must be where the journal says, and unchanged.</li>
+    <li>2 files fail that check and are left alone.</li>
+    <li>This undo is written to the journal first, so it can itself be inspected.</li>
+  </ul>
+  <p>
+    <button class="btn btn-danger" type="button">Undo 10 258 files</button>
+    <button class="btn" type="button">Cancel</button>
+  </p>
+</div>
+
+<!-- ===== Order guard ===== -->
+<h2>State — blocked by the order guard</h2>
+<div class="banner banner-warn" role="alert">
+  <span class="tag">Undo that first</span>
+  <span>“Rename, 2026-10-16 18:41” cannot be undone yet: 2 newer operations are still applied.</span>
+</div>
+<p>The newer operations were done on top of the renamed files. Undoing the rename first would leave them pointing at names
+  that no longer exist. Undo them in order, newest first:</p>
+<ol>
+  <li>Organize, 2026-10-16 18:52 — 10 260 files</li>
+  <li>Metadata write, 2026-10-16 18:47 — 2 418 files</li>
+  <li>Rename, 2026-10-16 18:41 — 7 962 files <span class="muted">(the one you asked for)</span></li>
+</ol>
+<p>
+  <button class="btn btn-danger" type="button">Undo Organize (18:52) first…</button>
+  <button class="btn" type="button">Undo all 3, newest first…</button>
+  <button class="btn" type="button">Cancel</button>
+</p>
+<p class="field-hint">There is no “force” button: undoing out of order is the one thing this screen refuses to do.
+  Every step still asks for its own confirmation.</p>
+
+<div class="stepbar"><a class="btn" href="07-organize.html">← Back: Organize</a><span class="spacer"></span></div>
+</main>
+</body>
+</html>
