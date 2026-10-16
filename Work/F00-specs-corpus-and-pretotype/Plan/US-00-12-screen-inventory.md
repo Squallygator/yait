@@ -1,6 +1,6 @@
 # US-00-12 — Mockup: Inventory grid
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 12/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 12/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 

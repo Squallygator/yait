@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Inventory</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 03 — Inventory</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Inventory</h1>
+
+<div class="layout">
+  <div class="main">
+    <h2 style="margin-top:0">Date source</h2>
+    <dl class="bars">
+      <dt>file-name</dt><dd><span class="bar" style="width:100%"></span></dd><dd class="count">3 980 · 38%</dd>
+      <dt>folder-name</dt><dd><span class="bar" style="width:73%"></span></dd><dd class="count">2 890 · 27%</dd>
+      <dt>embedded-metadata</dt><dd><span class="bar" style="width:78%"></span></dd><dd class="count">3 120 · 29%</dd>
+      <dt>sidecar</dt><dd><span class="bar" style="width:7%"></span></dd><dd class="count">270 · 3%</dd>
+      <dt>none</dt><dd><span class="bar" style="width:8%"></span></dd><dd class="count">322 · 3%</dd>
+    </dl>
+  </div>
+  <div class="main">
+    <h2 style="margin-top:0">Reading the grid</h2>
+    <p class="legend"><span><span class="source">file-name</span> reliable</span>
+      <span><span class="source source-weak">folder-name</span> <span class="source source-weak">none</span> worth a look</span></p>
+    <p>A date with dots, such as <span class="prec">2010-12<i>-··</i></span>, is known only to the
+      precision shown: here December 2010, day unknown. The last column says it in words.</p>
+  </div>
+</div>
+
+<div class="filters" style="margin-top:var(--gap)">
+  <label>Source
+    <select aria-label="Date source"><option>All</option><option>file-name</option><option>folder-name</option><option>embedded-metadata</option><option>sidecar</option><option>none</option></select>
+  </label>
+  <label>Precision
+    <select aria-label="Precision"><option>All</option><option>day</option><option>month</option><option>year</option></select>
+  </label>
+  <label>Type
+    <select aria-label="Type"><option>All</option><option>image</option><option>video</option><option>archive</option><option>other</option></select>
+  </label>
+  <label>Folder
+    <select aria-label="Folder"><option>All folders</option><option>2004-09 Bretagne</option><option>CANON</option></select>
+  </label>
+  <input type="search" placeholder="Search file names…" aria-label="Search">
+  <button class="btn" type="button">Export CSV</button>
+</div>
+<p class="muted" style="margin:6px 0">Showing 51 of 10 582 files. Rows are rendered on demand as you scroll, so the grid stays fast at any size.</p>
+
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th data-sort>File name</th>
+        <th data-sort>Folder</th>
+        <th data-sort>Type</th>
+        <th data-sort>Resolved date</th>
+        <th>Precision</th>
+        <th>Source</th>
+        <th class="num" data-sort>Size</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr><td class="mono">026-the-couple-and-the-mother.jpg</td><td class="path-cell" title="2002-07-20 Wedding at Arras/18-07-2002">2002-07-20 Wedding at Arras/18-07-2002</td><td>image</td><td class="mono" data-value="2002-07-18">2002-07-18</td><td class="muted">day</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="3482112">3.3 MB</td></tr>
+        <tr><td class="mono">img_0042.jpg</td><td class="path-cell" title="2002_07_20 Wedding at Arras">2002_07_20 Wedding at Arras</td><td>image</td><td class="mono" data-value="2002-07-20">2002-07-20</td><td class="muted">day</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2901004">2.8 MB</td></tr>
+        <tr><td class="mono">FB_IMG_1288000000.jpg</td><td class="path-cell" title="2003 vacances">2003 vacances</td><td>image</td><td class="mono" data-value="2010-10-25">2010-10-25</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="412330">403 KB</td></tr>
+        <tr><td class="mono">plage.jpg</td><td class="path-cell" title="2003-07 corse">2003-07 corse</td><td>image</td><td class="mono" data-value="2003-07-00"><span class="prec">2003-07<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2210450">2.1 MB</td></tr>
+        <tr><td class="mono">Étretat &amp; la plage (2).jpg</td><td class="path-cell" title="2004-07 corse">2004-07 corse</td><td>image</td><td class="mono" data-value="2004-07-00"><span class="prec">2004-07<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2644120">2.5 MB</td></tr>
+        <tr><td class="mono">menhir debout.jpg</td><td class="path-cell" title="2004-09 Bretagne">2004-09 Bretagne</td><td>image</td><td class="mono" data-value="2004-09-00"><span class="prec">2004-09<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="3101222">3.0 MB</td></tr>
+        <tr><td class="mono">vieux scan.jpg</td><td class="path-cell" title="2004-09 Bretagne">2004-09 Bretagne</td><td>image</td><td class="mono" data-value="2004-09-00"><span class="prec">2004-09<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="5120330">4.9 MB</td></tr>
+        <tr><td class="mono">le Forum.jpg</td><td class="path-cell" title="2005-08 Rome">2005-08 Rome</td><td>image</td><td class="mono" data-value="2005-08-00"><span class="prec">2005-08<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2781901">2.7 MB</td></tr>
+        <tr><td class="mono">plage.jpg</td><td class="path-cell" title="2006-05 disc 1">2006-05 disc 1</td><td>image</td><td class="mono" data-value="2006-05-00"><span class="prec">2006-05<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2199001">2.1 MB</td></tr>
+        <tr><td class="mono">plage.jpg</td><td class="path-cell" title="2006-05 disc 2">2006-05 disc 2</td><td>image</td><td class="mono" data-value="2006-05-00"><span class="prec">2006-05<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2205431">2.1 MB</td></tr>
+        <tr><td class="mono">IMG_0512.JPG</td><td class="path-cell" title="2006-08 birthday">2006-08 birthday</td><td>image</td><td class="mono" data-value="2006-08-12">2006-08-12</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3820100">3.6 MB</td></tr>
+        <tr><td class="mono">scan 001.jpg</td><td class="path-cell" title="2006-1">2006-1</td><td>image</td><td class="mono" data-value="2006-00-00"><span class="prec">2006<i>-··-··</i></span></td><td class="muted">year</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="6120450">5.8 MB</td></tr>
+        <tr><td class="mono">family new year 025.jpg</td><td class="path-cell" title="2006-2">2006-2</td><td>image</td><td class="mono" data-value="2006-00-00"><span class="prec">2006<i>-··-··</i></span></td><td class="muted">year</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="5920211">5.6 MB</td></tr>
+        <tr><td class="mono">IMG_0042.jpg</td><td class="path-cell" title="2007-08 corse">2007-08 corse</td><td>image</td><td class="mono" data-value="2007-08-14">2007-08-14</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3380221">3.2 MB</td></tr>
+        <tr><td class="mono">sunset.jpg</td><td class="path-cell" title="2007-08 corse">2007-08 corse</td><td>image</td><td class="mono" data-value="2007-08-16">2007-08-16</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="2980110">2.8 MB</td></tr>
+        <tr><td class="mono">sunset (copy).jpg</td><td class="path-cell" title="2007-08 corse">2007-08 corse</td><td>image</td><td class="mono" data-value="2007-08-16">2007-08-16</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="2980110">2.8 MB</td></tr>
+        <tr><td class="mono">20070815 arrivee ferry.JPG</td><td class="path-cell" title="2007-08-25 retour">2007-08-25 retour</td><td>image</td><td class="mono" data-value="2007-08-15">2007-08-15</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="3110920">3.0 MB</td></tr>
+        <tr><td class="mono">2007-08-25-arrivee ferry.jpg</td><td class="path-cell" title="2007-08-25 retour">2007-08-25 retour</td><td>image</td><td class="mono" data-value="2007-08-25">2007-08-25</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="3101004">3.0 MB</td></tr>
+        <tr><td class="mono">b.jpg</td><td class="path-cell" title="2009 albums">2009 albums</td><td>image</td><td class="mono" data-value="2009-00-00"><span class="prec">2009<i>-··-··</i></span></td><td class="muted">year</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="1820330">1.7 MB</td></tr>
+        <tr><td class="mono">IMG_0007.JPG</td><td class="path-cell" title="2009-06 Corsica">2009-06 Corsica</td><td>image</td><td class="mono" data-value="2009-06-21">2009-06-21</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3560210">3.4 MB</td></tr>
+        <tr><td class="mono">IMG_0042.jpg</td><td class="path-cell" title="2010-05 corse">2010-05 corse</td><td>image</td><td class="mono" data-value="2010-05-08">2010-05-08</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3421900">3.3 MB</td></tr>
+        <tr><td class="mono">photo.jpg</td><td class="path-cell" title="2010-08 fete/a">2010-08 fete/a</td><td>image</td><td class="mono" data-value="2010-08-00"><span class="prec">2010-08<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2100334">2.0 MB</td></tr>
+        <tr><td class="mono">photo.jpg</td><td class="path-cell" title="2010-08 fete/b">2010-08 fete/b</td><td>image</td><td class="mono" data-value="2010-08-00"><span class="prec">2010-08<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2144090">2.0 MB</td></tr>
+        <tr><td class="mono">plage.jpg</td><td class="path-cell" title="2011-06 corse">2011-06 corse</td><td>image</td><td class="mono" data-value="2011-06-00"><span class="prec">2011-06<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2290871">2.2 MB</td></tr>
+        <tr><td class="mono">a.jpg</td><td class="path-cell" title="2011-06-14 rando">2011-06-14 rando</td><td>image</td><td class="mono" data-value="2011-06-14">2011-06-14</td><td class="muted">day</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="2780114">2.7 MB</td></tr>
+        <tr><td class="mono">SANY0032.jpg</td><td class="path-cell" title="2012-06 Ouessant">2012-06 Ouessant</td><td>image</td><td class="mono" data-value="2012-06-03">2012-06-03</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3901224">3.7 MB</td></tr>
+        <tr><td class="mono">DSCN2043.JPG</td><td class="path-cell" title="2013-07 Sicily">2013-07 Sicily</td><td>image</td><td class="mono" data-value="2013-07-19">2013-07-19</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="4120300">3.9 MB</td></tr>
+        <tr><td class="mono">received_862666160799536.jpg</td><td class="path-cell" title="2015-07 Barcelona">2015-07 Barcelona</td><td>image</td><td class="mono" data-value="2015-07-00"><span class="prec">2015-07<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="612004">598 KB</td></tr>
+        <tr><td class="mono">note-20991231.jpg</td><td class="path-cell" title="2015-08 wedding">2015-08 wedding</td><td>image</td><td class="mono" data-value="2015-08-00"><span class="prec">2015-08<i>-··</i></span></td><td class="muted">month</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="1002331">979 KB</td></tr>
+        <tr><td class="mono">IMG_8801.CR2</td><td class="path-cell" title="2016-05 Iceland">2016-05 Iceland</td><td>image</td><td class="mono" data-value="2016-05-27">2016-05-27</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="24120331">23.0 MB</td></tr>
+        <tr><td class="mono">IMG_1234.JPG</td><td class="path-cell" title="2018-09 Rome">2018-09 Rome</td><td>image</td><td class="mono" data-value="2018-09-14">2018-09-14</td><td class="muted">day</td><td><span class="source">sidecar</span></td><td class="num" data-value="4802110">4.6 MB</td></tr>
+        <tr><td class="mono">IMG_2233.HEIC</td><td class="path-cell" title="2019-08 Algarve">2019-08 Algarve</td><td>image</td><td class="mono" data-value="2019-08-02">2019-08-02</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="2710456">2.6 MB</td></tr>
+        <tr><td class="mono">numérisation 08.jpg</td><td class="path-cell" title="22 JUILLET 2002">22 JUILLET 2002</td><td>image</td><td class="mono" data-value="2002-07-22">2002-07-22</td><td class="muted">day</td><td><span class="source source-weak">folder-name</span></td><td class="num" data-value="5400921">5.2 MB</td></tr>
+        <tr><td class="mono">MVI_2468.AVI</td><td class="path-cell" title="CANON">CANON</td><td>video</td><td class="mono" data-value="2006-03-11">2006-03-11</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="52428800">50.0 MB</td></tr>
+        <tr><td class="mono">MVI_3312.AVI</td><td class="path-cell" title="CANON">CANON</td><td>video</td><td class="mono" data-value="2006-03-11">2006-03-11</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="48200113">46.0 MB</td></tr>
+        <tr><td class="mono">WP_20140713_15_22_30_Pro.jpg</td><td class="path-cell" title="Camera Roll">Camera Roll</td><td>image</td><td class="mono" data-value="2014-07-13">2014-07-13</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="2310450">2.2 MB</td></tr>
+        <tr><td class="mono">2013-08-15 12.34.56-2.jpg</td><td class="path-cell" title="Camera Uploads">Camera Uploads</td><td>image</td><td class="mono" data-value="2013-08-15">2013-08-15</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="2410220">2.3 MB</td></tr>
+        <tr><td class="mono">IMG_20150704_193000.jpg</td><td class="path-cell" title="DCIM/Camera">DCIM/Camera</td><td>image</td><td class="mono" data-value="2015-07-04">2015-07-04</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="3320110">3.2 MB</td></tr>
+        <tr><td class="mono">scan.jpg</td><td class="path-cell" title="Originals">Originals</td><td>image</td><td class="muted">—</td><td class="muted">—</td><td><span class="source source-weak">none</span></td><td class="num" data-value="4100221">3.9 MB</td></tr>
+        <tr><td class="mono">Screenshot_2024-02-15-08-13-22-123_com.example.app.png</td><td class="path-cell" title="Pictures/Screenshots">Pictures/Screenshots</td><td>image</td><td class="mono" data-value="2024-02-15">2024-02-15</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="812330">793 KB</td></tr>
+        <tr><td class="mono">1974-08-11 grandparents house 03.jpg</td><td class="path-cell" title="Scans">Scans</td><td>image</td><td class="mono" data-value="1974-08-11">1974-08-11</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="5230110">5.0 MB</td></tr>
+        <tr><td class="mono">2003-07-14 - 1998 reunion rescan.jpg</td><td class="path-cell" title="Scans">Scans</td><td>image</td><td class="mono" data-value="2003-07-14">2003-07-14</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="5100443">4.9 MB</td></tr>
+        <tr><td class="mono">IMG-20161013-WA0001.jpg</td><td class="path-cell" title="WhatsApp">WhatsApp</td><td>image</td><td class="mono" data-value="2016-10-13">2016-10-13</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="221904">217 KB</td></tr>
+        <tr><td class="mono">2011 - family reunion.jpg</td><td class="path-cell" title="albums">albums</td><td>image</td><td class="mono" data-value="2011-00-00"><span class="prec">2011<i>-··-··</i></span></td><td class="muted">year</td><td><span class="source">file-name</span></td><td class="num" data-value="3010220">2.9 MB</td></tr>
+        <tr><td class="mono">2011-12 christmas market 08.jpg</td><td class="path-cell" title="divers">divers</td><td>image</td><td class="mono" data-value="2011-12-00"><span class="prec">2011-12<i>-··</i></span></td><td class="muted">month</td><td><span class="source">file-name</span></td><td class="num" data-value="2890113">2.8 MB</td></tr>
+        <tr><td class="mono">mystere.jpg</td><td class="path-cell" title="divers">divers</td><td>image</td><td class="muted">—</td><td class="muted">—</td><td><span class="source source-weak">none</span></td><td class="num" data-value="1900220">1.8 MB</td></tr>
+        <tr><td class="mono">MVI_0031.AVI</td><td class="path-cell" title="holidays">holidays</td><td>video</td><td class="mono" data-value="2008-07-30">2008-07-30</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="61200990">58.4 MB</td></tr>
+        <tr><td class="mono">MVI_0032.MOV</td><td class="path-cell" title="holidays">holidays</td><td>video</td><td class="mono" data-value="2008-07-30">2008-07-30</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="70120440">66.9 MB</td></tr>
+        <tr><td class="mono">suède juin 2004 045.jpg</td><td class="path-cell" title="numérisations">numérisations</td><td>image</td><td class="mono" data-value="2004-06-00"><span class="prec">2004-06<i>-··</i></span></td><td class="muted">month</td><td><span class="source">file-name</span></td><td class="num" data-value="5301002">5.1 MB</td></tr>
+        <tr><td class="mono">20080614_sunset_over_the_bay.jpg</td><td class="path-cell" title="scans">scans</td><td>image</td><td class="mono" data-value="2008-06-14">2008-06-14</td><td class="muted">day</td><td><span class="source">file-name</span></td><td class="num" data-value="2780921">2.7 MB</td></tr>
+        <tr><td class="mono">DSC_0009.JPG</td><td class="path-cell" title="vacances corse 2004">vacances corse 2004</td><td>image</td><td class="mono" data-value="2004-08-02">2004-08-02</td><td class="muted">day</td><td><span class="source">embedded-metadata</span></td><td class="num" data-value="3310400">3.2 MB</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+</body>
+</html>

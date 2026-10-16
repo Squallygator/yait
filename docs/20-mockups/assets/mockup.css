@@ -407,3 +407,11 @@ table.grid { width: 100%; border-collapse: collapse; }
 .notice li { padding: 6px 12px; border-top: 1px solid var(--border); }
 .notice li:first-child { border-top: 0; }
 .notice li::before { content: "\2139\00a0"; color: var(--warn-fg); font-weight: 700; }
+
+/* ---------- Date precision and weak sources ---------- */
+
+/* A partial date is an assumed imprecision, not a bug: unknown parts are shown as dots. */
+.prec i { font-style: normal; color: var(--text-muted); }
+/* Sources worth a second look (folder-name, none) get a stronger outline, text unchanged. */
+.source-weak { border-color: var(--warn-border); background: var(--warn-bg); color: var(--warn-fg); }
+.grid td.path-cell { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
