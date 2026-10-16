@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-12` — Mockup: Inventory grid **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-12-screen-inventory.md)
+  `docs/20-mockups/03-inventory.html` : 51 lignes aux noms réels du corpus, filtres, répartition par
+  source de date, dates partielles rendues avec des points, sources douteuses en pastille jaune,
+  export CSV. Styles `.prec` et `.source-weak` ajoutés. Vérification visuelle uniquement. Tag `US-00-12`.
+
 - ✅ `US-00-11` — Mockup: Collection summary **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-11-screen-collection-summary.md)
   `docs/20-mockups/02-collection-summary.html` : chemin complet non tronqué, volumétrie, alertes
   signalées sans être traitées, répartitions par extension et par type. Trois composants ajoutés
