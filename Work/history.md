@@ -6,6 +6,12 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-15` — Mockup: Collisions **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-15-screen-collisions.md)
+  `docs/20-mockups/06-collisions.html` : trois groupes tirés du corpus (la résolution tranche, copies
+  identiques départagées par le chemin, cas `Originals`), quatre critères dans l'ordre avec le critère
+  décisif marqué, suffixe et justification. Lignes d'exemple de la maquette 05 alignées. Aucune action
+  de changement de départage : aucune règle n'en prévoit. Vérification visuelle uniquement. Tag `US-00-15`.
+
 - ✅ `US-00-14` — Mockup: Rename plan, before and after **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-14-screen-rename-plan.md)
   `docs/20-mockups/05-rename-plan.html` : compteurs, horodatage et empreinte du plan figé, grille
   avant / après / motif en trois blocs (à renommer, conformes, sans date), bandeau de mode, actions
