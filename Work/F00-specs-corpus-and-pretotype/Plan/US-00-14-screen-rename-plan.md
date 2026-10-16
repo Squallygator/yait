@@ -1,6 +1,6 @@
 # US-00-14 — Mockup: Rename plan, before and after
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 14/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 14/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
