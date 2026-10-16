@@ -431,3 +431,14 @@ table.grid { width: 100%; border-collapse: collapse; }
 
 .why { margin: var(--gap) 0; padding: 8px 12px; background: var(--sim-bg); color: var(--sim-fg); border: 1px solid var(--sim-border); border-left-width: 4px; border-radius: var(--radius); }
 .why strong { display: block; margin-bottom: 2px; }
+
+/* ---------- Grid group headers and before/after cells ---------- */
+
+.grid tr.group th { background: var(--surface-sunken); color: var(--text); text-align: left; font-weight: 700; }
+.grid tr.group th .count { color: var(--text-muted); font-weight: 400; }
+.grid td.before { color: var(--text-muted); }
+.grid td.after { font-weight: 600; }
+.grid td.arrow { width: 24px; text-align: center; color: var(--text-muted); }
+.fingerprint { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--text-muted); overflow-wrap: anywhere; }
+/* A rename screen must never truncate a name: before/after cells and reasons wrap instead. */
+.grid td.before, .grid td.after, .grid td.reason { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Rename plan</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 05 — Rename plan</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<!-- Writing-mode variant (shown once the user opts in): replace the banner below with
+<div class="banner banner-sim" role="status" data-mode="write">
+  <span class="tag">Writing enabled</span>
+  <span>Applying this plan renames files in your collection. Every operation is journalled and can be undone.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: write</span>
+</div>
+-->
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection. This is a plan to review, not yet applied.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Rename plan</h1>
+
+<div class="cards">
+  <div class="card"><div class="label">To rename</div><div class="value">7 962</div></div>
+  <div class="card"><div class="label">Already compliant</div><div class="value">2 298</div></div>
+  <div class="card"><div class="label">No date</div><div class="value">322</div></div>
+  <div class="card"><div class="label">Collisions</div><div class="value">2</div></div>
+</div>
+
+<p class="muted" style="margin-bottom:0">Plan frozen on 2026-10-16 18:40:12 for
+  <span class="mono">E:\Archive\Imports\2007-08 Corse été</span>.</p>
+<p class="fingerprint" style="margin-top:2px">fingerprint sha256:9f3a6c1e0b27d4558a91f3c2e7d06b84a15cc9027e3b4d68f0a2175b9e4c71e</p>
+<p class="field-hint">Applying this plan renames exactly what is listed here. Before it starts, YAIT checks that
+  the folder tree has not changed since the plan was frozen, and refuses to continue if it has.</p>
+
+<p style="margin-top:var(--gap)">
+  <button class="btn btn-primary" type="button" disabled>Apply plan</button>
+  <button class="btn" type="button">Export plan for offline review</button>
+  <span class="muted">Applying is unavailable in dry-run. Enable writing to proceed.</span>
+</p>
+
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Before</th>
+        <th></th>
+        <th>After</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="group"><th colspan="4">To rename <span class="count">(showing 11 of 7 962)</span></th></tr>
+      <tr>
+        <td class="mono before">Scans/1974-08-11 grandparents house 03.jpg</td><td class="arrow">→</td>
+        <td class="mono after">Scans/1974-08-11-grandparents house 03.jpg</td>
+        <td class="reason"><span class="source">file-name</span> date typed in the name, moved to the front</td>
+      </tr>
+      <tr>
+        <td class="mono before">Scans/2003-07-14 - 1998 reunion rescan.jpg</td><td class="arrow">→</td>
+        <td class="mono after">Scans/2003-07-14-1998 reunion rescan.jpg</td>
+        <td class="reason"><span class="source">file-name</span> only the date that was used is removed; “1998” is kept</td>
+      </tr>
+      <tr>
+        <td class="mono before">scans/20080614_sunset_over_the_bay.jpg</td><td class="arrow">→</td>
+        <td class="mono after">scans/2008-06-14-sunset_over_the_bay.jpg</td>
+        <td class="reason"><span class="source">file-name</span> date typed in the name</td>
+      </tr>
+      <tr>
+        <td class="mono before">2007-08 corse/IMG_0042.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2007-08 corse/2007-08-14-IMG_0042.jpg</td>
+        <td class="reason"><span class="source">embedded-metadata</span> camera date, inside the folder's month</td>
+      </tr>
+      <tr>
+        <td class="mono before">2009-06 Corsica/IMG_0007.JPG</td><td class="arrow">→</td>
+        <td class="mono after">2009-06 Corsica/2009-06-00-IMG_0007.JPG</td>
+        <td class="reason"><span class="source source-weak">folder-name</span> camera date 2000-01-01 ignored: clock never set</td>
+      </tr>
+      <tr>
+        <td class="mono before">2004-07 corse/Étretat &amp; la plage (2).jpg</td><td class="arrow">→</td>
+        <td class="mono after">2004-07 corse/2004-07-00-Étretat &amp; la plage (2).jpg</td>
+        <td class="reason"><span class="source source-weak">folder-name</span> accents and “&amp;” kept as they are</td>
+      </tr>
+      <tr>
+        <td class="mono before">Bretagne 2011/coastal path.jpg</td><td class="arrow">→</td>
+        <td class="mono after">Bretagne 2011/2011-00-00-coastal path.jpg</td>
+        <td class="reason"><span class="source source-weak">folder-name</span> year only: month and day unknown</td>
+      </tr>
+      <tr>
+        <td class="mono before">Bretagne 2011/Originals/coastal path.jpg</td><td class="arrow">→</td>
+        <td class="mono after">Bretagne 2011/Originals/2011-00-00-coastal path-original.jpg</td>
+        <td class="reason"><span class="source source-weak">folder-name</span> suffix “-original”: same date and name as the file one level up</td>
+      </tr>
+      <tr>
+        <td class="mono before">2010-08 fete/a/photo.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2010-08 fete/a/2010-08-00-photo.jpg</td>
+        <td class="reason"><span class="source source-weak">collision</span> same target name as <span class="mono">b/photo.jpg</span></td>
+      </tr>
+      <tr>
+        <td class="mono before">2010-08 fete/b/photo.jpg</td><td class="arrow">→</td>
+        <td class="mono after">2010-08 fete/b/2010-08-00-photo.jpg</td>
+        <td class="reason"><span class="source source-weak">collision</span> same target name as <span class="mono">a/photo.jpg</span></td>
+      </tr>
+    </tbody>
+
+    <tbody>
+      <tr class="group"><th colspan="4">Already compliant — nothing to do <span class="count">(showing 1 of 2 298)</span></th></tr>
+      <tr>
+        <td class="mono before">2007-08-25 retour/2007-08-25-arrivee ferry.jpg</td><td class="arrow">=</td>
+        <td class="mono">unchanged</td>
+        <td class="reason"><span class="source">file-name</span> name already follows the convention</td>
+      </tr>
+    </tbody>
+
+    <tbody>
+      <tr class="group"><th colspan="4">No date found — left as they are <span class="count">(showing 2 of 322)</span></th></tr>
+      <tr>
+        <td class="mono before">divers/mystere.jpg</td><td class="arrow">=</td>
+        <td class="mono">unchanged</td>
+        <td class="reason"><span class="source">none</span> no usable date in the name, folders or metadata</td>
+      </tr>
+      <tr>
+        <td class="mono before">Originals/scan.jpg</td><td class="arrow">=</td>
+        <td class="mono">unchanged</td>
+        <td class="reason"><span class="source">none</span> no usable date in the name, folders or metadata</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="muted">Two files would receive the same name: resolve them on the <a href="06-collisions.html">collisions screen</a> before applying.</p>
+
+</main>
+</body>
+</html>
