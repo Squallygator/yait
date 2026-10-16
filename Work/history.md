@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-16` — Mockup: Organize and flatten **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-16-screen-organize.md)
+  `docs/20-mockups/07-organize.html` : sélecteur arborescence / à plat, répartition prévisionnelle,
+  sans-date dans `_undated/` ou laissés sur place selon le mode, dates à l'année seule à la racine de
+  l'année, état bloqué par les doublons de noms. Vérification visuelle uniquement. Tag `US-00-16`.
+
 - ✅ `US-00-15` — Mockup: Collisions **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-15-screen-collisions.md)
   `docs/20-mockups/06-collisions.html` : trois groupes tirés du corpus (la résolution tranche, copies
   identiques départagées par le chemin, cas `Originals`), quatre critères dans l'ordre avec le critère

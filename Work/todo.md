@@ -24,7 +24,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ✅ `US-00-13` Screen — Media detail [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-13-screen-media-detail.md) **(16/10/2026)**
   - ✅ `US-00-14` Screen — Rename plan [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-14-screen-rename-plan.md) **(16/10/2026)**
   - ✅ `US-00-15` Screen — Collisions [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-15-screen-collisions.md) **(16/10/2026)**
-  - ⌛ `US-00-16` Screen — Organize [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-16-screen-organize.md)
+  - ✅ `US-00-16` Screen — Organize [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-16-screen-organize.md) **(16/10/2026)**
   - ⬜ `US-00-17` Screen — Metadata editor [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-17-screen-metadata-editor.md)
   - ⬜ `US-00-18` Screen — Job progress [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-18-screen-job-progress.md)
   - ⬜ `US-00-19` Screen — History and undo [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-19-screen-history-undo.md)
