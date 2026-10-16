@@ -26,10 +26,10 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ✅ `US-00-15` Screen — Collisions [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-15-screen-collisions.md) **(16/10/2026)**
   - ✅ `US-00-16` Screen — Organize [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-16-screen-organize.md) **(16/10/2026)**
   - ✅ `US-00-17` Screen — Metadata editor [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-17-screen-metadata-editor.md) **(16/10/2026)**
-  - ⬜ `US-00-18` Screen — Job progress [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-18-screen-job-progress.md)
-  - ⬜ `US-00-19` Screen — History and undo [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-19-screen-history-undo.md)
-  - ⬜ `US-00-20` Screens — Empty and error states [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-20-screen-empty-and-error-states.md)
-  - ⬜ `US-00-21` Clickable prototype [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md)
+  - ⌛ `US-00-18` Screen — Job progress [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-18-screen-job-progress.md)
+  - ⌛ `US-00-19` Screen — History and undo [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-19-screen-history-undo.md)
+  - ⌛ `US-00-20` Screens — Empty and error states [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-20-screen-empty-and-error-states.md)
+  - ⌛ `US-00-21` Clickable prototype [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md)
   - ⬜ `US-00-22` Pretotyping review **(point d'arrêt)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-22-pretotyping-review.md)
   - ⬜ `US-00-23` Sample generator — GPS date field + nested archives *(chaîne corpus, hors point d'arrêt)* [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-23-sample-generator-gps-and-nesting.md)
 
