@@ -1,6 +1,6 @@
 # US-00-11 — Mockup: Collection summary
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 11/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 11/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
