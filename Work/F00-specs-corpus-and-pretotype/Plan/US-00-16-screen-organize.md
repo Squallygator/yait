@@ -1,6 +1,6 @@
 # US-00-16 — Mockup: Organize and flatten
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 16/22** · Statut : ⬜
+> **Feature** F00 — Specs corpus & pretotype · **Lot 16/22** · Statut : ⌛
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 
