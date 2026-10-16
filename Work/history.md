@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-14` — Mockup: Rename plan, before and after **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-14-screen-rename-plan.md)
+  `docs/20-mockups/05-rename-plan.html` : compteurs, horodatage et empreinte du plan figé, grille
+  avant / après / motif en trois blocs (à renommer, conformes, sans date), bandeau de mode, actions
+  appliquer et exporter. Les noms ne sont jamais tronqués. Vérification visuelle uniquement. Tag `US-00-14`.
+
 - ✅ `US-00-13` — Mockup: Media detail, why this date **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-13-screen-media-detail.md)
   `docs/20-mockups/04-media-detail.html` : deux variantes (tout concorde ; métadonnée écartée comme
   horloge d'appareil fausse, cas `UC-19`), tableau des sources avec leur état, encart d'arbitrage.
