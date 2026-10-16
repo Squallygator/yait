@@ -469,3 +469,23 @@ table.grid { width: 100%; border-collapse: collapse; }
 .tree li.nested { display: block; padding: 0; }
 .tree .count { text-align: right; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .tree .note { font-family: var(--font-ui); color: var(--text-muted); }
+
+/* ---------- Metadata editor ---------- */
+
+/* T O C pills: a filled pill is set in the file, a dashed one is empty (shape + letter, not colour alone). */
+.toc { display: inline-flex; gap: 2px; vertical-align: middle; }
+.toc-pill { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; font: 700 10px / 1 var(--font-mono); border: 1px dashed var(--text-muted); border-radius: 2px; color: var(--text-muted); }
+.toc-pill.on { border-style: solid; border-color: var(--text); background: var(--text); color: var(--surface-raised); }
+.mismatch { font-weight: 700; color: var(--st-diff-fg); background: var(--st-diff-bg); padding: 0 4px; border-radius: 2px; }
+.grid td.vp { white-space: normal; overflow-wrap: anywhere; max-width: 260px; }
+.grid td.vp-arrow { width: 20px; padding: 0; text-align: center; color: var(--text-muted); }
+.grid tr.diverge td:first-child { box-shadow: inset 3px 0 0 var(--st-diff-fg); }
+.bulk { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap); margin: var(--gap) 0; padding: 6px 8px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); }
+.bulk label { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); }
+.bulk input[type="text"] { padding: 4px 8px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.bulk .spacer { margin-left: auto; }
+
+/* ---------- Dialog (static in the mockups) ---------- */
+
+.dialog { max-width: 520px; padding: 12px 16px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); }
+.grid td.vp.mono { white-space: nowrap; }
