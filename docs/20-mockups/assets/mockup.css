@@ -549,3 +549,33 @@ a.btn:not(.btn-primary):not(.btn-danger) { color: var(--text); }
 .grid.editor td.vp.cur { max-width: 150px; }
 .grid.editor input.val { min-width: 175px; }
 .grid.editor th, .grid.editor td { padding: 0 5px; }
+
+/* ---------- Stepper, breadcrumb and step bar (application navigation) ---------- */
+
+/* The stepper is part of the application, unlike .mocknav. Each state has a symbol and a word,
+   so colour is never the only signal. Done steps are links: you can always go back. */
+.stepper { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap) 16px; padding: 6px 12px; background: var(--surface-raised); border-bottom: 1px solid var(--border); }
+.stepper ol { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.stepper li { display: flex; align-items: center; gap: 6px; padding: 2px 10px; border: 1px solid transparent; border-radius: var(--radius); }
+.stepper li:not(:first-child)::before { content: "\203A"; margin-right: 4px; color: var(--text-muted); }
+.stepper .mark { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; font: 700 var(--fs-small) / 1 var(--font-mono); border: 1px solid currentColor; border-radius: 50%; }
+.stepper .done a { display: inline-flex; align-items: center; gap: 6px; color: var(--st-ok-fg); }
+.stepper .done .mark { background: var(--st-ok-bg); }
+.stepper .current { font-weight: 700; border-color: var(--accent); background: var(--surface-sunken); }
+.stepper .current .mark { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.stepper .todo, .stepper .blocked { color: var(--text-muted); }
+.stepper .todo .mark { border-style: dashed; }
+.stepper .blocked { cursor: not-allowed; }
+.stepper .blocked .mark { border-color: var(--warn-border); color: var(--warn-fg); background: var(--warn-bg); }
+.stepper .opt { font-size: var(--fs-small); font-style: italic; color: var(--text-muted); }
+.stepper .aside { display: flex; align-items: center; gap: 16px; margin-left: auto; min-width: 0; }
+.stepper .aside a[aria-current="page"] { font-weight: 700; }
+.stepper .context { max-width: 36ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--fs-small); }
+
+.crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--gap); color: var(--text-muted); }
+.crumbs [aria-current="page"] { color: var(--text); font-weight: 600; }
+
+.stepbar { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap); margin-top: 24px; padding: 8px 12px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); }
+.stepbar .spacer { margin-left: auto; }
+.stepbar .reason { color: var(--warn-fg); font-weight: 600; }
+.stepbar .reason::before { content: "\2298\00a0"; }

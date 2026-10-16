@@ -262,6 +262,13 @@
   <span class="dirty">✎ 2 unsaved edits</span>
 </div>
 
+<h2>Stepper, breadcrumb and step bar</h2>
+<p class="muted">Application navigation. Done steps are links; blocked steps say why; the optional step is marked.</p>
+<nav class="stepper" aria-label="Steps"><ol><li class="done"><a href="#"><span class="mark">✓</span> Collection</a></li><li class="done"><a href="#"><span class="mark">✓</span> Scan</a></li><li class="done"><a href="#"><span class="mark">✓</span> Inventory</a></li><li class="current" aria-current="step"><span class="mark">●</span> Rename</li><li class="blocked" title="Blocked until the rename plan is applied"><span class="mark">⊘</span> Organize</li><li class="todo"><span class="mark">○</span> Metadata <span class="opt">(optional)</span></li></ol><span class="aside"><span class="context"><span class="muted">Collection</span> <span class="mono">E:\Archive\Imports7-08 Corse été</span></span><a href="#">History</a></span></nav>
+<p></p>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="#">Rename plan</a> <span>›</span> <span aria-current="page">Collisions</span></nav>
+<div class="stepbar"><a class="btn" href="#">← Back to Rename plan</a><span class="spacer"></span><span class="reason">Blocked: apply the rename plan first</span><button class="btn btn-primary" type="button" disabled>Next: Organize →</button></div>
+
 <h2>Empty states</h2>
 <div class="empty">
   <strong>No collection selected</strong>

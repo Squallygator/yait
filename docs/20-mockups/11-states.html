@@ -8,7 +8,7 @@
 <script type="module" src="assets/mockup.js"></script>
 </head>
 <body>
-<nav class="mocknav" aria-label="Mockup navigation"><span class="label">Mockup navigation, not part of the application</span><a href="index.html">Index</a><span class="spacer"></span><span class="muted">Off the main path</span></nav>
+<nav class="mocknav" aria-label="Mockup navigation"><span class="label">Mockup navigation, not part of the application</span><a href="index.html">Index</a></nav>
 
 <header class="topbar">
   <span class="brand">YAIT</span>
@@ -22,6 +22,7 @@
   <span class="spacer"></span>
   <span class="mono">mode: dry-run</span>
 </div>
+<nav class="stepper" aria-label="Steps"><ol><li class="done"><a href="02-collection-summary.html"><span class="mark">✓</span> Collection</a><span class="visually-hidden"> (done)</span></li><li class="current" aria-current="step"><span class="mark">●</span> Scan<span class="visually-hidden"> (current step)</span></li><li class="todo"><span class="mark">○</span> Inventory<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Rename<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Organize<span class="visually-hidden"> (not reached yet)</span></li><li class="todo"><span class="mark">○</span> Metadata <span class="opt">(optional)</span><span class="visually-hidden"> (not reached yet)</span></li></ol><span class="aside"><span class="context" title="E:\Archive\Imports\2007-08 Corse été"><span class="muted">Collection</span> <span class="mono">E:\Archive\Imports\2007-08 Corse été</span></span><a href="10-history-undo.html">History</a></span></nav>
 
 <main class="page">
 
@@ -89,6 +90,7 @@
   <div class="kind">Problem</div>
   <h3>YAIT cannot reach its service</h3>
   <p>The program running in the background has stopped, so this page can no longer ask it anything. Nothing was changed on your disk.</p>
+  <p class="muted">While the service is unreachable the step bar at the top of the page is hidden: there is no step to be in.</p>
   <p class="next">Start YAIT again from its launcher, then reload this page. <button class="btn" type="button">Reload the page</button></p>
 </div>
 <p></p>
