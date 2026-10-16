@@ -1,6 +1,6 @@
 # US-00-13 — Mockup: Media detail, why this date
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 13/22** · Statut : ⌛
+> **Feature** F00 — Specs corpus & pretotype · **Lot 13/22** · Statut : ✅
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 

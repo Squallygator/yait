@@ -6,6 +6,12 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-13` — Mockup: Media detail, why this date **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-13-screen-media-detail.md)
+  `docs/20-mockups/04-media-detail.html` : deux variantes (tout concorde ; métadonnée écartée comme
+  horloge d'appareil fausse, cas `UC-19`), tableau des sources avec leur état, encart d'arbitrage.
+  Nom cible `2009-06-00-IMG_0007.JPG` conservé pour l'instant : le format d'une date partielle dans
+  un nom cible n'est fixé par aucune règle. Vérification visuelle uniquement. Tag `US-00-13`.
+
 - ✅ `US-00-12` — Mockup: Inventory grid **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-12-screen-inventory.md)
   `docs/20-mockups/03-inventory.html` : 51 lignes aux noms réels du corpus, filtres, répartition par
   source de date, dates partielles rendues avec des points, sources douteuses en pastille jaune,
