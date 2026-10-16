@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Media detail</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 04 — Media detail</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Why this date?</h1>
+<p class="muted">Two variants of the same panel: everything agrees, then one source is discarded.</p>
+
+<!-- ===== Variant A: everything agrees ===== -->
+<h2>Variant A — all sources agree</h2>
+<div class="layout">
+  <aside class="side-panel" aria-label="Media detail">
+    <div class="thumb">thumbnail</div>
+    <h3>IMG_0042.jpg</h3>
+    <dl>
+      <dt>Path</dt><dd class="mono">2007-08 corse/IMG_0042.jpg</dd>
+      <dt>Status</dt><dd><span class="status status-ok">C</span> Compliant</dd>
+      <dt>Size</dt><dd>3.2 MB · 3264 × 2448</dd>
+    </dl>
+    <h3>Existing metadata</h3>
+    <dl>
+      <dt>Title</dt><dd class="muted">—</dd>
+      <dt>Subject</dt><dd class="muted">—</dd>
+      <dt>Comment</dt><dd class="muted">—</dd>
+    </dl>
+    <h3>Proposed name</h3>
+    <p class="mono">2007-08-14-IMG_0042.jpg</p>
+  </aside>
+  <div class="main">
+    <div class="grid-wrap">
+      <table class="grid">
+        <thead>
+          <tr><th>Source</th><th>Where</th><th>Date</th><th>State</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="source">file-name</span></td><td class="mono">IMG_0042.jpg</td><td class="muted">—</td><td><span class="cstate cstate-absent">Absent</span></td></tr>
+          <tr><td><span class="source source-weak">folder-name</span></td><td class="mono">2007-08 corse</td><td class="mono">2007-08<i class="muted">-··</i></td><td><span class="cstate cstate-dropped">Discarded</span> <span class="muted">less precise</span></td></tr>
+          <tr><td><span class="source">embedded-metadata</span></td><td class="mono">DateTimeOriginal</td><td class="mono">2007-08-14 16:02:41</td><td><span class="cstate cstate-kept">Retained</span></td></tr>
+          <tr><td><span class="source">sidecar</span></td><td class="mono">IMG_0042.jpg.json</td><td class="muted">—</td><td><span class="cstate cstate-absent">Absent</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="why"><strong>Why 2007-08-14</strong>
+      The photo's own timestamp falls inside the month named by its folder, and it is more precise, so it is kept.</div>
+  </div>
+</div>
+
+<!-- ===== Variant B: a source is discarded ===== -->
+<h2>Variant B — a source is discarded</h2>
+<div class="layout">
+  <aside class="side-panel" aria-label="Media detail">
+    <div class="thumb">thumbnail</div>
+    <h3>IMG_0007.JPG</h3>
+    <dl>
+      <dt>Path</dt><dd class="mono">2009-06 Corsica/IMG_0007.JPG</dd>
+      <dt>Status</dt><dd><span class="status status-diff">D</span> Divergent</dd>
+      <dt>Size</dt><dd>3.5 MB · 3264 × 2448</dd>
+    </dl>
+    <h3>Existing metadata</h3>
+    <dl>
+      <dt>Title</dt><dd class="muted">—</dd>
+      <dt>Subject</dt><dd class="muted">—</dd>
+      <dt>Comment</dt><dd class="muted">—</dd>
+    </dl>
+    <h3>Proposed name</h3>
+    <p class="mono">2009-06-00-IMG_0007.JPG</p>
+  </aside>
+  <div class="main">
+    <div class="grid-wrap">
+      <table class="grid">
+        <thead>
+          <tr><th>Source</th><th>Where</th><th>Date</th><th>State</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="source">file-name</span></td><td class="mono">IMG_0007.JPG</td><td class="muted">—</td><td><span class="cstate cstate-absent">Absent</span></td></tr>
+          <tr><td><span class="source source-weak">folder-name</span></td><td class="mono">2009-06 Corsica</td><td class="mono">2009-06<i class="muted">-··</i></td><td><span class="cstate cstate-kept">Retained</span></td></tr>
+          <tr class="dropped"><td><span class="source">embedded-metadata</span></td><td class="mono">DateTimeOriginal</td><td class="mono">2000-01-01 00:00:00</td><td><span class="cstate cstate-dropped">Discarded</span></td></tr>
+          <tr><td><span class="source">sidecar</span></td><td class="mono">IMG_0007.JPG.json</td><td class="muted">—</td><td><span class="cstate cstate-absent">Absent</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="why"><strong>Why June 2009, not 2000</strong>
+      The camera says 1 January 2000, which is nine years before the folder's June 2009. A camera
+      whose clock was never set stamps that same wrong date on everything, so the folder's date is
+      kept and the day stays unknown.</div>
+  </div>
+</div>
+
+</main>
+</body>
+</html>
