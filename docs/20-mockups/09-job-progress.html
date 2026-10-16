@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Job progress</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 09 — Job progress</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: this scan only reads your files. Nothing is written to your collection.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Scanning the collection</h1>
+<p class="mono" style="overflow-wrap:anywhere;margin-top:0">E:\Archive\Imports\2007-08 Corse été\Appareil photo et scans\Non triés\À revoir plus tard\Originaux</p>
+<p class="muted">Three states of the same screen: running, interrupted, finished.</p>
+
+<!-- ===== Variant 1: running ===== -->
+<h2>1 — Running</h2>
+<div class="progress">
+  <progress max="10582" value="6340" aria-label="Scan progress">60%</progress>
+  <span class="label">6 340 / 10 582 files</span>
+</div>
+<p style="margin:6px 0 2px">Now reading <span class="mono">2007-08 corse/IMG_0042.jpg</span></p>
+<p class="muted" style="margin:0">Elapsed 2 min 14 s · about 1 min 30 s left. The estimate is rough: it moves with the speed of the disk, and is not shown until 5 % of the files are done.</p>
+
+<h3>Notable events</h3>
+<ul class="log" aria-label="Notable events">
+  <li><span class="time">0:41</span><span class="source">unreadable</span><span><span class="mono">damaged/corrupt-scan.jpg</span> could not be read as an image. It is listed, not skipped silently.</span></li>
+  <li><span class="time">0:41</span><span class="source">empty file</span><span><span class="mono">damaged/empty-file.jpg</span> is 0 bytes.</span></li>
+  <li><span class="time">1:02</span><span class="source">archive not opened</span><span><span class="mono">backups/holiday-photos.zip</span>: archives are counted, their contents are not searched.</span></li>
+  <li><span class="time">1:18</span><span class="source">date discarded</span><span><span class="mono">2009-06 Corsica/IMG_0007.JPG</span>: camera date 2000-01-01 ignored, the folder says June 2009.</span></li>
+  <li><span class="time">1:55</span><span class="source">companion ignored</span><span><span class="mono">2018-09 Rome/IMG_1234.JPG.json</span> is not read as a date source.</span></li>
+</ul>
+<p class="field-hint">Only what deserves attention is listed: 5 events so far. Ordinary files do not appear here.</p>
+
+<p>
+  <button class="btn btn-danger" type="button">Stop the scan</button>
+  <span class="muted">Stopping keeps everything already read and starts nothing new.</span>
+</p>
+
+<!-- ===== Variant 2: interrupted ===== -->
+<h2>2 — Interrupted</h2>
+<div class="banner banner-warn" role="status">
+  <span class="tag">Stopped</span>
+  <span>The scan was stopped at 6 340 of 10 582 files. Nothing was written to your collection.</span>
+</div>
+<p></p>
+<div class="cards">
+  <div class="card"><div class="label">Done, result kept</div><div class="value">6 340</div></div>
+  <div class="card"><div class="label">Not started</div><div class="value">4 242</div></div>
+  <div class="card"><div class="label">Notable events</div><div class="value">5</div></div>
+</div>
+<p class="field-hint">The 6 340 files already read keep their result. The other 4 242 have not been touched or looked at.
+  Starting again resumes from where it stopped and does not read the same files twice.</p>
+<p>
+  <button class="btn btn-primary" type="button">Resume the scan</button>
+  <a class="btn" href="03-inventory.html">See the partial results (6 340 files)</a>
+</p>
+
+<!-- ===== Variant 3: finished ===== -->
+<h2>3 — Finished</h2>
+<div class="progress">
+  <progress max="10582" value="10582" aria-label="Scan progress">100%</progress>
+  <span class="label">10 582 / 10 582 files</span>
+</div>
+<p class="muted" style="margin:6px 0">Finished in 3 min 52 s.</p>
+<div class="cards">
+  <div class="card"><div class="label">Files read</div><div class="value">10 582</div></div>
+  <div class="card"><div class="label">With a date</div><div class="value">10 260</div></div>
+  <div class="card"><div class="label">Without a date</div><div class="value">322</div></div>
+  <div class="card"><div class="label">Notable events</div><div class="value">14</div></div>
+</div>
+<p style="margin-top:var(--gap)">
+  <a class="btn btn-primary" href="03-inventory.html">See the inventory</a>
+  <span class="muted">The 14 notable events are kept with the inventory.</span>
+</p>
+
+</main>
+</body>
+</html>
