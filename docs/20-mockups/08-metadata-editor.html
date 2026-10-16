@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Metadata editor</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 08 — Metadata editor</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your photos. Metadata is the one thing YAIT changes inside the files themselves.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Metadata editor</h1>
+
+<div class="legend">
+  <span><span class="status status-ok">C</span> Compliant: already as proposed (4 210)</span>
+  <span><span class="status status-fill">F</span> To fill: empty, a value is proposed (5 380)</span>
+  <span><span class="status status-diff">D</span> Divergent: has a value that differs (548)</span>
+  <span><span class="status status-none">N</span> Nothing to propose (122)</span>
+</div>
+<p class="field-hint"><strong>8 rows ticked</strong>: only ticked rows are written. Existing values are never replaced:
+  only empty fields are filled, so a divergent row keeps what a person typed.</p>
+
+<div class="filters">
+  <label>Status
+    <select aria-label="Status"><option>All</option><option>Compliant</option><option>To fill</option><option>Divergent</option><option>Nothing to propose</option></select>
+  </label>
+  <label>Folder
+    <select aria-label="Folder"><option>All folders</option><option>2004-09 Bretagne</option><option>Scans</option></select>
+  </label>
+  <label>Ticked
+    <select aria-label="Ticked"><option>All</option><option>Ticked</option><option>Not ticked</option></select>
+  </label>
+  <input type="search" placeholder="Search file names…" aria-label="Search">
+  <span class="spacer muted">Showing 14 of 10 260 images</span>
+</div>
+
+<div class="bulk">
+  <label>Label for all rows shown
+    <input type="text" list="known-labels" value="Bretagne" aria-label="Label to apply to all rows shown">
+  </label>
+  <datalist id="known-labels"><option value="Bretagne"><option value="Corsica"><option value="Rome"><option value="Sicily"></datalist>
+  <button class="btn" type="button">Apply to the 14 rows shown…</button>
+  <button class="btn" type="button">Tick all F rows</button>
+  <button class="btn" type="button" data-toggle-view>Detailed view (T, O, C separate)</button>
+  <span class="spacer"></span>
+  <button class="btn btn-primary" type="button" disabled>Write 8 ticked rows</button>
+</div>
+
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th></th>
+        <th data-sort>File name</th>
+        <th data-sort>Folder</th>
+        <th colspan="4">Title, subject, comment: in the file → proposal → status</th>
+        <th colspan="4">Capture date: in the file → proposal → status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><input type="checkbox" aria-label="Write menhir debout.jpg" checked></td><td class="mono">menhir debout.jpg</td><td class="path-cell" title="2004-09 Bretagne">2004-09 Bretagne</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Bretagne - menhir debout</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="prec">2004-09<i>-··</i></span></td><td><span class="status status-fill" title="To fill">F</span></td></tr>
+      <tr class="diverge"><td><input type="checkbox" aria-label="Write vieux scan.jpg"></td><td class="mono">vieux scan.jpg</td><td class="path-cell" title="2004-09 Bretagne">2004-09 Bretagne</td><td class="vp"><span class="toc"><span class="toc-pill on" title="Title: filled">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="mono">Carnac, la pierre debout</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Bretagne - vieux scan</span></td><td><span class="status status-diff" title="Divergent">D</span></td><td class="vp mono">2004-09-12 11:02:40</td><td class="vp-arrow">→</td><td class="vp mono">2004-09-12</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write IMG_0042.jpg" checked></td><td class="mono">IMG_0042.jpg</td><td class="path-cell" title="2007-08 corse">2007-08 corse</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">corse - 0042</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono">2007-08-14 16:02:41</td><td class="vp-arrow">→</td><td class="vp mono">2007-08-14</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write SANY0032.jpg" checked></td><td class="mono">SANY0032.jpg</td><td class="path-cell" title="2012-06 Ouessant">2012-06 Ouessant</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Ouessant - SANY0032</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono">2012-06-03 08:41:09</td><td class="vp-arrow">→</td><td class="vp mono">2012-06-03</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write le Forum.jpg" checked></td><td class="mono">le Forum.jpg</td><td class="path-cell" title="2005-08 Rome">2005-08 Rome</td><td class="vp"><span class="toc"><span class="toc-pill on" title="Title: filled">T</span><span class="toc-pill on" title="Subject: filled">O</span><span class="toc-pill on" title="Comment: filled">C</span></span> <span class="mono">Rome - le Forum</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Rome - le Forum</span></td><td><span class="status status-ok" title="Compliant">C</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="prec">2005-08<i>-··</i></span></td><td><span class="status status-fill" title="To fill">F</span></td></tr>
+      <tr class="diverge"><td><input type="checkbox" aria-label="Write IMG_0007.JPG"></td><td class="mono">IMG_0007.JPG</td><td class="path-cell" title="2009-06 Corsica">2009-06 Corsica</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Corsica - 0007</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono">2000-01-01 00:00:00</td><td class="vp-arrow">→</td><td class="vp mono"><span class="prec">2009-06<i>-··</i></span></td><td><span class="status status-diff" title="Divergent">D</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write plage.jpg" checked></td><td class="mono">plage.jpg</td><td class="path-cell" title="2003-07 corse">2003-07 corse</td><td class="vp"><span class="toc"><span class="toc-pill on" title="Title: filled">T</span><span class="toc-pill on" title="Subject: filled">O</span><span class="toc-pill on" title="Comment: filled">C</span></span> <span class="mono">corse - plage</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">corse - plage</span></td><td><span class="status status-ok" title="Compliant">C</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="prec">2003-07<i>-··</i></span></td><td><span class="status status-fill" title="To fill">F</span></td></tr>
+      <tr class="diverge"><td><input type="checkbox" aria-label="Write 1974-08-11 grandparents house 03.jpg"></td><td class="mono">1974-08-11 grandparents house 03.jpg</td><td class="path-cell" title="Scans">Scans</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Scans - grandparents house 03</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono">2009-03-20 14:05:11</td><td class="vp-arrow">→</td><td class="vp mono">1974-08-11</td><td><span class="status status-diff" title="Divergent">D</span></td></tr>
+      <tr class="diverge"><td><input type="checkbox" aria-label="Write coastal path.jpg"></td><td class="mono">coastal path.jpg</td><td class="path-cell" title="Bretagne 2011">Bretagne 2011</td><td class="vp"><span class="toc"><span class="toc-pill on" title="Title: filled">T</span><span class="toc-pill on" title="Subject: filled">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="mismatch" title="Title, subject and comment do not carry the same value">≠</span> <span class="muted">different values</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Bretagne - coastal path</span></td><td><span class="status status-diff" title="Divergent">D</span></td><td class="vp mono">2011-07-02 09:00:00</td><td class="vp-arrow">→</td><td class="vp mono">2011-07-02</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write corrupt-scan.jpg" disabled></td><td class="mono">corrupt-scan.jpg</td><td class="path-cell" title="damaged">damaged</td><td class="vp"><span class="muted">unreadable file</span></td><td class="vp-arrow">→</td><td class="vp"><span class="muted">—</span></td><td><span class="status status-none" title="Nothing to propose">N</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="muted">—</span></td><td><span class="status status-none" title="Nothing to propose">N</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write mystere.jpg" checked></td><td class="mono">mystere.jpg</td><td class="path-cell" title="divers">divers</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">divers - mystere</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="muted">—</span></td><td><span class="status status-none" title="Nothing to propose">N</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write plage.jpg" checked></td><td class="mono">plage.jpg</td><td class="path-cell" title="2006-05 disc 1">2006-05 disc 1</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">disc 1 - plage</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono">2006-05-14 10:00:00</td><td class="vp-arrow">→</td><td class="vp mono">2006-05-14</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Write scan.jpg" checked></td><td class="mono">scan.jpg</td><td class="path-cell" title="Originals">Originals</td><td class="vp"><span class="toc"><span class="toc-pill" title="Title: empty">T</span><span class="toc-pill" title="Subject: empty">O</span><span class="toc-pill" title="Comment: empty">C</span></span> <span class="muted">empty</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Originals - scan</span></td><td><span class="status status-fill" title="To fill">F</span></td><td class="vp mono"><span class="muted">—</span></td><td class="vp-arrow">→</td><td class="vp mono"><span class="muted">—</span></td><td><span class="status status-none" title="Nothing to propose">N</span></td></tr>
+      <tr class="diverge"><td><input type="checkbox" aria-label="Write DSCN2043.JPG"></td><td class="mono">DSCN2043.JPG</td><td class="path-cell" title="2013-07 Sicily">2013-07 Sicily</td><td class="vp"><span class="toc"><span class="toc-pill on" title="Title: filled">T</span><span class="toc-pill on" title="Subject: filled">O</span><span class="toc-pill on" title="Comment: filled">C</span></span> <span class="mono">Sicile 2013</span></td><td class="vp-arrow">→</td><td class="vp"><span class="mono">Sicily - 2043</span></td><td><span class="status status-diff" title="Divergent">D</span></td><td class="vp mono">2013-07-19 17:20:05</td><td class="vp-arrow">→</td><td class="vp mono">2013-07-19</td><td><span class="status status-ok" title="Compliant">C</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="field-hint">T O C = title, subject, comment. A filled pill is set in the file; a dashed one is empty.
+  <span class="mismatch">≠</span> means the three fields do not hold the same value. One label is written to all three.</p>
+
+<h2>Detailed view</h2>
+<p class="muted">The same two rows with title, subject and comment shown separately, for the rare file where they differ.</p>
+<div class="grid-wrap">
+  <table class="grid">
+    <thead>
+      <tr><th>File name</th><th colspan="4">Title</th><th colspan="4">Subject</th><th colspan="4">Comment</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">coastal path.jpg</td><td class="mono">Sentier côtier</td><td class="vp-arrow">→</td><td class="mono">Bretagne - coastal path</td><td><span class="status status-diff" title="Divergent">D</span></td><td class="mono">Bretagne 2011</td><td class="vp-arrow">→</td><td class="mono">Bretagne - coastal path</td><td><span class="status status-diff" title="Divergent">D</span></td><td class="muted">empty</td><td class="vp-arrow">→</td><td class="mono">Bretagne - coastal path</td><td><span class="status status-fill" title="To fill">F</span></td></tr>
+      <tr><td class="mono">DSCN2043.JPG</td><td class="mono">Sicile 2013</td><td class="vp-arrow">→</td><td class="mono">Sicily - 2043</td><td><span class="status status-diff" title="Divergent">D</span></td><td class="mono">Sicile 2013</td><td class="vp-arrow">→</td><td class="mono">Sicily - 2043</td><td><span class="status status-diff" title="Divergent">D</span></td><td class="mono">Sicile 2013</td><td class="vp-arrow">→</td><td class="mono">Sicily - 2043</td><td><span class="status status-diff" title="Divergent">D</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>State — confirming a bulk apply</h2>
+<div class="dialog" role="dialog" aria-label="Confirm bulk label">
+  <h3 style="margin-top:0;color:var(--text)">Apply “Bretagne” to the 14 rows shown?</h3>
+  <p>This sets the proposed label of every row shown to <span class="mono">Bretagne</span>. Nothing is written yet:
+    you still have to write the ticked rows afterwards.</p>
+  <ul>
+    <li>8 rows have empty fields: their proposal will change.</li>
+    <li>5 rows already hold a value: they keep it, existing values are never replaced.</li>
+    <li>1 row is unreadable: skipped.</li>
+  </ul>
+  <p>
+    <button class="btn btn-primary" type="button">Apply to 14 rows</button>
+    <button class="btn" type="button">Cancel</button>
+  </p>
+</div>
+
+</main>
+</body>
+</html>
