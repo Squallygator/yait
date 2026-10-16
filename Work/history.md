@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-10` — Mockup: Home, choosing a collection **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-10-screen-home.md)
+  `docs/20-mockups/01-home.html` : saisie du chemin, trois états d'erreur en variantes commentées,
+  trois collections récentes dont un chemin Windows très long. Deux composants ajoutés au design
+  system (champ de chemin, liste récente). Vérification visuelle uniquement. Tag `US-00-10`.
+
 - ✅ `US-00-09` — Design system for the mockups **(15/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-09-design-system.md)
   `docs/20-mockups/` : `mockup.css` (jetons, thème clair/sombre, grille dense, pastilles, bandeau
   simulation), `mockup.js` (bascule de thème, tri de colonne), `components.html`. Les quatre statuts
