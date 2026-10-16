@@ -415,3 +415,19 @@ table.grid { width: 100%; border-collapse: collapse; }
 /* Sources worth a second look (folder-name, none) get a stronger outline, text unchanged. */
 .source-weak { border-color: var(--warn-border); background: var(--warn-bg); color: var(--warn-fg); }
 .grid td.path-cell { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- Candidate state and arbitration explanation ---------- */
+
+/* Each state has a symbol and a word, so colour is never the only signal. */
+.cstate { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.cstate-kept { color: var(--st-ok-fg); }
+.cstate-kept::before { content: "\2713"; }
+.cstate-dropped { color: var(--st-diff-fg); }
+.cstate-dropped::before { content: "\2715"; }
+.cstate-absent { color: var(--text-muted); font-weight: 400; }
+.cstate-absent::before { content: "\2013"; }
+.grid tr.dropped td { color: var(--text-muted); }
+.grid tr.dropped td.mono { text-decoration: line-through; }
+
+.why { margin: var(--gap) 0; padding: 8px 12px; background: var(--sim-bg); color: var(--sim-fg); border: 1px solid var(--sim-border); border-left-width: 4px; border-radius: var(--radius); }
+.why strong { display: block; margin-bottom: 2px; }
