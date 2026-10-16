@@ -524,3 +524,28 @@ a.btn:not(.btn-primary):not(.btn-danger) { color: var(--text); }
 }
 .mocknav .label { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
 .mocknav .spacer { margin-left: auto; }
+
+/* ---------- Editable proposals ---------- */
+
+.grid input.val { width: 100%; min-width: 170px; padding: 1px 6px; font: var(--fs-small) var(--font-mono); color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 2px; }
+.grid input.val-date { min-width: 96px; width: 104px; }
+.grid input.val.changed { border-color: var(--accent); background: var(--surface-sunken); box-shadow: inset 3px 0 0 var(--accent); }
+.edited-mark { font-size: var(--fs-small); font-weight: 700; color: var(--accent); white-space: nowrap; }
+.grid td.vp:has(input.val) { white-space: nowrap; }
+.editor-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: var(--gap); }
+.editor-head .spacer { margin-left: auto; }
+/* Unsaved edits: text + symbol, not colour alone. */
+.dirty { padding: 1px 10px; font-weight: 700; color: var(--warn-fg); background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 10px; }
+.grid td.vp.cur { white-space: nowrap; max-width: 240px; overflow: hidden; text-overflow: ellipsis; }
+/* Editor table: the widest screen of the application, so its columns are kept tight. */
+.grid.editor td.path-cell { max-width: 150px; }
+.grid.editor td.vp.cur { max-width: 190px; }
+.grid.editor input.val { min-width: 150px; }
+.grid.editor input.val-date { min-width: 92px; width: 96px; }
+.grid.editor td.path-cell { max-width: 110px; }
+.grid.editor td.vp.cur { max-width: 170px; }
+.grid.editor input.val { min-width: 200px; }
+.grid.editor td.path-cell { max-width: 100px; }
+.grid.editor td.vp.cur { max-width: 150px; }
+.grid.editor input.val { min-width: 175px; }
+.grid.editor th, .grid.editor td { padding: 0 5px; }
