@@ -1,6 +1,6 @@
 # US-00-17 — Mockup: Metadata editor
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 17/22** · Statut : ⌛
+> **Feature** F00 — Specs corpus & pretotype · **Lot 17/22** · Statut : ✅
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md).
 

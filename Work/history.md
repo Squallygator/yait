@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-17` — Mockup: Metadata editor **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-17-screen-metadata-editor.md)
+  `docs/20-mockups/08-metadata-editor.html` : valeur → proposition → statut par propriété, colonne
+  groupée `T O C` avec vue détaillée, filtres, application en masse avec confirmation. Aucune option
+  d'écrasement (`UC-33`). Vérification visuelle uniquement. Tag `US-00-17`.
+
 - ✅ `US-00-16` — Mockup: Organize and flatten **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-16-screen-organize.md)
   `docs/20-mockups/07-organize.html` : sélecteur arborescence / à plat, répartition prévisionnelle,
   sans-date dans `_undated/` ou laissés sur place selon le mode, dates à l'année seule à la racine de
