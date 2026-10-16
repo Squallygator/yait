@@ -6,6 +6,11 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-11` — Mockup: Collection summary **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-11-screen-collection-summary.md)
+  `docs/20-mockups/02-collection-summary.html` : chemin complet non tronqué, volumétrie, alertes
+  signalées sans être traitées, répartitions par extension et par type. Trois composants ajoutés
+  au design system (cartes, barres, avis). Vérification visuelle uniquement. Tag `US-00-11`.
+
 - ✅ `US-00-10` — Mockup: Home, choosing a collection **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-10-screen-home.md)
   `docs/20-mockups/01-home.html` : saisie du chemin, trois états d'erreur en variantes commentées,
   trois collections récentes dont un chemin Windows très long. Deux composants ajoutés au design
