@@ -98,23 +98,23 @@
       </tr>
       <tr>
         <td class="mono before">Bretagne 2011/coastal path.jpg</td><td class="arrow">→</td>
-        <td class="mono after">Bretagne 2011/2011-00-00-coastal path.jpg</td>
-        <td class="reason"><span class="source source-weak">folder-name</span> year only: month and day unknown</td>
+        <td class="mono after">Bretagne 2011/2011-07-02-coastal path.jpg</td>
+        <td class="reason"><span class="source">embedded-metadata</span> camera date, inside the folder's year</td>
       </tr>
       <tr>
         <td class="mono before">Bretagne 2011/Originals/coastal path.jpg</td><td class="arrow">→</td>
-        <td class="mono after">Bretagne 2011/Originals/2011-00-00-coastal path-original.jpg</td>
-        <td class="reason"><span class="source source-weak">folder-name</span> suffix “-original”: same date and name as the file one level up</td>
+        <td class="mono after">Bretagne 2011/Originals/2011-07-02-coastal path-original.jpg</td>
+        <td class="reason"><span class="source">embedded-metadata</span> suffix “-original”: same date and name as the file one level up</td>
       </tr>
       <tr>
         <td class="mono before">2010-08 fete/a/photo.jpg</td><td class="arrow">→</td>
-        <td class="mono after">2010-08 fete/a/2010-08-00-photo.jpg</td>
-        <td class="reason"><span class="source source-weak">collision</span> same target name as <span class="mono">b/photo.jpg</span></td>
+        <td class="mono after">2010-08 fete/a/2010-08-15-photo_1.jpg</td>
+        <td class="reason"><span class="source source-weak">collision</span> same name as <span class="mono">b/photo.jpg</span>; smaller image, so it gets <span class="mono">_1</span></td>
       </tr>
       <tr>
         <td class="mono before">2010-08 fete/b/photo.jpg</td><td class="arrow">→</td>
-        <td class="mono after">2010-08 fete/b/2010-08-00-photo.jpg</td>
-        <td class="reason"><span class="source source-weak">collision</span> same target name as <span class="mono">a/photo.jpg</span></td>
+        <td class="mono after">2010-08 fete/b/2010-08-15-photo.jpg</td>
+        <td class="reason"><span class="source source-weak">collision</span> same name as <span class="mono">a/photo.jpg</span>; larger image, keeps the clean name</td>
       </tr>
     </tbody>
 
@@ -143,7 +143,7 @@
   </table>
 </div>
 
-<p class="muted">Two files would receive the same name: resolve them on the <a href="06-collisions.html">collisions screen</a> before applying.</p>
+<p class="muted">Two files would receive the same name and are told apart in the plan: see the <a href="06-collisions.html">collisions screen</a> for the order and the reason.</p>
 
 </main>
 </body>

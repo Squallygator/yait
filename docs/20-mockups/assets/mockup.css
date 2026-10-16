@@ -442,3 +442,12 @@ table.grid { width: 100%; border-collapse: collapse; }
 .fingerprint { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--text-muted); overflow-wrap: anywhere; }
 /* A rename screen must never truncate a name: before/after cells and reasons wrap instead. */
 .grid td.before, .grid td.after, .grid td.reason { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+
+/* ---------- Tie-break criteria ---------- */
+
+/* The criterion that settled the order is marked in text (▶ + bold), not only by colour. */
+.grid td.decisive { font-weight: 700; box-shadow: inset 0 -2px 0 var(--accent); }
+.grid td.decisive::before { content: "\25B6\00a0"; color: var(--accent); }
+.grid td.tied { color: var(--text-muted); }
+.group-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--gap); margin: 24px 0 var(--gap); }
+.group-title h2 { margin: 0; font-family: var(--font-mono); font-size: var(--fs-h2); }
