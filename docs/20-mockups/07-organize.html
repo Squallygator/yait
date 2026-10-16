@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAIT — Organize</title>
+<link rel="stylesheet" href="assets/mockup.css">
+<script type="module" src="assets/mockup.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">YAIT</span>
+  <span class="muted">Mockup 07 — Organize and flatten</span>
+  <button class="btn" type="button" data-theme-toggle>Light / dark</button>
+</header>
+
+<div class="banner banner-sim" role="status" data-mode="dry-run">
+  <span class="tag">Simulation</span>
+  <span>Dry run: nothing is written to your collection. This is a forecast of where files would go.</span>
+  <span class="spacer"></span>
+  <span class="mono">mode: dry-run</span>
+</div>
+
+<main class="page">
+
+<h1>Organize the collection</h1>
+<p class="muted">Files are moved after they have been renamed. Their names start with the date, so alphabetical order is chronological order.</p>
+
+<h2>Layout</h2>
+<div class="mode-cards" role="radiogroup" aria-label="Layout">
+  <label class="mode-card">
+    <input type="radio" name="layout" value="tree" checked><strong>Tree: YYYY/MM</strong>
+    <p>One folder per year, one per month. For keeping a browsable archive. Files with no date go to
+      <span class="mono">_undated/</span>.</p>
+  </label>
+  <label class="mode-card">
+    <input type="radio" name="layout" value="flat"><strong>Flat: one folder</strong>
+    <p>Every file in a single folder, sorted by name. For selecting everything at once and sending it to a
+      printing service or a cloud album. Files with no date are <strong>left where they are</strong>.</p>
+  </label>
+</div>
+
+<!-- ===== Preview: tree mode ===== -->
+<h2>Forecast — tree mode</h2>
+<div class="cards">
+  <div class="card"><div class="label">Files to move</div><div class="value">10 582</div></div>
+  <div class="card"><div class="label">Dated</div><div class="value">10 260</div></div>
+  <div class="card"><div class="label"><span class="mono">_undated/</span></div><div class="value">322</div></div>
+  <div class="card"><div class="label">Folders to remove</div><div class="value">318</div></div>
+</div>
+<p></p>
+<ul class="tree" aria-label="Destination forecast, tree mode">
+  <li><span>1974/</span><span class="count"></span><span class="note">known to the month</span></li>
+  <li class="nested"><ul><li><span>1974/08/</span><span class="count">38</span><span class="note"></span></li></ul></li>
+  <li><span>2002/</span><span class="count">4</span><span class="note">year only: kept at the root of the year, no month invented</span></li>
+  <li class="nested"><ul><li><span>2002/07/</span><span class="count">540</span><span class="note"></span></li><li><span>2002/08/</span><span class="count">68</span><span class="note"></span></li></ul></li>
+  <li><span>2004/</span><span class="count">96</span><span class="note">year only: kept at the root of the year, no month invented</span></li>
+  <li class="nested"><ul><li><span>2004/06/</span><span class="count">412</span><span class="note"></span></li><li><span>2004/07/</span><span class="count">530</span><span class="note"></span></li><li><span>2004/08/</span><span class="count">470</span><span class="note"></span></li></ul></li>
+  <li><span>2007/</span><span class="count"></span><span class="note">known to the month</span></li>
+  <li class="nested"><ul><li><span>2007/08/</span><span class="count">1 640</span><span class="note"></span></li><li><span>2007/09/</span><span class="count">600</span><span class="note"></span></li></ul></li>
+  <li><span>2011/</span><span class="count">52</span><span class="note">year only: kept at the root of the year, no month invented</span></li>
+  <li class="nested"><ul><li><span>2011/06/</span><span class="count">380</span><span class="note"></span></li><li><span>2011/07/</span><span class="count">640</span><span class="note"></span></li><li><span>2011/12/</span><span class="count">238</span><span class="note"></span></li></ul></li>
+  <li><span>14 other years</span><span class="count">4 552</span><span class="note"></span></li>
+  <li><span>_undated/</span><span class="count">322</span><span class="note">no date found: gathered in one folder, nothing is guessed</span></li>
+</ul>
+<p class="field-hint">After the move, folders left empty are removed. The final report counts only folders that were
+  actually removed, not the ones that were candidates.</p>
+
+<!-- ===== Preview: flat mode ===== -->
+<h2>Forecast — flat mode</h2>
+<div class="cards">
+  <div class="card"><div class="label">Files moved into one folder</div><div class="value">10 260</div></div>
+  <div class="card"><div class="label">Left in place</div><div class="value">322</div></div>
+</div>
+<p></p>
+<div class="banner banner-warn" role="note">
+  <span class="tag">Left in place</span>
+  <span>322 files have no date. In flat mode they are <strong>not moved</strong>: dropped into the pile they would lose
+    the folder name that is their only context. They stay in their folders, and need a date before they can be filed.</span>
+</div>
+<p></p>
+<ul class="tree" aria-label="Destination forecast, flat mode">
+  <li><span>Flat/</span><span class="count">10 260</span><span class="note">2002-07-18-… to 2024-02-15-…, in date order when sorted by name</span></li>
+  <li><span>divers/mystere.jpg</span><span class="count"></span><span class="note">stays here: no date</span></li>
+  <li><span>Originals/scan.jpg</span><span class="count"></span><span class="note">stays here: no date</span></li>
+  <li><span>…</span><span class="count">320 more</span><span class="note"></span></li>
+</ul>
+<p class="field-hint">Files known only to the year, such as <span class="mono">2011-00-00-coastal path.jpg</span>, are
+  moved like the others: their name already says the date is partial.</p>
+
+<!-- ===== Start button, normal state ===== -->
+<p style="margin-top:var(--gap)">
+  <button class="btn btn-primary" type="button" disabled>Organize collection</button>
+  <span class="muted">Unavailable in dry-run. Enable writing to proceed.</span>
+</p>
+
+<!-- ===== Blocked state ===== -->
+<h2>State — blocked by name collisions</h2>
+<div class="banner banner-warn" role="alert">
+  <span class="tag">Blocked</span>
+  <span>Organizing cannot start: 2 files would still get the same name. Moving them together would make one overwrite the other.</span>
+</div>
+<p></p>
+<p><strong>To unblock</strong></p>
+<ol>
+  <li>Open the <a href="06-collisions.html">collisions screen</a> and check the 2 groups.</li>
+  <li>Return to the <a href="05-rename-plan.html">rename plan</a>, and apply it once the names are unique.</li>
+  <li>Come back here: this screen unlocks by itself when no duplicate name remains.</li>
+</ol>
+<p>
+  <button class="btn btn-primary" type="button" disabled>Organize collection</button>
+  <span class="muted">Disabled: 2 duplicate names remain.</span>
+</p>
+
+</main>
+</body>
+</html>

@@ -451,3 +451,21 @@ table.grid { width: 100%; border-collapse: collapse; }
 .grid td.tied { color: var(--text-muted); }
 .group-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--gap); margin: 24px 0 var(--gap); }
 .group-title h2 { margin: 0; font-family: var(--font-mono); font-size: var(--fs-h2); }
+
+/* ---------- Mode cards (radio group) ---------- */
+
+.mode-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap); }
+.mode-card { display: block; padding: 10px 12px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; }
+.mode-card:has(input:checked) { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.mode-card input { margin-right: 6px; }
+.mode-card strong { font-size: var(--fs-h2); }
+.mode-card p { margin: 4px 0 0; color: var(--text-muted); }
+
+/* ---------- Destination tree ---------- */
+
+.tree { margin: 0; padding: 8px 12px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--font-mono); font-size: var(--fs-small); list-style: none; }
+.tree ul { margin: 0; padding-left: 20px; list-style: none; }
+.tree li { display: grid; grid-template-columns: 22ch 8ch 1fr; gap: 12px; padding: 1px 0; }
+.tree li.nested { display: block; padding: 0; }
+.tree .count { text-align: right; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.tree .note { font-family: var(--font-ui); color: var(--text-muted); }
