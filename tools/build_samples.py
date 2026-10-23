@@ -87,6 +87,15 @@ class ExifFieldName(str, Enum):
     ORIENTATION = "Orientation"
     DATE_TIME_ORIGINAL = "DateTimeOriginal"
     DATE_TIME_DIGITIZED = "DateTimeDigitized"
+    GPS_DATE_STAMP = "GPSDateStamp"
+
+
+class ExifIfd(Enum):
+    """The Exif directory a tag is written into."""
+
+    MAIN = "main"
+    EXIF = "exif"
+    GPS = "gps"
 
 
 class ForgeKind(str, Enum):
@@ -120,12 +129,19 @@ def _encode_exif_datetime(value: object, field_name: ExifFieldName) -> str:
     return parsed.strftime("%Y:%m:%d %H:%M:%S")
 
 
+def _encode_gps_date(value: object, field_name: ExifFieldName) -> str:
+    # GPSDateStamp carries a date only; the recipe writes a full datetime like
+    # every other date tag, and the time of day is dropped.
+    parsed = parse_recipe_datetime(value, f"exif.{field_name.value}")
+    return parsed.strftime("%Y:%m:%d")
+
+
 @dataclass(frozen=True)
 class ExifField:
     """Where one EXIF tag lives and how to turn a recipe value into wire form."""
 
     tag_id: int
-    in_exif_ifd: bool
+    ifd: ExifIfd
     encode: Callable[[object, ExifFieldName], int | str]
 
 
@@ -134,13 +150,16 @@ def _build_exif_field_table() -> dict[ExifFieldName, ExifField]:
 
     return {
         ExifFieldName.ORIENTATION: ExifField(
-            tag_id=int(ExifTags.Base.Orientation), in_exif_ifd=False, encode=_encode_orientation
+            tag_id=int(ExifTags.Base.Orientation), ifd=ExifIfd.MAIN, encode=_encode_orientation
         ),
         ExifFieldName.DATE_TIME_ORIGINAL: ExifField(
-            tag_id=int(ExifTags.Base.DateTimeOriginal), in_exif_ifd=True, encode=_encode_exif_datetime
+            tag_id=int(ExifTags.Base.DateTimeOriginal), ifd=ExifIfd.EXIF, encode=_encode_exif_datetime
         ),
         ExifFieldName.DATE_TIME_DIGITIZED: ExifField(
-            tag_id=int(ExifTags.Base.DateTimeDigitized), in_exif_ifd=True, encode=_encode_exif_datetime
+            tag_id=int(ExifTags.Base.DateTimeDigitized), ifd=ExifIfd.EXIF, encode=_encode_exif_datetime
+        ),
+        ExifFieldName.GPS_DATE_STAMP: ExifField(
+            tag_id=int(ExifTags.GPS.GPSDateStamp), ifd=ExifIfd.GPS, encode=_encode_gps_date
         ),
     }
 
@@ -441,12 +460,16 @@ def build_exif_bytes(exif: dict[ExifFieldName, object], exif_field_table: dict[E
     from PIL import Image, ExifTags
 
     container = Image.Exif()
-    exif_ifd = container.get_ifd(ExifTags.IFD.Exif)
+    # Create an IFD only when a tag lands in it, so an image with no GPS field
+    # carries no GPS block at all.
+    targets: dict[ExifIfd, dict[int, object]] = {ExifIfd.MAIN: container}
+    pillow_ifds = {ExifIfd.EXIF: ExifTags.IFD.Exif, ExifIfd.GPS: ExifTags.IFD.GPSInfo}
     for field_name, raw_value in exif.items():
         field = exif_field_table[field_name]
         value = field.encode(raw_value, field_name)
-        target = exif_ifd if field.in_exif_ifd else container
-        target[field.tag_id] = value
+        if field.ifd not in targets:
+            targets[field.ifd] = container.get_ifd(pillow_ifds[field.ifd])
+        targets[field.ifd][field.tag_id] = value
     return container.tobytes()
 
 

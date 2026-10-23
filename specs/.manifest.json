@@ -331,8 +331,10 @@
       "width": 320,
       "height": 143,
       "quality": 70,
-      "exif": {},
-      "size": 8964
+      "exif": {
+        "GPSDateStamp": "2013-06-30 00:00:00"
+      },
+      "size": 9030
     },
     {
       "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-60-timezone-not-inferred-from-gps/files/2006-08 birthday/IMG_0512.JPG",
