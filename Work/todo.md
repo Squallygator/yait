@@ -46,6 +46,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ⬜ `US-01-04` Launcher `yait.ps1` / `yait.sh`
   - ⬜ `US-01-05` Structured logging — diagnostics on stderr
   - ⬜ `US-01-06` UI shell matching the mockups
+    - ↳ **Inclut le stepper** (6 étapes, bloquée avec raison, History permanent, fil d'ariane, barre Précédent / Suivant) : voir « Points déjà identifiés » de `US-00-22`
 - ⬜ **F02** — Collections
   - ⬜ `US-02-01` Enter and validate a collection path (confinement, long Windows paths)
   - ⬜ `US-02-02` Recent collections

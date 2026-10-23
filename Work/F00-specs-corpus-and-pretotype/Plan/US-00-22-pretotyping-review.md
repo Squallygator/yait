@@ -68,6 +68,24 @@ Et, le cas échéant, les fiches de lot des features réordonnées.
 9. Quelles exclusions assumées la revue remet-elle en cause ? Le cas échéant : supprimer la règle
    négative, écrire la positive — la procédure est dans `specs/README.md`.
 
+## Points déjà identifiés, à trancher pendant la revue
+
+Remontés pendant les lots 17 à 21 et à ne pas perdre :
+
+1. **Le stepper de navigation est un élément de l'application, pas un artifice de maquette.**
+   Six étapes (Collection, Scan, Inventory, Rename, Organize, Metadata facultative), états faite /
+   en cours / pas encore atteinte / bloquée avec leur raison, lien History permanent, pastille de la
+   collection, fil d'ariane dans Inventory et Rename, barre Précédent / Suivant. À juger comme les
+   écrans, et à reprendre dans `US-01-06` (coquille de l'IHM). Dessiné dans `docs/20-mockups/`
+   (`.stepper`, `.crumbs`, `.stepbar` de `mockup.css`, démonstration dans `components.html`).
+2. **« Chemin trop long »** (écran des états) : la fiche US-00-20 demande une erreur, `UC-34`
+   impose de traiter les chemins de plus de 260 caractères. La maquette ne montre que la limite
+   de 32 000 caractères. Garder cet état ou le supprimer.
+3. **Éditeur de métadonnées contre `csvedit.js`** (question 3 ci-dessus) : comparaison faite,
+   voir « Suites de la vérification manuelle » de `US-00-17`. Reste à juger à l'usage.
+4. **Besoin de `UC-33` et `UC-61`** : le générateur ne sait pas écrire un champ de légende
+   (`XPTitle`), les deux scénarios le simulent dans le harnais. Aucun lot ne le prévoit encore.
+
 ## Étapes
 
 1. `T-00-22-01` Traverser le parcours principal, dans les deux thèmes, sur un écran large et un
