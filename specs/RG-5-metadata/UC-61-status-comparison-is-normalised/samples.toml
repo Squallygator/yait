@@ -1,0 +1,39 @@
+# UC-61 — a caption in place is compared to its proposal, normalised.
+#
+# Five stills with no metadata at all: the captions the scenarios compare are
+# set by the acceptance harness (see the Sample-fidelity note in rule.md), so
+# what these files carry is a name and a folder. Each folder/name pair is chosen
+# so the deduced label (UC-32) differs from the caption in exactly one way:
+# capital letters, accents, spacing, a real difference, and a punctuation mark.
+
+version = 1
+
+[[files]]
+path = "2005-08 Rome/le Forum.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2004-07 corse/Étretat & la plage (2).jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2003-07 corse/plage.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2004-09 Bretagne/menhir debout.jpg"
+source = "seed"
+width = 320
+exif = {}
+
+[[files]]
+path = "2006-05 disc 1/plage.jpg"
+source = "seed"
+width = 320
+exif = {}
