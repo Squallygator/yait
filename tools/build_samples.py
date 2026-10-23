@@ -87,6 +87,15 @@ class ExifFieldName(str, Enum):
     ORIENTATION = "Orientation"
     DATE_TIME_ORIGINAL = "DateTimeOriginal"
     DATE_TIME_DIGITIZED = "DateTimeDigitized"
+    GPS_DATE_STAMP = "GPSDateStamp"
+
+
+class ExifIfd(Enum):
+    """The Exif directory a tag is written into."""
+
+    MAIN = "main"
+    EXIF = "exif"
+    GPS = "gps"
 
 
 class ForgeKind(str, Enum):
@@ -120,12 +129,19 @@ def _encode_exif_datetime(value: object, field_name: ExifFieldName) -> str:
     return parsed.strftime("%Y:%m:%d %H:%M:%S")
 
 
+def _encode_gps_date(value: object, field_name: ExifFieldName) -> str:
+    # GPSDateStamp carries a date only; the recipe writes a full datetime like
+    # every other date tag, and the time of day is dropped.
+    parsed = parse_recipe_datetime(value, f"exif.{field_name.value}")
+    return parsed.strftime("%Y:%m:%d")
+
+
 @dataclass(frozen=True)
 class ExifField:
     """Where one EXIF tag lives and how to turn a recipe value into wire form."""
 
     tag_id: int
-    in_exif_ifd: bool
+    ifd: ExifIfd
     encode: Callable[[object, ExifFieldName], int | str]
 
 
@@ -134,13 +150,16 @@ def _build_exif_field_table() -> dict[ExifFieldName, ExifField]:
 
     return {
         ExifFieldName.ORIENTATION: ExifField(
-            tag_id=int(ExifTags.Base.Orientation), in_exif_ifd=False, encode=_encode_orientation
+            tag_id=int(ExifTags.Base.Orientation), ifd=ExifIfd.MAIN, encode=_encode_orientation
         ),
         ExifFieldName.DATE_TIME_ORIGINAL: ExifField(
-            tag_id=int(ExifTags.Base.DateTimeOriginal), in_exif_ifd=True, encode=_encode_exif_datetime
+            tag_id=int(ExifTags.Base.DateTimeOriginal), ifd=ExifIfd.EXIF, encode=_encode_exif_datetime
         ),
         ExifFieldName.DATE_TIME_DIGITIZED: ExifField(
-            tag_id=int(ExifTags.Base.DateTimeDigitized), in_exif_ifd=True, encode=_encode_exif_datetime
+            tag_id=int(ExifTags.Base.DateTimeDigitized), ifd=ExifIfd.EXIF, encode=_encode_exif_datetime
+        ),
+        ExifFieldName.GPS_DATE_STAMP: ExifField(
+            tag_id=int(ExifTags.GPS.GPSDateStamp), ifd=ExifIfd.GPS, encode=_encode_gps_date
         ),
     }
 
@@ -176,8 +195,16 @@ class Mp4MvhdParams:
 
 @dataclass(frozen=True)
 class ZipEntry:
+    """One archive member: a seed-derived image (``exif``), or a real sub-archive (``nested``)."""
+
     name: str
     exif: dict[ExifFieldName, object]
+    nested: ZipParams | None = None
+
+    def to_manifest(self) -> dict[str, object]:
+        if self.nested is not None:
+            return {"name": self.name, "nested": self.nested.to_manifest()}
+        return {"name": self.name, "exif": {name.value: value for name, value in sorted(self.exif.items())}}
 
 
 @dataclass(frozen=True)
@@ -185,12 +212,7 @@ class ZipParams:
     entries: tuple[ZipEntry, ...]
 
     def to_manifest(self) -> dict[str, object]:
-        return {
-            "entries": [
-                {"name": entry.name, "exif": {name.value: value for name, value in sorted(entry.exif.items())}}
-                for entry in self.entries
-            ]
-        }
+        return {"entries": [entry.to_manifest() for entry in self.entries]}
 
 
 @dataclass(frozen=True)
@@ -364,32 +386,44 @@ def _load_zip_params(recipe_path: Path, index: int, raw: dict[str, object]) -> F
     unknown = set(raw) - {"entries"}
     if unknown:
         raise RecipeError(f"{recipe_path}: files[{index}].params has unknown field(s): {sorted(unknown)}")
+    return _load_zip_entries(recipe_path, index, raw, f"files[{index}].params")
 
+
+def _load_zip_entries(recipe_path: Path, index: int, raw: dict[str, object], where: str) -> ZipParams:
+    """Read an ``entries`` array; an entry is an image (``exif``) or a sub-archive (``nested``)."""
     raw_entries = raw.get("entries")
     if not isinstance(raw_entries, list) or not raw_entries:
-        raise RecipeError(f"{recipe_path}: files[{index}].params.entries must be a non-empty array of tables")
+        raise RecipeError(f"{recipe_path}: {where}.entries must be a non-empty array of tables")
 
     entries: list[ZipEntry] = []
     for entry_index, raw_entry in enumerate(raw_entries):
+        entry_where = f"{where}.entries[{entry_index}]"
         if not isinstance(raw_entry, dict):
-            raise RecipeError(f"{recipe_path}: files[{index}].params.entries[{entry_index}] must be a table")
-        unknown_entry = set(raw_entry) - {"name", "exif"}
+            raise RecipeError(f"{recipe_path}: {entry_where} must be a table")
+        unknown_entry = set(raw_entry) - {"name", "exif", "nested"}
         if unknown_entry:
-            raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}] has unknown field(s): "
-                f"{sorted(unknown_entry)}"
-            )
+            raise RecipeError(f"{recipe_path}: {entry_where} has unknown field(s): {sorted(unknown_entry)}")
         name = raw_entry.get("name")
         if not isinstance(name, str) or not name:
-            raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}].name is required "
-                "and must be a non-empty string"
-            )
+            raise RecipeError(f"{recipe_path}: {entry_where}.name is required and must be a non-empty string")
+
+        if "nested" in raw_entry:
+            if "exif" in raw_entry:
+                raise RecipeError(f"{recipe_path}: {entry_where} is either an image (exif) or an archive (nested), not both")
+            raw_nested = raw_entry["nested"]
+            if not isinstance(raw_nested, dict):
+                raise RecipeError(f"{recipe_path}: {entry_where}.nested must be a table")
+            unknown_nested = set(raw_nested) - {"entries"}
+            if unknown_nested:
+                raise RecipeError(f"{recipe_path}: {entry_where}.nested has unknown field(s): {sorted(unknown_nested)}")
+            nested = _load_zip_entries(recipe_path, index, raw_nested, f"{entry_where}.nested")
+            entries.append(ZipEntry(name=name, exif={}, nested=nested))
+            continue
+
         exif = _load_exif_table(recipe_path, index, raw_entry.get("exif", {}))
         if ExifFieldName.DATE_TIME_ORIGINAL not in exif:
             raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}] needs "
-                "exif.DateTimeOriginal to set a distinct archive entry timestamp"
+                f"{recipe_path}: {entry_where} needs exif.DateTimeOriginal to set a distinct archive entry timestamp"
             )
         entries.append(ZipEntry(name=name, exif=exif))
     return ZipParams(entries=tuple(entries))
@@ -441,12 +475,16 @@ def build_exif_bytes(exif: dict[ExifFieldName, object], exif_field_table: dict[E
     from PIL import Image, ExifTags
 
     container = Image.Exif()
-    exif_ifd = container.get_ifd(ExifTags.IFD.Exif)
+    # Create an IFD only when a tag lands in it, so an image with no GPS field
+    # carries no GPS block at all.
+    targets: dict[ExifIfd, dict[int, object]] = {ExifIfd.MAIN: container}
+    pillow_ifds = {ExifIfd.EXIF: ExifTags.IFD.Exif, ExifIfd.GPS: ExifTags.IFD.GPSInfo}
     for field_name, raw_value in exif.items():
         field = exif_field_table[field_name]
         value = field.encode(raw_value, field_name)
-        target = exif_ifd if field.in_exif_ifd else container
-        target[field.tag_id] = value
+        if field.ifd not in targets:
+            targets[field.ifd] = container.get_ifd(pillow_ifds[field.ifd])
+        targets[field.ifd][field.tag_id] = value
     return container.tobytes()
 
 
@@ -593,13 +631,29 @@ def build_mp4_mvhd(created: datetime) -> bytes:
     return ftyp + moov
 
 
+def _entry_timestamp(entry: ZipEntry) -> datetime:
+    """The stored date of an archive member.
+
+    An image carries its ``DateTimeOriginal``. A sub-archive carries the oldest
+    date among its own members, so the stored date never contradicts what is
+    inside it.
+    """
+    if entry.nested is not None:
+        return min(_entry_timestamp(inner) for inner in entry.nested.entries)
+    captured = entry.exif[ExifFieldName.DATE_TIME_ORIGINAL]
+    return parse_recipe_datetime(captured, f"zip entry {entry.name!r} exif.DateTimeOriginal")
+
+
 def build_zip(seed: Image.Image, params: ZipParams, exif_field_table: dict[ExifFieldName, ExifField]) -> bytes:
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_STORED) as archive:
         for entry in params.entries:
-            data, _, _ = derive_image(seed, DEFAULT_WIDTH, DEFAULT_QUALITY, entry.exif, exif_field_table)
-            captured = entry.exif[ExifFieldName.DATE_TIME_ORIGINAL]
-            parsed = parse_recipe_datetime(captured, f"zip entry {entry.name!r} exif.DateTimeOriginal")
+            if entry.nested is not None:
+                # A real archive inside the archive, built by this same function.
+                data = build_zip(seed, entry.nested, exif_field_table)
+            else:
+                data, _, _ = derive_image(seed, DEFAULT_WIDTH, DEFAULT_QUALITY, entry.exif, exif_field_table)
+            parsed = _entry_timestamp(entry)
             try:
                 info = zipfile.ZipInfo(
                     entry.name,

@@ -1,9 +1,11 @@
 # UC-57 — GPS metadata is not a date source.
 #
-# Degenerate example: the generator cannot yet write a GPS IFD, so this is a
-# still with no metadata at all, in a month-dated folder. See rule.md's
-# sample-fidelity note — the distinct case (a present GPSDateStamp, ignored) is
-# a tracked follow-up once the generator can forge a GPS block.
+# A still with NO capture-date tag but a PRESENT GPSDateStamp, in a month-dated
+# folder. The stamp is 2013-06-30: the UTC fix naming the day before the folder's
+# month, exactly the "different calendar day" the rule warns about. An
+# implementation that read GPS as a fallback would resolve 2013-06-30, day
+# precision, from embedded-metadata; the folder answer is 2013-07, month
+# precision, from folder-name. The two cannot agree by accident.
 
 version = 1
 
@@ -11,4 +13,4 @@ version = 1
 path = "2013-07 Sicily/DSCN2043.JPG"
 source = "seed"
 width = 320
-exif = {}
+exif = { GPSDateStamp = "2013-06-30 00:00:00" }

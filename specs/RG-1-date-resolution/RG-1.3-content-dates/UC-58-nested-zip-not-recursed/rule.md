@@ -68,16 +68,11 @@ Supersedes:  —
 ## Example
 
 `files/backups/2012-full-backup.zip` contains two datable images
-(`DateTimeOriginal` `2012-07-10` and `2012-07-11`) and a third entry named
-`old-stuff.zip` standing in for a nested archive, whose own stored date is
-`2001-01-01`. The scenario asserts the outer archive resolves to `2012-07-10` —
-the oldest *readable image* — proving the `2001` nested entry was skipped, not
-counted.
-
-> Sample-fidelity note: the generator builds one archive level, so
-> `old-stuff.zip` is a seed-derived entry with that name, not a real inner ZIP.
-> The rule's teeth are in the date arithmetic (a wrongly-counted `2001` entry
-> changes the answer). `US-00-23` adds true archive nesting to the sample
-> generator and tightens this example.
+(`DateTimeOriginal` `2012-07-10` and `2012-07-11`) and a third entry,
+`old-stuff.zip`, that is a **real inner archive** holding one image dated
+`2001-01-01` (the inner entry's stored date is `2001-01-01` too). The scenario
+asserts the outer archive resolves to `2012-07-10` — the oldest image it
+*directly* contains — proving the inner archive was not opened: reading into
+it would answer `2001-01-01` and fail the test.
 
 Proven by [`rule.feature`](rule.feature).

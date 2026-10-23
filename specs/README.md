@@ -188,7 +188,9 @@ kind = "riff-idit"
 params = { idit = "Tue Aug 29 09:43:38 2006" }
 ```
 
-Available `kind` values are documented in `_templates/samples.toml`.
+Available `kind` values, the closed list of EXIF tags (`Orientation`, `DateTimeOriginal`,
+`DateTimeDigitized`, `GPSDateStamp`) and the `nested` form of a `zip` entry (a real
+archive inside the archive) are documented in `_templates/samples.toml`.
 
 Paths may contain directories: the folder names are usually the point of the
 rule. Accents, spaces and ampersands are welcome — the real archive is full of

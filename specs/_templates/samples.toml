@@ -14,6 +14,13 @@ width = 480                    # optional, default: small standard size
 quality = 70                   # optional
 exif = {}                      # {} or omitted = no metadata at all
 # exif = { DateTimeOriginal = "2006-08-29 09:43:38", DateTimeDigitized = "2006-08-29 09:43:38", Orientation = 1 }
+#
+# The closed list of EXIF tags (anything else is an error, on purpose):
+#   Orientation        integer
+#   DateTimeOriginal   "YYYY-MM-DD HH:MM:SS"
+#   DateTimeDigitized  "YYYY-MM-DD HH:MM:SS"
+#   GPSDateStamp       "YYYY-MM-DD HH:MM:SS", written into the GPS block as a date only
+# exif = { GPSDateStamp = "2013-06-30 00:00:00" }   # GPS date, and no capture-date tag
 
 # --- forged artefacts ----------------------------------------------------
 # Built byte by byte: no encoder, no external tool, no third-party content.
@@ -24,8 +31,13 @@ exif = {}                      # {} or omitted = no metadata at all
 #   kind = "mp4-mvhd"        MP4/MOV carrying a moov/mvhd atom
 #     params = { created = "2011-06-04 18:22:00" }
 #
-#   kind = "zip"             archive containing seed-derived images
+#   kind = "zip"             archive containing seed-derived images and/or real sub-archives
 #     params = { entries = [{ name = "a.jpg", exif = { DateTimeOriginal = "..." } }] }
+#     An entry is an image (exif, DateTimeOriginal required: it becomes the entry's
+#     stored date) or an archive (nested), never both. A nested archive is built by
+#     the same code and takes the oldest stored date inside it:
+#     params = { entries = [{ name = "old.zip", nested = { entries = [
+#                { name = "b.jpg", exif = { DateTimeOriginal = "2001-01-01 00:00:00" } } ] } }] }
 #
 #   kind = "truncated-jpeg"  header intact, scan cut short (damaged CD sector)
 #     params = { keep_bytes = 4096 }

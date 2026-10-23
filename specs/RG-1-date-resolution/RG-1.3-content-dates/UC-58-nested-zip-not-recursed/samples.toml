@@ -1,12 +1,10 @@
 # UC-58 — archives are read one level deep.
 #
-# Two datable images and a third entry named "old-stuff.zip" that stands in for
-# a nested archive, with the oldest stored date (2001-01-01). rule.feature
-# asserts the outer archive resolves to 2012-07-10, the oldest READABLE image,
-# so a wrongly-counted 2001 entry fails the test.
-#
-# The generator builds one archive level, so "old-stuff.zip" is a seed-derived
-# entry with that name, not a real inner ZIP. See rule.md's sample-fidelity note.
+# Two datable images and a third entry, "old-stuff.zip", that is a REAL inner
+# archive holding one image dated 2001-01-01. rule.feature asserts the outer
+# archive resolves to 2012-07-10, the oldest image it directly contains: an
+# implementation that opened the inner archive would answer 2001-01-01 instead.
+# One nested level is enough; deeper nesting proves nothing more.
 
 version = 1
 
@@ -17,5 +15,7 @@ kind = "zip"
 params = { entries = [
   { name = "photos/IMG_001.jpg", exif = { DateTimeOriginal = "2012-07-10 09:00:00" } },
   { name = "photos/IMG_002.jpg", exif = { DateTimeOriginal = "2012-07-11 09:00:00" } },
-  { name = "old-stuff.zip", exif = { DateTimeOriginal = "2001-01-01 00:00:00" } },
+  { name = "old-stuff.zip", nested = { entries = [
+    { name = "scans/IMG_OLD.jpg", exif = { DateTimeOriginal = "2001-01-01 00:00:00" } },
+  ] } },
 ] }

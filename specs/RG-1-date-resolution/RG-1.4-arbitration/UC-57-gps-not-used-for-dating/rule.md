@@ -66,15 +66,12 @@ Supersedes:  —
 
 ## Example
 
-`files/2013-07 Sicily/DSCN2043.JPG` — no capture-date Exif, a filename with no
-date, a `2013-07` folder. The scenario asserts the resolved date is `2013-07`,
-month precision, from `folder-name`, and **not** from `embedded-metadata`.
-
-> Sample-fidelity note: the sample generator cannot yet write a GPS IFD, so this
-> example is the degenerate case — a still with no metadata at all — and is
-> observationally the same as `UC-18`. What makes `UC-57` a distinct rule is the
-> `## Why`: a *present* `GPSDateStamp` must still be ignored. Tightening the
-> example (a real GPS block, `GPSDateStamp` a day off, asserting it is not read)
-> needs a small generator addition, tracked as `US-00-23`.
+`files/2013-07 Sicily/DSCN2043.JPG` — no capture-date Exif, but a **present**
+`GPSDateStamp` of `2013-06-30`: the UTC fix naming the day before the folder's
+month, the "different calendar day" case from `## Why`. The filename carries no
+date; the folder is `2013-07`. The scenario asserts the resolved date is
+`2013-07`, month precision, from `folder-name`, and **not** from
+`embedded-metadata` — so reading the GPS stamp as a fallback would answer
+`2013-06-30` and fail the test.
 
 Proven by [`rule.feature`](rule.feature).
