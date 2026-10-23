@@ -31,7 +31,7 @@ Vue de pilotage. Une ligne par feature, les lots en sous-liste.
   - ✅ `US-00-20` Screens — Empty and error states [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-20-screen-empty-and-error-states.md) **(16/10/2026)**
   - ✅ `US-00-21` Clickable prototype [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md) **(16/10/2026)**
   - ⬜ `US-00-22` Pretotyping review **(point d'arrêt)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-22-pretotyping-review.md)
-  - ⬜ `US-00-23` Sample generator — GPS date field + nested archives *(chaîne corpus, hors point d'arrêt)* [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-23-sample-generator-gps-and-nesting.md)
+  - ⌛ `US-00-23` Sample generator — GPS date field + nested archives *(chaîne corpus, hors point d'arrêt)* [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-23-sample-generator-gps-and-nesting.md)
 
 ---
 
