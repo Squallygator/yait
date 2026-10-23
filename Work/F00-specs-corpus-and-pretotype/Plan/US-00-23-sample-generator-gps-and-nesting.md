@@ -1,6 +1,6 @@
 # US-00-23 — Sample generator : champ date GPS + archives imbriquées
 
-> **Feature** F00 — Specs corpus & pretotype · **Lot 23/23** *(ajouté après coup, suivi de `US-00-06`)* · Statut : ⌛
+> **Feature** F00 — Specs corpus & pretotype · **Lot 23/23** *(ajouté après coup, suivi de `US-00-06`)* · Statut : ✅
 > Fiche autosuffisante : ne pas lire le plan global.
 > Lire d'abord le [`CLAUDE.md` racine](../../../CLAUDE.md) puis [`specs/README.md`](../../../specs/README.md).
 

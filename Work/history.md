@@ -6,6 +6,13 @@ Ce qui est terminé, daté. Uniquement du ✅.
 
 ## 2026
 
+- ✅ `US-00-23` — Sample generator: GPS date field and nested archives **(23/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-23-sample-generator-gps-and-nesting.md)
+  `GPSDateStamp` ajouté à la liste EXIF fermée et écrit dans un vrai IFD GPS ; une entrée de `zip` peut
+  être une vraie archive (`nested`). `UC-57` et `UC-58` ont maintenant un exemple fidèle (la source
+  refusée est présente, pas seulement absente), notes de fidélité supprimées. Hors lot et resté ouvert :
+  le générateur ne sait toujours pas écrire un champ de légende (besoin de `UC-33` et `UC-61`).
+  Même jour : règle `UC-61` (comparaison de statut normalisée) et note du stepper pour `US-01-06`. Tag `US-00-23`.
+
 - ✅ `US-00-21` — Clickable prototype **(16/10/2026)** [🔗](F00-specs-corpus-and-pretotype/Plan/US-00-21-clickable-prototype.md)
   `docs/20-mockups/index.html` (douze pages, parcours principal, point à juger par page), barre de
   mockup réduite au lien vers l'index, et navigation applicative : stepper à six étapes (Collection,
