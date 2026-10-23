@@ -195,8 +195,16 @@ class Mp4MvhdParams:
 
 @dataclass(frozen=True)
 class ZipEntry:
+    """One archive member: a seed-derived image (``exif``), or a real sub-archive (``nested``)."""
+
     name: str
     exif: dict[ExifFieldName, object]
+    nested: ZipParams | None = None
+
+    def to_manifest(self) -> dict[str, object]:
+        if self.nested is not None:
+            return {"name": self.name, "nested": self.nested.to_manifest()}
+        return {"name": self.name, "exif": {name.value: value for name, value in sorted(self.exif.items())}}
 
 
 @dataclass(frozen=True)
@@ -204,12 +212,7 @@ class ZipParams:
     entries: tuple[ZipEntry, ...]
 
     def to_manifest(self) -> dict[str, object]:
-        return {
-            "entries": [
-                {"name": entry.name, "exif": {name.value: value for name, value in sorted(entry.exif.items())}}
-                for entry in self.entries
-            ]
-        }
+        return {"entries": [entry.to_manifest() for entry in self.entries]}
 
 
 @dataclass(frozen=True)
@@ -383,32 +386,44 @@ def _load_zip_params(recipe_path: Path, index: int, raw: dict[str, object]) -> F
     unknown = set(raw) - {"entries"}
     if unknown:
         raise RecipeError(f"{recipe_path}: files[{index}].params has unknown field(s): {sorted(unknown)}")
+    return _load_zip_entries(recipe_path, index, raw, f"files[{index}].params")
 
+
+def _load_zip_entries(recipe_path: Path, index: int, raw: dict[str, object], where: str) -> ZipParams:
+    """Read an ``entries`` array; an entry is an image (``exif``) or a sub-archive (``nested``)."""
     raw_entries = raw.get("entries")
     if not isinstance(raw_entries, list) or not raw_entries:
-        raise RecipeError(f"{recipe_path}: files[{index}].params.entries must be a non-empty array of tables")
+        raise RecipeError(f"{recipe_path}: {where}.entries must be a non-empty array of tables")
 
     entries: list[ZipEntry] = []
     for entry_index, raw_entry in enumerate(raw_entries):
+        entry_where = f"{where}.entries[{entry_index}]"
         if not isinstance(raw_entry, dict):
-            raise RecipeError(f"{recipe_path}: files[{index}].params.entries[{entry_index}] must be a table")
-        unknown_entry = set(raw_entry) - {"name", "exif"}
+            raise RecipeError(f"{recipe_path}: {entry_where} must be a table")
+        unknown_entry = set(raw_entry) - {"name", "exif", "nested"}
         if unknown_entry:
-            raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}] has unknown field(s): "
-                f"{sorted(unknown_entry)}"
-            )
+            raise RecipeError(f"{recipe_path}: {entry_where} has unknown field(s): {sorted(unknown_entry)}")
         name = raw_entry.get("name")
         if not isinstance(name, str) or not name:
-            raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}].name is required "
-                "and must be a non-empty string"
-            )
+            raise RecipeError(f"{recipe_path}: {entry_where}.name is required and must be a non-empty string")
+
+        if "nested" in raw_entry:
+            if "exif" in raw_entry:
+                raise RecipeError(f"{recipe_path}: {entry_where} is either an image (exif) or an archive (nested), not both")
+            raw_nested = raw_entry["nested"]
+            if not isinstance(raw_nested, dict):
+                raise RecipeError(f"{recipe_path}: {entry_where}.nested must be a table")
+            unknown_nested = set(raw_nested) - {"entries"}
+            if unknown_nested:
+                raise RecipeError(f"{recipe_path}: {entry_where}.nested has unknown field(s): {sorted(unknown_nested)}")
+            nested = _load_zip_entries(recipe_path, index, raw_nested, f"{entry_where}.nested")
+            entries.append(ZipEntry(name=name, exif={}, nested=nested))
+            continue
+
         exif = _load_exif_table(recipe_path, index, raw_entry.get("exif", {}))
         if ExifFieldName.DATE_TIME_ORIGINAL not in exif:
             raise RecipeError(
-                f"{recipe_path}: files[{index}].params.entries[{entry_index}] needs "
-                "exif.DateTimeOriginal to set a distinct archive entry timestamp"
+                f"{recipe_path}: {entry_where} needs exif.DateTimeOriginal to set a distinct archive entry timestamp"
             )
         entries.append(ZipEntry(name=name, exif=exif))
     return ZipParams(entries=tuple(entries))
@@ -616,13 +631,29 @@ def build_mp4_mvhd(created: datetime) -> bytes:
     return ftyp + moov
 
 
+def _entry_timestamp(entry: ZipEntry) -> datetime:
+    """The stored date of an archive member.
+
+    An image carries its ``DateTimeOriginal``. A sub-archive carries the oldest
+    date among its own members, so the stored date never contradicts what is
+    inside it.
+    """
+    if entry.nested is not None:
+        return min(_entry_timestamp(inner) for inner in entry.nested.entries)
+    captured = entry.exif[ExifFieldName.DATE_TIME_ORIGINAL]
+    return parse_recipe_datetime(captured, f"zip entry {entry.name!r} exif.DateTimeOriginal")
+
+
 def build_zip(seed: Image.Image, params: ZipParams, exif_field_table: dict[ExifFieldName, ExifField]) -> bytes:
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_STORED) as archive:
         for entry in params.entries:
-            data, _, _ = derive_image(seed, DEFAULT_WIDTH, DEFAULT_QUALITY, entry.exif, exif_field_table)
-            captured = entry.exif[ExifFieldName.DATE_TIME_ORIGINAL]
-            parsed = parse_recipe_datetime(captured, f"zip entry {entry.name!r} exif.DateTimeOriginal")
+            if entry.nested is not None:
+                # A real archive inside the archive, built by this same function.
+                data = build_zip(seed, entry.nested, exif_field_table)
+            else:
+                data, _, _ = derive_image(seed, DEFAULT_WIDTH, DEFAULT_QUALITY, entry.exif, exif_field_table)
+            parsed = _entry_timestamp(entry)
             try:
                 info = zipfile.ZipInfo(
                     entry.name,

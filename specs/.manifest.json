@@ -242,13 +242,20 @@
           },
           {
             "name": "old-stuff.zip",
-            "exif": {
-              "DateTimeOriginal": "2001-01-01 00:00:00"
+            "nested": {
+              "entries": [
+                {
+                  "name": "scans/IMG_OLD.jpg",
+                  "exif": {
+                    "DateTimeOriginal": "2001-01-01 00:00:00"
+                  }
+                }
+              ]
             }
           }
         ]
       },
-      "size": 27462
+      "size": 27594
     },
     {
       "path": "RG-1-date-resolution/RG-1.4-arbitration/UC-08-long-digit-run-is-not-a-date/files/2015-07 Barcelona/received_862666160799536.jpg",
