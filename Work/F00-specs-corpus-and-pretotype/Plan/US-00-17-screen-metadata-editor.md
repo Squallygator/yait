@@ -77,6 +77,17 @@ faut pas prétendre le contraire. La vérification est visuelle.
 - Les quatre statuts restent-ils distinguables dans les deux thèmes, sans se fier à la seule couleur ?
 - Sur cinquante lignes, repère-t-on les lignes divergentes sans les chercher ?
 
+## Suites de la vérification manuelle
+
+La comparaison avec `csvedit.js` a eu lieu après la livraison (16/10/2026) ; ce qu'elle a produit :
+
+- **Règle `UC-61`** (`specs/RG-5-metadata/`) : un « conforme » se décide en ignorant casse, accents
+  et espaces, comme `csvedit.js` et `dvdmeta.py` le faisaient sans que rien ne l'écrive.
+- **Maquette complétée** : propositions éditables avec liste de libellés connus et marqueur
+  « édité », statut de ligne agrégé (le pire gagne), indicateur de modifications non enregistrées,
+  confirmation avant de quitter, tout cocher / tout décocher, rappel `Ctrl+S`.
+- **Écrasement** : `dvdmeta.py` avait `--overwrite` ; `UC-33` l'exclut, la maquette n'en propose pas.
+
 ## Commit
 
 ```

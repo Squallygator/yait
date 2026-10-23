@@ -4,7 +4,7 @@
 > truth for any rule is its own `rule.md`; this page is a derived index —
 > regenerate it by running the checker again.
 
-60 rules: 47 enforced, 13 assumed exclusions.
+61 rules: 48 enforced, 13 assumed exclusions.
 
 | UC | Rule | Group | Polarity | Decided on | Owner | Revisit if |
 |---|---|---|---|---|---|---|
@@ -68,4 +68,5 @@
 | UC-58 | Archives are read one level deep, not recursed | RG-1.3 Dates read from the file's content | Assumed exclusion ⊘ | 2026-08-27 | squallygator | A real collection is found whose meaningful dates live only inside nested archives — then this scenario goes red and a bounded-depth recursion rule replaces it. |
 | UC-59 | Identical content in two files is not detected or merged | RG-2 File classification | Assumed exclusion ⊘ | 2026-09-09 | squallygator | A collection appears that is mostly exact duplicates from repeated backups, where keeping both copies is pure waste — then a dedup step gets its own design, this scenario goes red (one file would have no target name of its own), and an enforced rule replaces this one. |
 | UC-60 | Timestamps are kept as written; no timezone is applied | RG-1.4 Arbitration and refusals | Assumed exclusion ⊘ | 2026-08-27 | squallygator | A use case appears that genuinely needs UTC-normalised dates — even then a display-time toggle would be safer than changing what "resolved date" means, so this scenario stays the guard. |
+| UC-61 | A caption in place is compared to its proposal ignoring case, accents and spacing | RG-5 Metadata deduction and writing | Enforced ▶ | 2026-10-23 | squallygator | A collection shows two captions that differ only by case, accents or spacing and must still be reported divergent (case carrying meaning in a caption, for instance), or a script whose letters decompose into distinct readings. |
 

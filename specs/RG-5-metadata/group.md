@@ -17,6 +17,7 @@ place rather than moving them. The rules here are correspondingly strict.
 | `UC-44-write-never-reencodes` | ▶ | Header segments only; the scan is copied |
 | `UC-45-drift-detected` | ▶ | A file changed since the audit is not written blind |
 | `UC-33-existing-fields-never-overwritten` | ⊘ | A value already there was probably typed by a human |
+| `UC-61-status-comparison-is-normalised` | ▶ | When a caption in place counts as matching its proposal |
 
 ## Boundaries
 

@@ -115,6 +115,9 @@ And its target name is "<name.ext>"
 # RG-5 — metadata deduction and writing
 And its deduced label is "<text>"
 When the media "<relative/path.jpg>" has its metadata written
+Given "<relative/path.jpg>" already has the title "<text>"
+When the media "<relative/path.jpg>" is audited for metadata
+Then its title status is "<compliant|to fill|divergent|nothing to propose>"
 Then its title, subject and comment all read "<text>"
 And its title still reads "<text>"
 And the deduced label was not written to the title
